@@ -1,0 +1,46 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "564305318",
+    "Type": "Event",
+    "GUID": "{9BD9829C-7B26-4FD7-92EA-6685482D30D8}",
+    "Language": "SFX",
+    "Hash": "{C04BA385-1648-EA3B-60D4-284981A8A6A5}",
+    "ObjectPath": "Play_Amen_break_Playlist",
+    "ShortName": "Play_Amen_break_Playlist",
+    "Path": "Event/Play_Amen_break_Playlist.bnk",
+    "Media": [
+     {
+      "Id": "868969617",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Loose",
+      "ShortName": "Amen-break.wav",
+      "Path": "Media/868969617.wem",
+      "CachePath": "D3/{D3B51746-2533-F334-5F12-CA82ACFAB555}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "564305318",
+      "Name": "Play_Amen_break_Playlist",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Amen_break_Playlist",
+      "GUID": "{9BD9829C-7B26-4FD7-92EA-6685482D30D8}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "868969617"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{D2C93A06-59B7-FB72-9E66-6F7BFFA3589E}"
+ }
+}

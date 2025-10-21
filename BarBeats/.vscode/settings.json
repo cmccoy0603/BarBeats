@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "BarBeats_WwiseIntegrationTemp.sln"
+    "dotnet.defaultSolution": "BarBeats.sln"
 }
