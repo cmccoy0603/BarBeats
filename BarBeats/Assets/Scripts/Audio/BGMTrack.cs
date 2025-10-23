@@ -20,4 +20,14 @@ public class BGMTrack
         this.play_event = play_event;
         this.stop_event = stop_event;
     }
+
+    public void Play()
+    {
+        play_event.Post(AkEventList.instance.gameObject);
+    }
+
+    public void Stop()
+    {
+        stop_event.Post(AkEventList.instance.gameObject);
+    }
 }
