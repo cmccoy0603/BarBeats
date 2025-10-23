@@ -80,8 +80,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 2088215e559d8e4bbfd27e337f5f0df6
     GuidInternal: 
-    m_lastTime: -8584405414059853746
-    List: []
+    m_lastTime: -8584405367156989906
+    List:
+    - name: Play_Amen_break_Playlist
+      guid: 9c82d99b267bd74f92ea6685482d30d8
+      id: 564305318
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2088215e559d8e4bbfd27e337f5f0df6
+      - ElementName: Play_Amen_break_Playlist
+        ObjectType: 3
+        guid: 9c82d99b267bd74f92ea6685482d30d8
+      Path: Events\Default Work Unit\Play_Amen_break_Playlist
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:

@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" SchemaVersion="123">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Amen_break_Playlist" ID="{9BD9829C-7B26-4FD7-92EA-6685482D30D8}">
+					<ChildrenList>
+						<Action Name="" ID="{0058CA9E-ABA2-451D-89B6-75457D6022C2}" ShortID="258610430">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Amen-break_Playlist" ID="{10EAA06A-1C2E-4EC5-A3BE-CA2D9ADF074C}" WorkUnitID="{F51861C7-3561-4828-BE50-AAD9ABCDB79C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
