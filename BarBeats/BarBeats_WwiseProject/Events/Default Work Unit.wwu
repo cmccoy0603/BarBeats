@@ -14,6 +14,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Stop_Amen_break_Playlist" ID="{7B3D3669-A65C-4980-95E7-2B0B302D8DFA}">
+					<ChildrenList>
+						<Action Name="" ID="{855349C9-97FC-491E-BB5E-408D3D0140F6}" ShortID="947554193">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Amen-break_Playlist" ID="{10EAA06A-1C2E-4EC5-A3BE-CA2D9ADF074C}" WorkUnitID="{F51861C7-3561-4828-BE50-AAD9ABCDB79C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
