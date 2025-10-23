@@ -1,17 +1,21 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine;
 
 public class BGMTrack
 {
     private string internal_name = "Uninitialized";
-    private AK.Wwise.Event play_event;
-    private AK.Wwise.Event stop_event;
+    public AK.Wwise.Event play_event { get; private set; }
+    public AK.Wwise.Event stop_event { get; private set; }
 
     private static Dictionary<string, BGMTrack> ost = new();
+    public static uint wwise_current_playing_id { get; private set; } = AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
 
-    public static void Init()
+    private static void InitIfNecessary()
     {
-        ost.Clear();
+        if (AkEventList.IsNull()) return;
+        if (ost.ContainsKey("AmenBreak")) return;
         AddToOST("AmenBreak", AkEventList.instance.play_amen_break, AkEventList.instance.stop_amen_break);
     }
 
@@ -26,18 +30,9 @@ public class BGMTrack
         this.stop_event = stop_event;
     }
 
-    public void Play()
-    {
-        play_event.Post(AkEventList.instance.gameObject);
-    }
-
-    public void Stop()
-    {
-        stop_event.Post(AkEventList.instance.gameObject);
-    }
-
     public static BGMTrack TryGet(string internal_name)
     {
+        InitIfNecessary();
         ost.TryGetValue(internal_name, out var track);
         return track;
     }
@@ -45,5 +40,11 @@ public class BGMTrack
     private static void AddToOST(string internal_name, AK.Wwise.Event play_event, AK.Wwise.Event stop_event)
     {
         ost.Add(internal_name, new BGMTrack(internal_name, play_event, stop_event));
+    }
+
+    public static int GetProgress()
+    {
+        AkUnitySoundEngine.GetSourcePlayPosition(wwise_current_playing_id, out int playback_ms);
+        return playback_ms;
     }
 }
