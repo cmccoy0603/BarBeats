@@ -30,12 +30,6 @@ public class AkEventList : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        int playback_ms = BGMTrack.GetProgress();
-        // Debug.Log("" + BGMTrack.wwise_current_playing_id + " " + playback_ms);
-    }
-
     public static bool IsNull()
     {
         return instance == null;
