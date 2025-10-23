@@ -1,9 +1,11 @@
-using UnityEngine;
-
 public class MusicPlayer
 {
-    BGMTrack[] tracks =
+    private static BGMTrack current_track = null;
+
+    public static void SwitchToTrack(string internal_name)
     {
-        new BGMTrack("Amen Break", "AmenBreak", AkEventList.instance.play_amen_break, AkEventList.instance.stop_amen_break)
-    };
+        current_track?.Stop();
+        current_track = BGMTrack.TryGet(internal_name);
+        current_track?.Play();
+    }
 }
