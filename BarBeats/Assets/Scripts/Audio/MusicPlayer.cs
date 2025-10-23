@@ -14,11 +14,11 @@ public class MusicPlayer : MonoBehaviour
 
     private IEnumerator GuaranteeInitTrack()
     {
-        while (current_track == null)
+        while (AkEventList.IsNull())
         {
-            SwitchToTrack(init_track_name);
             yield return null;
         }
+        SwitchToTrack(init_track_name);
     }
 
     public void SwitchToTrack(string internal_name)
