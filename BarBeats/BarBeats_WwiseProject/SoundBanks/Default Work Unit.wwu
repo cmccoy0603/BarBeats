@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{533AC396-E93D-4572-9CD8-3D7E7A4E2894}" SchemaVersion="123">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{533AC396-E93D-4572-9CD8-3D7E7A4E2894}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="MainBank" ID="{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Stop_Amen_break_Playlist" ID="{7B3D3669-A65C-4980-95E7-2B0B302D8DFA}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Amen_break_Playlist" ID="{9BD9829C-7B26-4FD7-92EA-6685482D30D8}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
