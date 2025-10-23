@@ -14,14 +14,8 @@ public class MusicPlayer : MonoBehaviour
     {
         ak_flags.value = (uint)AkCallbackType.AK_EnableGetSourcePlayPosition;
         gameObject_id = AkUnitySoundEngine.GetAkGameObjectID(gameObject);
-        DontDestroyOnLoad(gameObject);
         StartCoroutine(GuaranteeInitTrack());
 
-    }
-
-    void Update()
-    {
-        Debug.Log("" + GetPlayheadProgressMilliseconds());
     }
 
     public void SwitchToTrack(string internal_name)
@@ -46,10 +40,9 @@ public class MusicPlayer : MonoBehaviour
 
         if (num_ids <= 0 || playing_ids[0] == AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
         {
-            Debug.Log("no playing IDs found");
+            Debug.Log("[MusicPlayer] no playing IDs found");
             return 0;
         }
-        Debug.Log($"{num_ids} playing IDs found");
         AkUnitySoundEngine.GetSourcePlayPosition(playing_ids[0], out int playback_ms);
         return playback_ms;
     }
