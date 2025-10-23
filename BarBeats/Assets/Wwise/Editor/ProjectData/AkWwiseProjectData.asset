@@ -66,8 +66,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 96c33a533de972459cd83d7e7a4e2894
     GuidInternal: 
-    m_lastTime: -8584405414060032228
-    List: []
+    m_lastTime: -8584403749385914022
+    List:
+    - name: MainBank
+      guid: 86a06ef4ea973642bb86a5d4c3c36ca5
+      id: 2880737896
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 96c33a533de972459cd83d7e7a4e2894
+      - ElementName: MainBank
+        ObjectType: 7
+        guid: 86a06ef4ea973642bb86a5d4c3c36ca5
+      Path: SoundBanks\Default Work Unit\MainBank
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -80,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 2088215e559d8e4bbfd27e337f5f0df6
     GuidInternal: 
-    m_lastTime: -8584405367156989906
+    m_lastTime: -8584403749385863962
     List:
     - name: Play_Amen_break_Playlist
       guid: 9c82d99b267bd74f92ea6685482d30d8
@@ -96,6 +110,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 9c82d99b267bd74f92ea6685482d30d8
       Path: Events\Default Work Unit\Play_Amen_break_Playlist
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Amen_break_Playlist
+      guid: 69363d7b5ca6804995e72b0b302d8dfa
+      id: 1969469092
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2088215e559d8e4bbfd27e337f5f0df6
+      - ElementName: Stop_Amen_break_Playlist
+        ObjectType: 3
+        guid: 69363d7b5ca6804995e72b0b302d8dfa
+      Path: Events\Default Work Unit\Stop_Amen_break_Playlist
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -156,7 +187,7 @@ MonoBehaviour:
     m_lastTime: -8584405414059521530
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 0500000006000000070000000c0000000d000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
