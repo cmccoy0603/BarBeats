@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,15 +16,17 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        _rigidbody.linearVelocity = _moveDirection * speed;
+        Vector2 currentPos = _rigidbody.position;
+        Vector2 movement = _moveDirection * speed * Time.fixedDeltaTime;
+        _rigidbody.MovePosition(currentPos + movement);
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         _moveDirection = context.ReadValue<Vector2>();
+        _moveDirection.Normalize();
     }
     
 }
