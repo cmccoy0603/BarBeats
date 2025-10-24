@@ -1,4 +1,6 @@
 using System.Collections;
+using System.ComponentModel;
+using Unity.Mathematics;
 using UnityEngine;
 
 // Component that plays a BGM track on its gameObject.
@@ -15,7 +17,6 @@ public class MusicPlayer : MonoBehaviour
         ak_flags.value = (uint)AkCallbackType.AK_EnableGetSourcePlayPosition;
         gameObject_id = AkUnitySoundEngine.GetAkGameObjectID(gameObject);
         StartCoroutine(GuaranteeInitTrack());
-
     }
 
     public void SwitchToTrack(string internal_name)
@@ -32,19 +33,51 @@ public class MusicPlayer : MonoBehaviour
         Play();
     }
 
-    public int GetPlayheadProgressMilliseconds()
+    public (uint, int) GetPlayheadProgressMilliseconds()
+    {
+        uint playing_id = GetPlayingID();
+
+        if (IsInvalidPlayingID(playing_id)) return (AkUnitySoundEngine.AK_INVALID_PLAYING_ID, 0);
+
+        AkUnitySoundEngine.GetSourcePlayPosition(playing_id, out int playback_ms);
+        return (playing_id, playback_ms);
+    }
+
+    public float GetRhythmSyncScore()
+    {
+        (uint playing_id, int progress_ms) = GetPlayheadProgressMilliseconds();
+        if (IsInvalidPlayingID(playing_id)) return 0;
+
+        const double tempo = 137;
+        const double ms_per_pulse = 60000.0 / tempo;
+        const double strictness = 0;
+        const int height = 1;
+        return (float)math.max(
+            0,
+            (
+                height
+                + strictness
+            )
+            * math.cos(
+                math.TAU
+                * progress_ms
+                / ms_per_pulse
+            ) - strictness
+        );
+    }
+
+    private uint GetPlayingID()
     {
         uint num_ids = 1; // We expect at least one playing ID
         uint[] playing_ids = new uint[1]; // Array to store the result
         AkUnitySoundEngine.GetPlayingIDsFromGameObject(gameObject_id, ref num_ids, playing_ids);
 
-        if (num_ids <= 0 || playing_ids[0] == AkUnitySoundEngine.AK_INVALID_PLAYING_ID)
+        if (num_ids <= 0)
         {
-            Debug.Log("[MusicPlayer] no playing IDs found");
-            return 0;
+            return AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
         }
-        AkUnitySoundEngine.GetSourcePlayPosition(playing_ids[0], out int playback_ms);
-        return playback_ms;
+
+        return playing_ids[0];
     }
 
     private void Play()
@@ -68,5 +101,10 @@ public class MusicPlayer : MonoBehaviour
     private void Noop(object in_cookie, AkCallbackType in_type, AkCallbackInfo in_info)
     {
         return;
+    }
+
+    private static bool IsInvalidPlayingID(uint id)
+    {
+        return id == AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
     }
 }
