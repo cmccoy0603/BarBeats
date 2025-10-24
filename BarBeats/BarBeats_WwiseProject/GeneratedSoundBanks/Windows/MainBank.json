@@ -1,0 +1,55 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "2880737896",
+    "Type": "User",
+    "GUID": "{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}",
+    "Language": "SFX",
+    "Hash": "{99E491AE-9AD5-5C98-9997-A338B2B34446}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\MainBank",
+    "ShortName": "MainBank",
+    "Path": "MainBank.bnk",
+    "Media": [
+     {
+      "Id": "868969617",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Amen-break.wav",
+      "CachePath": "D3/{D3B51746-2533-F334-5F12-CA82ACFAB555}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "564305318",
+      "Name": "Play_Amen_break_Playlist",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Amen_break_Playlist",
+      "GUID": "{9BD9829C-7B26-4FD7-92EA-6685482D30D8}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "868969617"
+       }
+      ]
+     },
+     {
+      "Id": "1969469092",
+      "Name": "Stop_Amen_break_Playlist",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Amen_break_Playlist",
+      "GUID": "{7B3D3669-A65C-4980-95E7-2B0B302D8DFA}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{93483590-ECB2-EB59-F740-CF6FFC9AD8C4}"
+ }
+}

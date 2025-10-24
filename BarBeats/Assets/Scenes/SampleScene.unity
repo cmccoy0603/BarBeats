@@ -28803,10 +28803,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7406517380707835409, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1685941366554327143, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 487245180}
+    - targetCorrespondingSourceObject: {fileID: 1685941366554327143, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 487245179}
   m_SourcePrefab: {fileID: 100100000, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

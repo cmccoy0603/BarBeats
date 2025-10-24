@@ -1,0 +1,43 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "BarBeats_WwiseProject",
+   "GUID": "{72C2454A-F897-45A1-BE49-A1051F44D86B}",
+   "Generator": "2024.1.9.8920"
+  },
+  "CacheRoot": "../../../../BarBeats_WwiseProject/.cache",
+  "Platforms": [
+   {
+    "Name": "Linux",
+    "GUID": "{55619091-D7DB-4C27-8DB3-57BB614F9FA1}",
+    "BasePlatform": "Linux",
+    "BasePlatformGUID": "{BD0BDF13-3125-454F-8BFD-319537169F81}",
+    "Path": "../../../../BarBeats_WwiseProject/GeneratedSoundBanks/Linux"
+   },
+   {
+    "Name": "Mac",
+    "GUID": "{6ED5254F-CAB6-4D74-BE97-EE783ADB4961}",
+    "BasePlatform": "Mac",
+    "BasePlatformGUID": "{9C6217D5-DD11-4795-87C1-6CE02853C540}",
+    "Path": "../../../../BarBeats_WwiseProject/GeneratedSoundBanks/Mac"
+   },
+   {
+    "Name": "Windows",
+    "GUID": "{591FBBA5-BD0D-4A44-83C5-922BCD4678F2}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "../../../../BarBeats_WwiseProject/GeneratedSoundBanks/Windows"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{1A0FC0A4-E0C2-445F-B78E-821F630A7C3D}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{8CAD54B0-68A2-33B6-A234-1804FB648BFD}"
+ }
+}
