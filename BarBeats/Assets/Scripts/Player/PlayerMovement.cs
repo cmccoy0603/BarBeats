@@ -1,15 +1,16 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     // Public vars
-    public float speed = 5f;
+    [SerializeField] float speed = 5f;
     
     private Rigidbody2D _rigidbody;
     private Vector2 _moveDirection;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
