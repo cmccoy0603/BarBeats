@@ -4,15 +4,25 @@ public class Polygon : MonoBehaviour
 {
     public LineRenderer polygonRenderer;
 
-    public void DrawPolygon(int numSides, Vector2[] points, float rotation = 0)
+    public void DrawPolygon(int numSides, Vector2[] points, float rotation = 0, float rythymScore = 0)
     {
-        Debug.Log("drawing polygon?");
         polygonRenderer.positionCount = numSides;
 
         for (int i = 0; i < points.Length; i++)
         {
             Vector3 rotatedPoint = RotatePoint(points[i], Vector2.zero, rotation);
             polygonRenderer.SetPosition(i, rotatedPoint);
+        }
+
+        if (rythymScore >= .8)
+        {
+            polygonRenderer.startColor = Color.green;
+            polygonRenderer.endColor = Color.green;
+        }
+        else
+        {
+            polygonRenderer.startColor = Color.red;
+            polygonRenderer.endColor = Color.red;
         }
 
         polygonRenderer.loop = false;

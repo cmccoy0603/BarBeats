@@ -9,7 +9,6 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange = 1;
     public float attackSpread = 1;
     public GameObject weapon;
-    public GameObject attackCircle;
 
     private Camera cam;
     // We'll probably want a weapon for the player to have. That way we can switch it out. For now, nah
@@ -26,7 +25,6 @@ public class PlayerAttack : MonoBehaviour
         _positionAction = InputSystem.actions.FindAction("PointerPosition");
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         _widthHeight = spriteRenderer.size / 2;
-        attackCircle.transform.localScale = new Vector3(attackRange, attackRange, 1);
 
         _weaponTransform = weapon.transform;
         
@@ -45,9 +43,13 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
+        if (weapon.activeSelf)
+        {
+            return;
+        }
         weapon.SetActive(true);
-        float rhythmScore = 1.0f;
-        //rhythmScore = musicPlayer.getRyhthmSyncScore();
+        float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
+        Debug.Log(rhythmScore);
         
         // TODO: Play animation depending on the rhythm score
 
@@ -69,20 +71,11 @@ public class PlayerAttack : MonoBehaviour
         // Angle in rad
         float angle = Mathf.Atan2(aimVector.y, aimVector.x);
         Vector2 startPos = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * _widthHeight;
-        //attackCircle.transform.localPosition = startPos;
 
         _weaponTransform.localPosition = startPos;
         _weaponTransform.localRotation = Quaternion.Euler(0,0,angle * Mathf.Rad2Deg);
-
-        // Do something with this... I am thinking we'll do something where we can plug in other weapons?
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(startPos, attackRange, enemyLayer);
         
-        foreach(Collider2D hitEnemy in hitEnemies)
-        {
-            Debug.Log("hit an enemy");
-        }
-
-        _weaponRender.DrawPolygon(4, _polygonCollider2D.points, angle);
+        _weaponRender.DrawPolygon(4, _polygonCollider2D.points, angle, rhythmScore);
 
         StartCoroutine(StopWeaponAnimation());
 
