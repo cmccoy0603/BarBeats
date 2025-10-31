@@ -555,6 +555,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 663253875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1161294388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+  m_PrefabInstance: {fileID: 2529145167169380838}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1161294389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161294388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6218fc9b2f662684c8d9e1f222b34aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  CurrentHealth: 100
 --- !u!1 &1271900209
 GameObject:
   m_ObjectHideFlags: 0
@@ -98981,6 +99002,8 @@ GameObject:
   - component: {fileID: 2107551497}
   - component: {fileID: 2107551499}
   - component: {fileID: 2107551500}
+  - component: {fileID: 2107551501}
+  - component: {fileID: 2107551502}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -99073,6 +99096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09332d214f4bf8849959bdb122aae075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  target: {fileID: 0}
   speed: 4
   stopDistance: 0.4
 --- !u!50 &2107551500
@@ -99100,8 +99124,39 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &2107551501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107551496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6218fc9b2f662684c8d9e1f222b34aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  CurrentHealth: 10
+--- !u!114 &2107551502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107551496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b393e5f3b719704ba47b73d5ab8d5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DamageOnContact2D
+  damage: 10
+  damageCooldown: 1
+  destroySelfAfterHit: 0
 --- !u!1001 &2529145167169380838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99154,6 +99209,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1919663325611315145, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2369685322163668460, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       propertyPath: speed
       value: 5
@@ -99189,7 +99248,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1702414445192702504, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 761969218}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1161294389}
   m_SourcePrefab: {fileID: 100100000, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
