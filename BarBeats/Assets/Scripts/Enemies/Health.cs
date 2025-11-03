@@ -1,0 +1,54 @@
+using UnityEngine;
+using UnityEngine.Events;
+
+public class Health : MonoBehaviour
+{
+    private float maxHealth = 100f;
+    private bool destroyGameObjectOnDeath = true;
+    private float deathDestroyDelay = 0f;
+
+    public UnityEvent OnDeath;
+
+    public float CurrentHealth;
+    public bool IsDead => CurrentHealth <= 0f;
+
+    private void Awake()
+    {
+        CurrentHealth = maxHealth;
+    }
+
+    private void OnValidate()
+    {
+        // Keep sensible values in the Inspector
+        maxHealth = Mathf.Max(0.01f, maxHealth);
+        deathDestroyDelay = Mathf.Max(0f, deathDestroyDelay);
+    }
+
+    /// Returns true if this call caused the object to die.
+    public bool TakeDamage(float amount)
+    {
+        if (IsDead)
+        {
+            return false; // already dead, ignore
+        }
+
+        // Negative damage will heal
+        CurrentHealth -= amount;
+
+        if (CurrentHealth <= 0f)
+        {
+            Die();
+            return true;
+        }
+
+        return false;
+    }
+
+    private void Die()
+    {
+        // Fire any inspector-assigned listeners
+        OnDeath?.Invoke();
+
+        Destroy(gameObject, deathDestroyDelay);
+    }
+}
