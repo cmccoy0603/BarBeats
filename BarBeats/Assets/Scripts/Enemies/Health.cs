@@ -40,8 +40,15 @@ public class Health : MonoBehaviour
             Die();
             return true;
         }
+        
+        OnDamage();
 
         return false;
+    }
+
+    private void OnDamage()
+    {
+        
     }
 
     private void Die()

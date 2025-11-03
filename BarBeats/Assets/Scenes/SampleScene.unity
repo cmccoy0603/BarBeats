@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 121787194}
   - component: {fileID: 121787195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeaponCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 220605974}
   - component: {fileID: 220605976}
   - component: {fileID: 220605975}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeaponPolygonRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 222851845}
   - component: {fileID: 222851849}
   - component: {fileID: 222851848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -181018,7 +181018,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1142749920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181067,8 +181067,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  attackRange: 1
-  attackSpread: 1.5
+  attackRange: 1.5
+  attackSpread: 2
+  weaponDamage: 20
   weapon: {fileID: 1142749919}
 --- !u!114 &1613686479
 MonoBehaviour:
@@ -181134,6 +181135,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1919663325611315145, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4341262379558932502, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -181181,6 +181186,10 @@ PrefabInstance:
     - target: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       propertyPath: m_TagString

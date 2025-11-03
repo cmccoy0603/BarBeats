@@ -10,11 +10,13 @@ public class Polygon : MonoBehaviour
 
         for (int i = 0; i < points.Length; i++)
         {
-            Vector3 rotatedPoint = RotatePoint(points[i], Vector2.zero, rotation);
+            Vector3 worldPoint = transform.TransformPoint(points[i]);
+            Vector3 rotatedPoint = RotatePoint(worldPoint, transform.position, rotation);
+            // Convert to world pos
             polygonRenderer.SetPosition(i, rotatedPoint);
         }
 
-        if (rythymScore >= .8)
+        if (rythymScore >= .75)
         {
             polygonRenderer.startColor = Color.green;
             polygonRenderer.endColor = Color.green;
