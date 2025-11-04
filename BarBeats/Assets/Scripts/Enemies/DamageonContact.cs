@@ -1,13 +1,23 @@
 // DamageOnContact2D.cs
+
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class DamageOnContact2D : MonoBehaviour
 {
     public float damage = 10f;
     public float damageCooldown = 1f;
+    public float wakeupDelay = .5f;
+    private bool _isWoke = false;
     public bool destroySelfAfterHit = false;
 
     private float lastDamageTime = -Mathf.Infinity;
+
+    private void Awake()
+    {
+        StartCoroutine(WakeyWakey(wakeupDelay));
+    }
 
     private void OnCollisionEnter2D(Collision2D collision) => TryDamage(collision.gameObject);
     private void OnCollisionStay2D(Collision2D collision)  => TryDamage(collision.gameObject);
@@ -16,7 +26,7 @@ public class DamageOnContact2D : MonoBehaviour
 
     private void TryDamage(GameObject other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") || !_isWoke) return;
 
         if (damageCooldown > 0f && Time.time - lastDamageTime < damageCooldown) return;
 
@@ -32,5 +42,11 @@ public class DamageOnContact2D : MonoBehaviour
 
         if (destroySelfAfterHit)
             Destroy(gameObject);
+    }
+
+    IEnumerator WakeyWakey(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _isWoke = true;
     }
 }
