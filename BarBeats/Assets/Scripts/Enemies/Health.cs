@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,6 +8,7 @@ public class Health : MonoBehaviour
     private float maxHealth = 100f;
     private bool destroyGameObjectOnDeath = true;
     private float deathDestroyDelay = 0f;
+    private bool invulnerable = false;
 
     public UnityEvent OnDeath;
     public UnityEvent<GameObject> OnHit;
@@ -29,9 +31,9 @@ public class Health : MonoBehaviour
     /// Returns true if this call caused the object to die.
     public bool TakeDamage(float amount, GameObject source = null)
     {
-        if (IsDead)
+        if (IsDead || invulnerable)
         {
-            return false; // already dead, ignore
+            return false; // already dead or cant be hit, ignore
         }
 
         // Negative damage will heal
@@ -57,5 +59,15 @@ public class Health : MonoBehaviour
         OnDeath?.Invoke();
 
         Destroy(gameObject, deathDestroyDelay);
+    }
+
+    public void SetInvulnerable()
+    {
+        invulnerable = true;
+    }
+
+    public void SetVulnerable()
+    {
+        invulnerable = false;
     }
 }

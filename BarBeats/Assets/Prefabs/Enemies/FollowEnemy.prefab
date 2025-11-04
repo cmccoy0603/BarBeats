@@ -168,7 +168,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1.3333334}
+  m_Size: {x: 1.25, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &7376246527843915483
 MonoBehaviour:
@@ -213,6 +213,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   CurrentHealth: 25
+  IframeDuration: 0.25
 --- !u!114 &1209025681023344702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,10 +260,34 @@ MonoBehaviour:
   delay: 0.15
   OnBegin:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1209025681023344702}
+        m_TargetAssemblyTypeName: EnemyChaseRigidbody2D, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1209025681023344702}
+        m_TargetAssemblyTypeName: EnemyChaseRigidbody2D, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &5679539881390044216
 MonoBehaviour:
   m_ObjectHideFlags: 0

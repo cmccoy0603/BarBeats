@@ -11,8 +11,8 @@ public class DamageOnContact2D : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) => TryDamage(collision.gameObject);
     private void OnCollisionStay2D(Collision2D collision)  => TryDamage(collision.gameObject);
-    private void OnTriggerEnter2D(Collider2D other)       => TryDamage(other.gameObject);
-    private void OnTriggerStay2D(Collider2D other)        => TryDamage(other.gameObject);
+    private void OnTriggerEnter2D(Collider2D other)        => TryDamage(other.gameObject);
+    private void OnTriggerStay2D(Collider2D other)         => TryDamage(other.gameObject);
 
     private void TryDamage(GameObject other)
     {

@@ -10,7 +10,7 @@ public class FlashFeedback : MonoBehaviour
     [SerializeField] public float delay = .15f;
     [SerializeField] public Material flashMaterial;
 
-    private void Start()
+    private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _spriteDefaultMat = _spriteRenderer.material;
