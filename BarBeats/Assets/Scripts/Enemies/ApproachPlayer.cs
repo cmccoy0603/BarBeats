@@ -17,6 +17,9 @@ public class EnemyChaseRigidbody2D : MonoBehaviour
             target = playerObj.transform;
         else
             Debug.LogWarning("No GameObject with tag 'Player' found in scene.");
+        
+        // Modify speed so its not uniform
+        speed += Random.Range(-1f, 1f);
     }
 
      void Awake() => rb = GetComponent<Rigidbody2D>();

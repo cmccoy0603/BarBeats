@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayer;
     public float attackRange = 1;
     public float attackSpread = 1;
+    public float weaponDamage = 20;
     public GameObject weapon;
 
     private Camera cam;
@@ -49,7 +51,6 @@ public class PlayerAttack : MonoBehaviour
         }
         weapon.SetActive(true);
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
-        Debug.Log(rhythmScore);
         
         // TODO: Play animation depending on the rhythm score
 
@@ -76,9 +77,36 @@ public class PlayerAttack : MonoBehaviour
         _weaponTransform.localRotation = Quaternion.Euler(0,0,angle * Mathf.Rad2Deg);
         
         _weaponRender.DrawPolygon(4, _polygonCollider2D.points, angle, rhythmScore);
+        
+        // Get collisions?
+        float damageMult = rhythmScore > .9 ? 2 : rhythmScore;
+        CheckCollisions(damageMult);
 
         StartCoroutine(StopWeaponAnimation());
 
+    }
+
+    void CheckCollisions(float damageMult)
+    {
+        List<Collider2D> overlappingColliders = new List<Collider2D>();
+        ContactFilter2D contactFilter = new ContactFilter2D();
+        contactFilter.SetLayerMask(enemyLayer);
+        contactFilter.useTriggers = false;
+        int numColliders = _polygonCollider2D.Overlap(contactFilter, overlappingColliders);
+
+        if (numColliders > 0)
+        {
+            foreach (Collider2D enemy in overlappingColliders)
+            {
+                Health enemyHealth = enemy.gameObject.GetComponent<Health>();
+                if (!enemyHealth)
+                {
+                    return;
+                }
+
+                enemyHealth.TakeDamage(weaponDamage * damageMult, gameObject);
+            }
+        }
     }
 
     IEnumerator StopWeaponAnimation()
