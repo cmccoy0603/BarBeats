@@ -27,7 +27,7 @@ public class DamageOnContact2D : MonoBehaviour
             return;
         }
 
-        health.TakeDamage(damage);
+        health.TakeDamage(damage, gameObject);
         lastDamageTime = Time.time;
 
         if (destroySelfAfterHit)

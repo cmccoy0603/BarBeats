@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,7 @@ public class Health : MonoBehaviour
     private float deathDestroyDelay = 0f;
 
     public UnityEvent OnDeath;
+    public UnityEvent<GameObject> OnHit;
 
     public float CurrentHealth;
     public bool IsDead => CurrentHealth <= 0f;
@@ -25,7 +27,7 @@ public class Health : MonoBehaviour
     }
 
     /// Returns true if this call caused the object to die.
-    public bool TakeDamage(float amount)
+    public bool TakeDamage(float amount, GameObject source = null)
     {
         if (IsDead)
         {
@@ -40,15 +42,13 @@ public class Health : MonoBehaviour
             Die();
             return true;
         }
-        
-        OnDamage();
+
+        if (source != null)
+        {
+            OnHit?.Invoke(source);
+        }
 
         return false;
-    }
-
-    private void OnDamage()
-    {
-        
     }
 
     private void Die()

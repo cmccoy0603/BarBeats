@@ -51,7 +51,6 @@ public class PlayerAttack : MonoBehaviour
         }
         weapon.SetActive(true);
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
-        Debug.Log(rhythmScore);
         
         // TODO: Play animation depending on the rhythm score
 
@@ -97,7 +96,6 @@ public class PlayerAttack : MonoBehaviour
 
         if (numColliders > 0)
         {
-            Debug.Log("Collided with an enemy");
             foreach (Collider2D enemy in overlappingColliders)
             {
                 Health enemyHealth = enemy.gameObject.GetComponent<Health>();
@@ -106,7 +104,7 @@ public class PlayerAttack : MonoBehaviour
                     return;
                 }
 
-                enemyHealth.TakeDamage(weaponDamage * damageMult);
+                enemyHealth.TakeDamage(weaponDamage * damageMult, gameObject);
             }
         }
     }
