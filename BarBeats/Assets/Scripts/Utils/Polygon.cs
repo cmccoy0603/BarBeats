@@ -4,7 +4,7 @@ public class Polygon : MonoBehaviour
 {
     public LineRenderer polygonRenderer;
 
-    public void DrawPolygon(int numSides, Vector2[] points, float rotation = 0, float rythymScore = 0)
+    public void DrawPolygon(int numSides, Vector2[] points, float rotation = 0, float rhythmScore = 0)
     {
         polygonRenderer.positionCount = numSides;
 
@@ -16,7 +16,7 @@ public class Polygon : MonoBehaviour
             polygonRenderer.SetPosition(i, rotatedPoint);
         }
 
-        if (rythymScore >= .75)
+        if (rhythmScore > 0)
         {
             polygonRenderer.startColor = Color.green;
             polygonRenderer.endColor = Color.green;
@@ -29,7 +29,7 @@ public class Polygon : MonoBehaviour
 
         polygonRenderer.loop = false;
     }
-    
+
     private Vector3 RotatePoint(Vector2 point, Vector2 pivot, float radians)
     {
         float cos = Mathf.Cos(radians);

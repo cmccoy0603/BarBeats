@@ -28,7 +28,7 @@ public class EnemyChaseRigidbody2D : MonoBehaviour
     {
         if (target == null)
         {
-            print("test");
+            // print("test");
             return;
         }
 
