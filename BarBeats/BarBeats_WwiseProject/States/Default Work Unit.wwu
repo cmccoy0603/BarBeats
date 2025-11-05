@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{4BE34484-DF78-4325-9F2C-53636DA52EBA}" SchemaVersion="123">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{4BE34484-DF78-4325-9F2C-53636DA52EBA}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4BE34484-DF78-4325-9F2C-53636DA52EBA}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Medley_BGM_Choice" ID="{C44CC094-3A93-43CB-96C4-B89EFC9B361C}">
+					<ChildrenList>
+						<State Name="None" ID="{582FB08F-87A4-4235-9269-11B42F899C11}"/>
+						<State Name="March" ID="{5FE5F814-01BC-4D73-BC0A-0C6E62263269}"/>
+						<State Name="Western" ID="{63E82D72-E06F-4E1D-B173-F35D1E8EAA2A}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>
