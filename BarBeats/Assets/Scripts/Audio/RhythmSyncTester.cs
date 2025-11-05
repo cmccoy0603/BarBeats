@@ -9,7 +9,7 @@ public class RhythmSyncTester : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        music_player = GetComponentInChildren<MusicPlayer>();
+        music_player = GetComponentInParent<MusicPlayer>();
         sprite_renderer = GetComponentInChildren<SpriteRenderer>();
     }
 

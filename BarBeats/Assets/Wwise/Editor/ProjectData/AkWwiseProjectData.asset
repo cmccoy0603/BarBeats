@@ -142,7 +142,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 2942ce4cb0d73b4181ead2223cb520e3
     GuidInternal: 
-    m_lastTime: -8584403325251234176
+    m_lastTime: -8584392386713021935
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -156,8 +156,74 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 8444e34b78df25439f2c53636da52eba
     GuidInternal: 
-    m_lastTime: -8584403325250531576
-    List: []
+    m_lastTime: -8584392383583757264
+    List:
+    - name: Medley_BGM_Choice
+      guid: 94c04cc4933acb4396c4b89efc9b361c
+      id: 1268045652
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8444e34b78df25439f2c53636da52eba
+      - ElementName: Medley_BGM_Choice
+        ObjectType: 9
+        guid: 94c04cc4933acb4396c4b89efc9b361c
+      Path: States\Default Work Unit\Medley_BGM_Choice
+      values:
+      - name: March
+        guid: 14f8e55fbc01734dbc0a0c6e62263269
+        id: 1173955642
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 8444e34b78df25439f2c53636da52eba
+        - ElementName: Medley_BGM_Choice
+          ObjectType: 9
+          guid: 94c04cc4933acb4396c4b89efc9b361c
+        - ElementName: March
+          ObjectType: 8
+          guid: 14f8e55fbc01734dbc0a0c6e62263269
+      - name: None
+        guid: 8fb02f58a4873542926911b42f899c11
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 8444e34b78df25439f2c53636da52eba
+        - ElementName: Medley_BGM_Choice
+          ObjectType: 9
+          guid: 94c04cc4933acb4396c4b89efc9b361c
+        - ElementName: None
+          ObjectType: 8
+          guid: 8fb02f58a4873542926911b42f899c11
+      - name: Western
+        guid: 722de8636fe01d4eb173f35d1e8eaa2a
+        id: 3740536705
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 8444e34b78df25439f2c53636da52eba
+        - ElementName: Medley_BGM_Choice
+          ObjectType: 9
+          guid: 94c04cc4933acb4396c4b89efc9b361c
+        - ElementName: Western
+          ObjectType: 8
+          guid: 722de8636fe01d4eb173f35d1e8eaa2a
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -170,7 +236,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 900e1956aaecbb4d851c60d118fda80d
     GuidInternal: 
-    m_lastTime: -8584403325250521578
+    m_lastTime: -8584392386712929772
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
