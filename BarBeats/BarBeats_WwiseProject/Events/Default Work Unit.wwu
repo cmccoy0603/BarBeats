@@ -28,6 +28,31 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_BGM_Playlist" ID="{07887010-ADBE-4133-BE45-4FDE2728D9DB}">
+					<ChildrenList>
+						<Action Name="" ID="{E91CBAB4-9648-4C91-A067-15B4FFB715AA}" ShortID="43134319">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM_Playlist" ID="{7A4209D1-9C98-4986-A086-8EE77E590325}" WorkUnitID="{F51861C7-3561-4828-BE50-AAD9ABCDB79C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_BGM_Playlist" ID="{8BA17472-E851-49F8-B3EE-0A8C145BF116}">
+					<ChildrenList>
+						<Action Name="" ID="{EDCAF3A2-911A-4938-8EB6-08036507D3CD}" ShortID="1006456017">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BGM_Playlist" ID="{7A4209D1-9C98-4986-A086-8EE77E590325}" WorkUnitID="{F51861C7-3561-4828-BE50-AAD9ABCDB79C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

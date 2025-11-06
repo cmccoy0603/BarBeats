@@ -331,6 +331,7 @@
 																				<Property Name="EndTrimOffset" Type="Real64" Value="1832.06106870229"/>
 																				<Property Name="FadeInMode" Type="int16" Value="0"/>
 																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="1.94289029309402E-11"/>
 																			</PropertyList>
 																			<AudioSourceRef Name="2025-10-29_BarBeats_medley" ID="{BC646FD8-28BF-4441-B81B-FA10080B37AF}"/>
 																			<PropertyCurveList>
@@ -403,6 +404,7 @@
 																				<Property Name="EndTrimOffset" Type="Real64" Value="73282.4427480916"/>
 																				<Property Name="FadeInMode" Type="int16" Value="0"/>
 																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="1.88720150617883E-11"/>
 																			</PropertyList>
 																			<AudioSourceRef Name="2025-10-29_BarBeats_medley" ID="{BC646FD8-28BF-4441-B81B-FA10080B37AF}"/>
 																			<PropertyCurveList>
@@ -475,6 +477,7 @@
 																				<Property Name="EndTrimOffset" Type="Real64" Value="75114.5038167939"/>
 																				<Property Name="FadeInMode" Type="int16" Value="0"/>
 																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="-1.45519152283669E-11"/>
 																			</PropertyList>
 																			<AudioSourceRef Name="2025-10-29_BarBeats_medley" ID="{BC646FD8-28BF-4441-B81B-FA10080B37AF}"/>
 																			<PropertyCurveList>
@@ -711,7 +714,11 @@
 								<ObjectList Name="Cues">
 									<Reference>
 										<Local>
-											<MusicCue Name="Entry Cue" ID="{78678432-F7CD-4CB9-9389-87DC1524335C}"/>
+											<MusicCue Name="Entry Cue" ID="{78678432-F7CD-4CB9-9389-87DC1524335C}">
+												<PropertyList>
+													<Property Name="TimeMs" Type="Real64" Value="1832.06106870229"/>
+												</PropertyList>
+											</MusicCue>
 										</Local>
 									</Reference>
 									<Reference>

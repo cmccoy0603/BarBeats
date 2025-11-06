@@ -51,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
         }
         weapon.SetActive(true);
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
-        Debug.Log("rhythmScore: " + rhythmScore);
+        GameManager.MusicPlayer.LetMeKnowEarlyMyAttackWasOnNextBeat(rhythmScore);
 
         // TODO: Play animation depending on the rhythm score
 
