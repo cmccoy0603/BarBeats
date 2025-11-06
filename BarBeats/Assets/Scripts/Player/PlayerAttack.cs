@@ -11,7 +11,7 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyLayer;
     public float attackRange = 1;
     public float attackSpread = 1;
-    public float weaponDamage = 20;
+    public float weaponDamage = 10;
     public float meleeSpeed = .25f;
     public GameObject weapon;
 
@@ -95,7 +95,7 @@ public class PlayerAttack : MonoBehaviour
         _weaponRender.DrawPolygon(4, _polygonCollider2D.points, rhythmScore);
         
         // Get collisions?
-        float damageMult = rhythmScore > .9 ? 2 : rhythmScore;
+        float damageMult = rhythmScore > .9 ? 2 : 1 + (rhythmScore);
         CheckCollisions(damageMult);
 
         StartCoroutine(StopWeaponAnimation());

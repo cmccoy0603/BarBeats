@@ -225,7 +225,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  CurrentHealth: 25
+  maxHealth: 25
 --- !u!114 &1209025681023344702
 MonoBehaviour:
   m_ObjectHideFlags: 0

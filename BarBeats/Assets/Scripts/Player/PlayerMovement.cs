@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Public vars
     [SerializeField] float speed = 5f;
+    [SerializeField] private SpriteRenderer _sr;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _moveDirection;
@@ -21,6 +22,15 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 currentPos = _rigidbody.position;
         Vector2 movement = _moveDirection * speed * Time.fixedDeltaTime;
+
+        if (movement.x < 0 && !_sr.flipX)
+        {
+            _sr.flipX = true;
+        } else if (movement.x > 0 && _sr.flipX)
+        {
+            _sr.flipX = false;
+        }
+        
         _rigidbody.MovePosition(currentPos + movement);
 
         // TODO: remove

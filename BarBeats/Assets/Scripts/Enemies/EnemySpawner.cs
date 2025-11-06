@@ -26,8 +26,7 @@ public class EnemySpawner : MonoBehaviour
     {
         foreach (var spawnRecord in enemiesToSpawn)
         {
-            // TODO: reenable
-            // StartCoroutine(spawnEmemies(spawnRecord.spawnFrequency, spawnRecord.enemyPrefab));
+            StartCoroutine(spawnEmemies(spawnRecord.spawnFrequency, spawnRecord.enemyPrefab));
         }
     }
 
