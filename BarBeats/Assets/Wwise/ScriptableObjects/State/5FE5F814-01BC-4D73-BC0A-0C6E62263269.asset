@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7cbf84c9bd47b4484834e7e7a30533, type: 3}
+  m_Name: 5FE5F814-01BC-4D73-BC0A-0C6E62263269
+  m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseStateReference
+  objectName: March
+  id: 1173955642
+  guid: 5FE5F814-01BC-4D73-BC0A-0C6E62263269
+  WwiseStateGroupReference: {fileID: 11400000, guid: 61c5da1d6c502414eb811b7b3517438f, type: 2}

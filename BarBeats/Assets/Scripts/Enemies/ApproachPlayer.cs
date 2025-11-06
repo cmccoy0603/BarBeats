@@ -13,22 +13,22 @@ public class EnemyChaseRigidbody2D : MonoBehaviour
     {
         GameObject playerObj = GameObject.FindWithTag("Player");
 
-        if (playerObj != null) 
+        if (playerObj != null)
             target = playerObj.transform;
         else
             Debug.LogWarning("No GameObject with tag 'Player' found in scene.");
-        
+
         // Modify speed so its not uniform
         speed += Random.Range(-1f, 1f);
     }
 
-     void Awake() => rb = GetComponent<Rigidbody2D>();
+    void Awake() => rb = GetComponent<Rigidbody2D>();
 
     void FixedUpdate()
     {
         if (target == null)
         {
-            print("test");
+            // print("test");
             return;
         }
 

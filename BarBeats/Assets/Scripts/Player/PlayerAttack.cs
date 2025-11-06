@@ -29,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
         _widthHeight = spriteRenderer.size / 2;
 
         _weaponTransform = weapon.transform;
-        
+
         // Modify the actual hit box
         _polygonCollider2D = weapon.GetComponentInChildren<PolygonCollider2D>();
         Vector2[] polygonPoints = _polygonCollider2D.points;
@@ -39,7 +39,7 @@ public class PlayerAttack : MonoBehaviour
 
         _weaponRender = weapon.GetComponentInChildren<Polygon>();
         _weaponRender.DrawPolygon(4, polygonPoints);
-        
+
         weapon.SetActive(false);
     }
 
@@ -51,7 +51,8 @@ public class PlayerAttack : MonoBehaviour
         }
         weapon.SetActive(true);
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
-        
+        GameManager.MusicPlayer.LetMeKnowEarlyMyAttackWasOnNextBeat(rhythmScore);
+
         // TODO: Play animation depending on the rhythm score
 
         Vector3 inputPosition = _positionAction.ReadValue<Vector2>();
@@ -68,16 +69,16 @@ public class PlayerAttack : MonoBehaviour
         }
 
         aimVector.Normalize();
-        
+
         // Angle in rad
         float angle = Mathf.Atan2(aimVector.y, aimVector.x);
         Vector2 startPos = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * _widthHeight;
 
         _weaponTransform.localPosition = startPos;
-        _weaponTransform.localRotation = Quaternion.Euler(0,0,angle * Mathf.Rad2Deg);
-        
+        _weaponTransform.localRotation = Quaternion.Euler(0, 0, angle);
+
         _weaponRender.DrawPolygon(4, _polygonCollider2D.points, angle, rhythmScore);
-        
+
         // Get collisions?
         float damageMult = rhythmScore > .9 ? 2 : rhythmScore;
         CheckCollisions(damageMult);
@@ -114,5 +115,5 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         weapon.SetActive(false);
     }
-    
+
 }
