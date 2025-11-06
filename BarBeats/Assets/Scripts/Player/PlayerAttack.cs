@@ -6,25 +6,37 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    // All stuff we get from serialize field
+    [SerializeField] private Animator animator;
     public LayerMask enemyLayer;
     public float attackRange = 1;
     public float attackSpread = 1;
     public float weaponDamage = 20;
+    public float meleeSpeed = .25f;
     public GameObject weapon;
 
     private Camera cam;
     // We'll probably want a weapon for the player to have. That way we can switch it out. For now, nah
-    private InputAction _positionAction;
     private Transform _weaponTransform;
     private Polygon _weaponRender;
     private PolygonCollider2D _polygonCollider2D;
 
     private Vector2 _widthHeight = Vector2.zero;
+    
+    // All of our silly input stuff
+    private InputAction _mousePositionAction;
+    private InputAction _joystickPositionAction;
+    private InputAction _keysPositionAction;
+    private InputDevice _attackDevice;
+    private bool _attackedThisFrame = false;
+
 
     private void Awake()
     {
         cam = Camera.main;
-        _positionAction = InputSystem.actions.FindAction("PointerPosition");
+        _mousePositionAction = InputSystem.actions.FindAction("MousePos");
+        _joystickPositionAction = InputSystem.actions.FindAction("StickPos");
+        _keysPositionAction = InputSystem.actions.FindAction("KeysPos");
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         _widthHeight = spriteRenderer.size / 2;
 
@@ -43,29 +55,32 @@ public class PlayerAttack : MonoBehaviour
         weapon.SetActive(false);
     }
 
-    public void Attack(InputAction.CallbackContext context)
+    private void Update()
     {
+        if (!_attackedThisFrame) return;
+        
+        Attack(_attackDevice);
+    }
+
+    public void PreAttack(InputAction.CallbackContext context)
+    {
+        _attackDevice = context.control.device;
+        _attackedThisFrame = true;
+    }
+
+    public void Attack(InputDevice device)
+    {
+        _attackedThisFrame = false;
         if (weapon.activeSelf)
         {
             return;
         }
         weapon.SetActive(true);
+        animator.SetTrigger("Attack");
+        
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
         
-        // TODO: Play animation depending on the rhythm score
-
-        Vector3 inputPosition = _positionAction.ReadValue<Vector2>();
-
-        Vector2 aimVector = inputPosition;
-        // Our math changes slightly if the player is using a mouse vs a keyboard. We can probably abstract this out in the future
-        if (context.control.shortDisplayName == "LMB")
-        {
-            inputPosition.z = cam.nearClipPlane;
-            Vector3 point = cam.ScreenToWorldPoint(inputPosition);
-
-            // Now we get the vector from the player to the point (aim direction)
-            aimVector = point - transform.position;
-        }
+        Vector2 aimVector = GetAttackDirection(device);
 
         aimVector.Normalize();
         
@@ -109,9 +124,43 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    private Vector2 GetAttackDirection(InputDevice device)
+    {
+        Vector3 pointerPos = Vector3.zero;
+
+        if (device is Mouse)
+        {
+            pointerPos = _mousePositionAction.ReadValue<Vector2>();
+            pointerPos.z = cam.nearClipPlane;
+            Vector3 point = cam.ScreenToWorldPoint(pointerPos);
+
+            // Now we get the vector from the player to the point (aim direction)
+            pointerPos = point - transform.position;
+        }
+        else if (device is Gamepad)
+        {
+            pointerPos = _joystickPositionAction.ReadValue<Vector2>();
+        }
+        else if (device is Keyboard)
+        {
+            try
+            {
+                pointerPos = _keysPositionAction.ReadValue<Vector2>();
+            }
+            catch (Exception e)
+            {
+                Debug.Log("Why did I get an error >:-( " + e.Message);
+            }
+            
+            Debug.Log("Keyboard position?" + pointerPos);
+        }
+
+        return pointerPos;
+    }
+
     IEnumerator StopWeaponAnimation()
     {
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(meleeSpeed);
         weapon.SetActive(false);
     }
     
