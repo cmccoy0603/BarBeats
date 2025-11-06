@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    private float maxHealth = 100f;
+    private float currentHealth = 100f;
     private bool destroyGameObjectOnDeath = true;
     private float deathDestroyDelay = 0f;
     private bool invulnerable = false;
@@ -13,12 +13,13 @@ public class Health : MonoBehaviour
     public UnityEvent OnDeath;
     public UnityEvent<GameObject> OnHit;
 
-    public float CurrentHealth;
-    public bool IsDead => CurrentHealth <= 0f;
+    [SerializeField]
+    private float maxHealth;
+    public bool IsDead => currentHealth <= 0f;
 
     private void Awake()
     {
-        CurrentHealth = maxHealth;
+        currentHealth = maxHealth;
     }
 
     private void OnValidate()
@@ -36,10 +37,15 @@ public class Health : MonoBehaviour
             return false; // already dead or cant be hit, ignore
         }
 
-        // Negative damage will heal
-        CurrentHealth -= amount;
+        if (gameObject.CompareTag("Player"))
+        {
+            Debug.Log("player was damaged");
+        }
 
-        if (CurrentHealth <= 0f)
+        // Negative damage will heal
+        currentHealth -= amount;
+
+        if (currentHealth <= 0f)
         {
             Die();
             return true;

@@ -91,7 +91,7 @@ public class PlayerAttack : MonoBehaviour
         _weaponTransform.localPosition = startPos;
         _weaponTransform.localRotation = Quaternion.Euler(0,0,angle * Mathf.Rad2Deg);
         
-        _weaponRender.DrawPolygon(4, _polygonCollider2D.points, angle, rhythmScore);
+        _weaponRender.DrawPolygon(4, _polygonCollider2D.points, rhythmScore);
         
         // Get collisions?
         float damageMult = rhythmScore > .9 ? 2 : rhythmScore;
