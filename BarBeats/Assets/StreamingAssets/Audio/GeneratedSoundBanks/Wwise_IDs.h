@@ -14,8 +14,26 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_AMEN_BREAK_PLAYLIST = 564305318U;
+        static const AkUniqueID PLAY_BGM_PLAYLIST = 904524261U;
         static const AkUniqueID STOP_AMEN_BREAK_PLAYLIST = 1969469092U;
+        static const AkUniqueID STOP_BGM_PLAYLIST = 2287618571U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace MEDLEY_BGM_CHOICE
+        {
+            static const AkUniqueID GROUP = 1268045652U;
+
+            namespace STATE
+            {
+                static const AkUniqueID MARCH = 1173955642U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID WESTERN = 3740536705U;
+            } // namespace STATE
+        } // namespace MEDLEY_BGM_CHOICE
+
+    } // namespace STATES
 
     namespace BANKS
     {

@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 96c33a533de972459cd83d7e7a4e2894
     GuidInternal: 
-    m_lastTime: -8584403325250541702
+    m_lastTime: -8584391472714335884
     List:
     - name: MainBank
       guid: 86a06ef4ea973642bb86a5d4c3c36ca5
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 2088215e559d8e4bbfd27e337f5f0df6
     GuidInternal: 
-    m_lastTime: -8584403325251259241
+    m_lastTime: -8584391475416125848
     List:
     - name: Play_Amen_break_Playlist
       guid: 9c82d99b267bd74f92ea6685482d30d8
@@ -110,6 +110,23 @@ MonoBehaviour:
         ObjectType: 3
         guid: 9c82d99b267bd74f92ea6685482d30d8
       Path: Events\Default Work Unit\Play_Amen_break_Playlist
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_BGM_Playlist
+      guid: 10708807bead3341be454fde2728d9db
+      id: 904524261
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2088215e559d8e4bbfd27e337f5f0df6
+      - ElementName: Play_BGM_Playlist
+        ObjectType: 3
+        guid: 10708807bead3341be454fde2728d9db
+      Path: Events\Default Work Unit\Play_BGM_Playlist
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -130,6 +147,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_BGM_Playlist
+      guid: 7274a18b51e8f849b3ee0a8c145bf116
+      id: 2287618571
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2088215e559d8e4bbfd27e337f5f0df6
+      - ElementName: Stop_BGM_Playlist
+        ObjectType: 3
+        guid: 7274a18b51e8f849b3ee0a8c145bf116
+      Path: Events\Default Work Unit\Stop_BGM_Playlist
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -142,7 +176,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 2942ce4cb0d73b4181ead2223cb520e3
     GuidInternal: 
-    m_lastTime: -8584403325251234176
+    m_lastTime: -8584392386713021935
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -156,8 +190,74 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 8444e34b78df25439f2c53636da52eba
     GuidInternal: 
-    m_lastTime: -8584403325250531576
-    List: []
+    m_lastTime: -8584392383583757264
+    List:
+    - name: Medley_BGM_Choice
+      guid: 94c04cc4933acb4396c4b89efc9b361c
+      id: 1268045652
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8444e34b78df25439f2c53636da52eba
+      - ElementName: Medley_BGM_Choice
+        ObjectType: 9
+        guid: 94c04cc4933acb4396c4b89efc9b361c
+      Path: States\Default Work Unit\Medley_BGM_Choice
+      values:
+      - name: March
+        guid: 14f8e55fbc01734dbc0a0c6e62263269
+        id: 1173955642
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 8444e34b78df25439f2c53636da52eba
+        - ElementName: Medley_BGM_Choice
+          ObjectType: 9
+          guid: 94c04cc4933acb4396c4b89efc9b361c
+        - ElementName: March
+          ObjectType: 8
+          guid: 14f8e55fbc01734dbc0a0c6e62263269
+      - name: None
+        guid: 8fb02f58a4873542926911b42f899c11
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 8444e34b78df25439f2c53636da52eba
+        - ElementName: Medley_BGM_Choice
+          ObjectType: 9
+          guid: 94c04cc4933acb4396c4b89efc9b361c
+        - ElementName: None
+          ObjectType: 8
+          guid: 8fb02f58a4873542926911b42f899c11
+      - name: Western
+        guid: 722de8636fe01d4eb173f35d1e8eaa2a
+        id: 3740536705
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 8444e34b78df25439f2c53636da52eba
+        - ElementName: Medley_BGM_Choice
+          ObjectType: 9
+          guid: 94c04cc4933acb4396c4b89efc9b361c
+        - ElementName: Western
+          ObjectType: 8
+          guid: 722de8636fe01d4eb173f35d1e8eaa2a
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -170,7 +270,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 900e1956aaecbb4d851c60d118fda80d
     GuidInternal: 
-    m_lastTime: -8584403325250521578
+    m_lastTime: -8584392386712929772
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -187,7 +287,7 @@ MonoBehaviour:
     m_lastTime: -8584403325250509822
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000c0000000d000000
+  ExpandedWaapiItemIds: 0500000006000000070000000c0000000d0000000e000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

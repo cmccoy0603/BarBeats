@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.ComponentModel;
 using Unity.Mathematics;
@@ -10,6 +11,9 @@ public class MusicPlayer : MonoBehaviour
     public string init_track_name = "AmenBreak";
     private BGMTrack current_track = null;
     private ulong gameObject_id;
+
+    private const double TEMPO = 131;
+    private const double MS_PER_PULSE = 60000 / TEMPO;
     private static AK.Wwise.CallbackFlags ak_flags = new();
 
     void Start()
@@ -26,9 +30,11 @@ public class MusicPlayer : MonoBehaviour
         current_track = BGMTrack.TryGet(internal_name);
         if (current_track == null)
         {
-            Debug.Log("" + internal_name + " does not exist");
+            Debug.LogWarning($"BGM track {internal_name} does not exist");
+            return;
         }
-        if (current_track == null) return;
+
+        print($"Starting BGM track {internal_name} using event {current_track.play_event}");
 
         Play();
     }
@@ -48,8 +54,6 @@ public class MusicPlayer : MonoBehaviour
         (uint playing_id, int progress_ms) = GetPlayheadProgressMilliseconds();
         if (IsInvalidPlayingID(playing_id)) return 0;
 
-        const double tempo = 137;
-        const double ms_per_pulse = 60000.0 / tempo;
         const double strictness = 0;
         const int height = 1;
         return (float)math.max(
@@ -60,10 +64,27 @@ public class MusicPlayer : MonoBehaviour
             )
             * math.cos(
                 math.TAU
-                * progress_ms
-                / ms_per_pulse
+                * (progress_ms + 280)
+                / MS_PER_PULSE
             ) - strictness
         );
+    }
+
+    public void LetMeKnowEarlyMyAttackWasOnNextBeat(float rhythm_score)
+    {
+        StartCoroutine(WaitForAndPrintAttackEarlinessData(rhythm_score));
+    }
+
+    private IEnumerator WaitForAndPrintAttackEarlinessData(float rhythm_score)
+    {
+        DateTime start_time = DateTime.Now;
+        while (GetRhythmSyncScore() < 0.97)
+        {
+            yield return null;
+        }
+        double delta_ms = DateTime.Now.Subtract(start_time).TotalMilliseconds;
+        double delta_beats = delta_ms / MS_PER_PULSE;
+        print($"<color=cyan>{delta_beats}</color> beats too early (<color=yellow>{(int)delta_ms}</color> ms). <color=red>RS: {rhythm_score}</color>");
     }
 
     private uint GetPlayingID()
@@ -89,9 +110,10 @@ public class MusicPlayer : MonoBehaviour
     {
         current_track?.stop_event.Post(gameObject);
     }
+
     private IEnumerator GuaranteeInitTrack()
     {
-        while (AkEventList.IsNull())
+        while (AkEventList.NullCheck())
         {
             yield return null;
         }

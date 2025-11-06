@@ -25,7 +25,7 @@ public class Polygon : MonoBehaviour
             polygonRenderer.SetPosition(i, points[i]);
         }
 
-        if (rythymScore >= .75)
+        if (rhythmScore > 0)
         {
             polygonRenderer.startColor = successColor;
             polygonRenderer.endColor = successColor;

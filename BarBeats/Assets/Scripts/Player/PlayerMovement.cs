@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // Public vars
     [SerializeField] float speed = 5f;
-    
+
     private Rigidbody2D _rigidbody;
     private Vector2 _moveDirection;
 
@@ -22,6 +22,16 @@ public class PlayerMovement : MonoBehaviour
         Vector2 currentPos = _rigidbody.position;
         Vector2 movement = _moveDirection * speed * Time.fixedDeltaTime;
         _rigidbody.MovePosition(currentPos + movement);
+
+        // TODO: remove
+        if (transform.position.x > 0)
+        {
+            AkEventList.instance.medley_bgm_choice_march.SetValue();
+        }
+        else
+        {
+            AkEventList.instance.medley_bgm_choice_western.SetValue();
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -29,5 +39,5 @@ public class PlayerMovement : MonoBehaviour
         _moveDirection = context.ReadValue<Vector2>();
         _moveDirection.Normalize();
     }
-    
+
 }

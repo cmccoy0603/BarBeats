@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}",
     "Language": "SFX",
-    "Hash": "{99E491AE-9AD5-5C98-9997-A338B2B34446}",
+    "Hash": "{5B207AE0-E2CE-9FFD-C554-0015F0DB3705}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MainBank",
     "ShortName": "MainBank",
     "Path": "MainBank.bnk",
     "Media": [
+     {
+      "Id": "204484264",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "2025-10-29_BarBeats_medley.wav",
+      "CachePath": "CE/{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem"
+     },
      {
       "Id": "868969617",
       "Language": "SFX",
@@ -38,6 +46,18 @@
       ]
      },
      {
+      "Id": "904524261",
+      "Name": "Play_BGM_Playlist",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_BGM_Playlist",
+      "GUID": "{07887010-ADBE-4133-BE45-4FDE2728D9DB}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "204484264"
+       }
+      ]
+     },
+     {
       "Id": "1969469092",
       "Name": "Stop_Amen_break_Playlist",
       "ObjectPath": "\\Events\\Default Work Unit\\Stop_Amen_break_Playlist",
@@ -46,10 +66,20 @@
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
+     },
+     {
+      "Id": "2287618571",
+      "Name": "Stop_BGM_Playlist",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_BGM_Playlist",
+      "GUID": "{8BA17472-E851-49F8-B3EE-0A8C145BF116}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ]
    }
   ],
-  "FileHash": "{A78D9F02-6159-F3F0-780B-AFA191B8E844}"
+  "FileHash": "{6E4A3C8C-44F6-BA7D-CC82-BEB3C0055BA7}"
  }
 }

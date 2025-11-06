@@ -14,9 +14,10 @@ public class BGMTrack
 
     private static void InitIfNecessary()
     {
-        if (AkEventList.IsNull()) return;
+        if (AkEventList.NullCheck()) return;
         if (ost.ContainsKey("AmenBreak")) return;
         AddToOST("AmenBreak", AkEventList.instance.play_amen_break, AkEventList.instance.stop_amen_break);
+        AddToOST("MedleyBGM", AkEventList.instance.play_medley_bgm, AkEventList.instance.stop_medley_bgm);
     }
 
     public BGMTrack(
@@ -34,6 +35,10 @@ public class BGMTrack
     {
         InitIfNecessary();
         ost.TryGetValue(internal_name, out var track);
+        if (track == null)
+        {
+            Debug.LogWarning($"BGM Track {internal_name} does not exist");
+        }
         return track;
     }
 

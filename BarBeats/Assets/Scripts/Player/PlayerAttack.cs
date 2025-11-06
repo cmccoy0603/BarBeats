@@ -41,7 +41,7 @@ public class PlayerAttack : MonoBehaviour
         _widthHeight = spriteRenderer.size / 2;
 
         _weaponTransform = weapon.transform;
-        
+
         // Modify the actual hit box
         _polygonCollider2D = weapon.GetComponentInChildren<PolygonCollider2D>();
         Vector2[] polygonPoints = _polygonCollider2D.points;
@@ -51,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
 
         _weaponRender = weapon.GetComponentInChildren<Polygon>();
         _weaponRender.DrawPolygon(4, polygonPoints);
-        
+
         weapon.SetActive(false);
     }
 
@@ -81,9 +81,10 @@ public class PlayerAttack : MonoBehaviour
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
         
         Vector2 aimVector = GetAttackDirection(device);
+        GameManager.MusicPlayer.LetMeKnowEarlyMyAttackWasOnNextBeat(rhythmScore);
 
         aimVector.Normalize();
-        
+
         // Angle in rad
         float angle = Mathf.Atan2(aimVector.y, aimVector.x);
         Vector2 startPos = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * _widthHeight;
@@ -163,5 +164,5 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(meleeSpeed);
         weapon.SetActive(false);
     }
-    
+
 }

@@ -8,6 +8,12 @@ public class AkEventList : MonoBehaviour
 
     public AK.Wwise.Event play_amen_break;
     public AK.Wwise.Event stop_amen_break;
+    public AK.Wwise.Event play_medley_bgm;
+    public AK.Wwise.Event stop_medley_bgm;
+
+    public AK.Wwise.State medley_bgm_choice_none;
+    public AK.Wwise.State medley_bgm_choice_march;
+    public AK.Wwise.State medley_bgm_choice_western;
 
     void Start()
     {
@@ -30,8 +36,13 @@ public class AkEventList : MonoBehaviour
         }
     }
 
-    public static bool IsNull()
+    public static bool NullCheck()
     {
-        return instance == null;
+        bool r = instance == null;
+        if (r)
+        {
+            Debug.LogWarning("AkEventList is null");
+        }
+        return r;
     }
 }
