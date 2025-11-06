@@ -75,7 +75,7 @@ public class PlayerAttack : MonoBehaviour
         Vector2 startPos = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * _widthHeight;
 
         _weaponTransform.localPosition = startPos;
-        _weaponTransform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+        _weaponTransform.localRotation = Quaternion.Euler(0, 0, angle);
 
         _weaponRender.DrawPolygon(4, _polygonCollider2D.points, angle, rhythmScore);
 
