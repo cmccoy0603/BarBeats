@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4240385934459098345}
   - component: {fileID: 5679539881390044216}
   - component: {fileID: 19345096812962430}
+  - component: {fileID: 1587907688261239430}
   m_Layer: 7
   m_Name: FollowEnemy
   m_TagString: Untagged
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 40fa859559eed13418d0965217cab5c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32cb089af40fec049b3544a97cc30e3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -163,7 +164,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.3333334}
+    oldSize: {x: 1.7089844, y: 2.2786458}
     newSize: {x: 2, y: 2.6666667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -328,3 +329,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Score
   scoreAmount: 20
+--- !u!114 &1587907688261239430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560046693183542054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84f10e3cb71aa343ad36d79d3739af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomSpriteSelector
+  possibleSprites:
+  - {fileID: 21300000, guid: 32cb089af40fec049b3544a97cc30e3f, type: 3}
+  - {fileID: 21300000, guid: 90d3d15d30ab71c46aaa0fb70021ca72, type: 3}
+  spriteRenderer: {fileID: 5700122820330073639}
