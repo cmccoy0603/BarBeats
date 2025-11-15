@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 222851845}
   - component: {fileID: 222851849}
   - component: {fileID: 222851848}
+  - component: {fileID: 222851850}
   m_Layer: 6
   m_Name: Camera
   m_TagString: MainCamera
@@ -477,12 +478,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 222851843}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1613686473}
+  m_Father: {fileID: 275346135}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &222851845
 MonoBehaviour:
@@ -619,6 +620,19 @@ MonoBehaviour:
   scalingFactor: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &222851850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222851843}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6c4295d0b14ed439d4a00d7c04878f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenShake
+  ShakeMultiplier: 7
 --- !u!1 &267580655
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,6 +769,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267580655}
   m_CullTransparentMesh: 1
+--- !u!1 &275346134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275346135}
+  - component: {fileID: 275346136}
+  m_Layer: 6
+  m_Name: Camera Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &275346135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275346134}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 222851844}
+  m_Father: {fileID: 1613686473}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &275346136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275346134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd99ae0e851ed864eafdd66ecb87aab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraManager
 --- !u!1 &381148682
 GameObject:
   m_ObjectHideFlags: 0
@@ -181945,6 +182004,7 @@ MonoBehaviour:
   weaponDamage: 10
   meleeSpeed: 0.25
   weapon: {fileID: 1142749919}
+  cameraManager: {fileID: 275346136}
 --- !u!114 &1613686479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182088,6 +182148,48 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8957205303050718606, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
   m_PrefabInstance: {fileID: 2529145167169380838}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1613686495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613686468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39400fccba60bdf4bb280d7874a254ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnHit
+  OnHitEnemyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1613686474}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: OnHitEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnKillEnemyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1613686474}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: OnKillEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2529145167169380838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182234,10 +182336,10 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1702414445192702504, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 222851844}
+      addedObject: {fileID: 1142749920}
     - targetCorrespondingSourceObject: {fileID: 1702414445192702504, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1142749920}
+      addedObject: {fileID: 275346135}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       insertIndex: 3
@@ -182254,6 +182356,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1613686486}
+    - targetCorrespondingSourceObject: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1613686495}
     - targetCorrespondingSourceObject: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1613686487}

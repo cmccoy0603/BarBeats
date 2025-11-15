@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows.WebCam;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlayerAttack : MonoBehaviour
     public GameObject weapon;
 
     private Camera cam;
+    [SerializeField]
+    private CameraManager cameraManager;
+
     // We'll probably want a weapon for the player to have. That way we can switch it out. For now, nah
     private Transform _weaponTransform;
     private Polygon _weaponRender;
@@ -93,7 +97,7 @@ public class PlayerAttack : MonoBehaviour
         _weaponTransform.localRotation = Quaternion.Euler(0,0,angle * Mathf.Rad2Deg);
         
         _weaponRender.DrawPolygon(4, _polygonCollider2D.points, rhythmScore);
-        
+
         // Get collisions?
         float damageMult = rhythmScore > .9 ? 2 : 1 + (rhythmScore);
         CheckCollisions(damageMult);
@@ -163,6 +167,24 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(meleeSpeed);
         weapon.SetActive(false);
+    }
+
+    public void OnKillEnemy()
+    {
+        float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
+        if (rhythmScore > 0)
+        {
+            cameraManager.AddScreenShake(.15f * rhythmScore, .5f);
+        }
+        else
+        {
+            cameraManager.AddScreenShake(.05f, .25f);
+        }
+    }
+
+    public void OnHitEnemy()
+    {
+        
     }
 
 }

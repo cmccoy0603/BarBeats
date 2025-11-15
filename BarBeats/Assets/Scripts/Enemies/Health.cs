@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     private bool destroyGameObjectOnDeath = true;
     private float deathDestroyDelay = 0f;
     private bool invulnerable = false;
+    private OnHit hitFeedback = null;
 
     public UnityEvent OnDeath;
     public UnityEvent<GameObject> OnHit;
@@ -37,9 +38,10 @@ public class Health : MonoBehaviour
             return false; // already dead or cant be hit, ignore
         }
 
-        if (gameObject.CompareTag("Player"))
+        if (source)
         {
-            Debug.Log("player was damaged");
+            // See if the source has a schmancy component
+            hitFeedback = source.GetComponent<OnHit>();
         }
 
         // Negative damage will heal
@@ -48,6 +50,10 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0f)
         {
             Die();
+            if (hitFeedback)
+            {
+                hitFeedback.OnKillEnemy(gameObject);
+            }
             return true;
         }
 
@@ -56,10 +62,17 @@ public class Health : MonoBehaviour
             OnHit?.Invoke(source);
         }
 
+        if (hitFeedback)
+        {
+            hitFeedback.OnHitEnemy(gameObject);
+        }
+
+        hitFeedback = null;
+
         return false;
     }
 
-    private void Die()
+    private void Die(GameObject source = null)
     {
         // Fire any inspector-assigned listeners
         OnDeath?.Invoke();

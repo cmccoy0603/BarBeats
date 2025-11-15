@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 5679539881390044216}
   - component: {fileID: 19345096812962430}
   - component: {fileID: 1587907688261239430}
+  - component: {fileID: 2497592141550791427}
   m_Layer: 7
   m_Name: FollowEnemy
   m_TagString: Untagged
@@ -199,6 +200,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2497592141550791427}
+        m_TargetAssemblyTypeName: ParticleSpawner, Assembly-CSharp
+        m_MethodName: SpawnParticle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHit:
     m_PersistentCalls:
       m_Calls:
@@ -218,6 +231,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: FlashFeedback, Assembly-CSharp
         m_MethodName: ApplyFlash
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2497592141550791427}
+        m_TargetAssemblyTypeName: ParticleSpawner, Assembly-CSharp
+        m_MethodName: SpawnHitParticles
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -345,3 +370,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 32cb089af40fec049b3544a97cc30e3f, type: 3}
   - {fileID: 21300000, guid: 90d3d15d30ab71c46aaa0fb70021ca72, type: 3}
   spriteRenderer: {fileID: 5700122820330073639}
+--- !u!114 &2497592141550791427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560046693183542054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177052e3e1a79224cb9064639ae44a3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ParticleSpawner
+  particlesToSpawn:
+  - {fileID: 42198813336044558, guid: 011be323487d6f340aa7d8fff1c36a71, type: 3}
+  - {fileID: 42198813336044558, guid: 792c47adf2a763b44bdd4210f072f9a1, type: 3}
+  hitParticle: {fileID: 42198813336044558, guid: b15a91de0e66286459ee74aa9ea73a4f, type: 3}
