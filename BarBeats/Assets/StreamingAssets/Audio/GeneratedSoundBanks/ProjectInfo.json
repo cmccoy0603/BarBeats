@@ -3,7 +3,7 @@
   "Project": {
    "Name": "BarBeats_WwiseProject",
    "GUID": "{72C2454A-F897-45A1-BE49-A1051F44D86B}",
-   "Generator": "2024.1.9.8920"
+   "Generator": "2024.1.1.8691"
   },
   "CacheRoot": "../../../../BarBeats_WwiseProject/.cache",
   "Platforms": [
@@ -38,6 +38,6 @@
     "UseAsStandIn": "true"
    }
   ],
-  "FileHash": "{8CAD54B0-68A2-33B6-A234-1804FB648BFD}"
+  "FileHash": "{9CF60F31-03E9-9733-25B7-765B0124BF65}"
  }
 }
