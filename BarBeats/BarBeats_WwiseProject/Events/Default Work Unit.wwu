@@ -53,6 +53,50 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="play_perfect_hit" ID="{FE3D23F0-F92B-4538-A87B-057B07EA6C00}">
+					<ChildrenList>
+						<Action Name="" ID="{D6ECB5B6-EF6A-4BC3-B3E1-325E7F3E4099}" ShortID="232013010">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Barbarian Beats perfect hit-2" ID="{A356C78E-CDF5-4D9B-A931-9236D4C147F9}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_late_hit" ID="{3A936C13-DA88-48EE-A436-FDDDB8031945}">
+					<ChildrenList>
+						<Action Name="" ID="{B8855E02-1A57-4A58-B959-BD89809C0BA5}" ShortID="92735733">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Barbarian Beats sfx late hit" ID="{7567158D-9070-4297-AB1D-45F7A5B5B710}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_early_hit" ID="{E0CEF390-80D1-4376-AE2A-028317E2384D}">
+					<ChildrenList>
+						<Action Name="" ID="{8D56FC49-79B7-47C8-B50E-BF98EACD0941}" ShortID="129277595">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Barbarian Beats sfx early hit" ID="{358EFD4C-6975-44C5-A84A-ED9086C39904}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_slime_death" ID="{3E78C8E4-9C9B-43B5-BEC8-F5F5D3D88008}">
+					<ChildrenList>
+						<Action Name="" ID="{D8D209B9-1A7D-4D5E-9261-7E480CE012EF}" ShortID="792766899">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="burst" ID="{DE4DE6E8-4A76-4CB4-9C45-6E0B2EE24713}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
