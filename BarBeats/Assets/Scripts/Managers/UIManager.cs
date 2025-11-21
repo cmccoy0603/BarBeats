@@ -6,6 +6,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI score;
+    [SerializeField] private GameObject gameOver;
 
     public void UpdateScore(float amount)
     {
@@ -22,5 +23,10 @@ public class UIManager : MonoBehaviour
 
         currScore += amount;
         score.text = currScore.ToSafeString();
+    }
+
+    public void ShowGameOver()
+    {
+        gameOver.SetActive(true);
     }
 }

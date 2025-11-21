@@ -17,8 +17,6 @@ public class PlayerAttack : MonoBehaviour
     public GameObject weapon;
 
     private Camera cam;
-    [SerializeField]
-    private CameraManager cameraManager;
 
     // We'll probably want a weapon for the player to have. That way we can switch it out. For now, nah
     private Transform _weaponTransform;
@@ -61,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (!_attackedThisFrame) return;
+        if (!_attackedThisFrame || GameManager.PlayerManager.IsGameOver()) return;
         
         Attack(_attackDevice);
     }
@@ -101,6 +99,9 @@ public class PlayerAttack : MonoBehaviour
         // Get collisions?
         float damageMult = rhythmScore > .9 ? 2 : 1 + (rhythmScore);
         CheckCollisions(damageMult);
+        
+        // Player follow through
+        GameManager.PlayerManager.MovePlayer(aimVector);
 
         StartCoroutine(StopWeaponAnimation());
 
@@ -174,11 +175,11 @@ public class PlayerAttack : MonoBehaviour
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
         if (rhythmScore > 0)
         {
-            cameraManager.AddScreenShake(.15f * rhythmScore, .5f);
+            GameManager.PlayerManager.AddScreenShake(.15f * rhythmScore, .5f);
         }
         else
         {
-            cameraManager.AddScreenShake(.05f, .25f);
+            GameManager.PlayerManager.AddScreenShake(.05f, .25f);
         }
     }
 

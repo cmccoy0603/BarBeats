@@ -84,7 +84,7 @@ public class MusicPlayer : MonoBehaviour
         }
         double delta_ms = DateTime.Now.Subtract(start_time).TotalMilliseconds;
         double delta_beats = delta_ms / MS_PER_PULSE;
-        print($"<color=cyan>{delta_beats}</color> beats too early (<color=yellow>{(int)delta_ms}</color> ms). <color=red>RS: {rhythm_score}</color>");
+        //print($"<color=cyan>{delta_beats}</color> beats too early (<color=yellow>{(int)delta_ms}</color> ms). <color=red>RS: {rhythm_score}</color>");
     }
 
     private uint GetPlayingID()

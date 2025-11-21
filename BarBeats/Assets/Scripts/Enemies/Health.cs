@@ -77,6 +77,13 @@ public class Health : MonoBehaviour
         // Fire any inspector-assigned listeners
         OnDeath?.Invoke();
 
+        // If the player dies we don't want to just delete them, we instead want to do some other stuff first
+        if (gameObject.CompareTag("Player"))
+        {
+            GameManager.PlayerManager.PlayerDeath();
+            return;
+        }
+
         Destroy(gameObject, deathDestroyDelay);
     }
 
