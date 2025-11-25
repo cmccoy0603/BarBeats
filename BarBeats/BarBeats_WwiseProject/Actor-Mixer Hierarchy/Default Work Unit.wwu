@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3E684598-5655-4C43-92C4-CAF8B7C06729}" SchemaVersion="123">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{3E684598-5655-4C43-92C4-CAF8B7C06729}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3E684598-5655-4C43-92C4-CAF8B7C06729}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="12_boOoOong" ID="{0D1264AF-181D-45EE-A86F-B908AA03BF55}" ShortID="524353830">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{52266E1B-28FD-451F-B254-630FDCF2FF41}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A83A366A-4E49-413D-B3E4-BF46B401B97F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="12_boOoOong" ID="{D6B8953F-544B-454E-9218-33B9D82551F7}">
+							<Language>SFX</Language>
+							<AudioFile>12_boOoOong.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="845915703"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="12_boOoOong" ID="{D6B8953F-544B-454E-9218-33B9D82551F7}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

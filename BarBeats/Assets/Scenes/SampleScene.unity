@@ -1492,6 +1492,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b5aee6e45aea144b7755124846a286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AkEventList
+  play_bonk:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 32d05738b562c6b48a9deba38b1a0be1, type: 2}
   play_amen_break:
     idInternal: 0
     valueGuidInternal: 
@@ -181981,6 +181985,8 @@ GameObject:
   m_Component:
   - component: {fileID: 938962210}
   - component: {fileID: 938962211}
+  - component: {fileID: 938962213}
+  - component: {fileID: 938962212}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -182017,6 +182023,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicPlayer
   init_track_name: MedleyBGM
+--- !u!114 &938962212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938962209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a73b302ceb83045b1e9571fc93b294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkEvent
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 30257d8cfaef4f74d8827c1cc7a5fafe, type: 2}
+  useCallbacks: 1
+  stopSoundOnDestroy: 1
+  Callbacks:
+  - Flags:
+      value: 8192
+    FunctionName: BeatWindow
+    GameObject: {fileID: 938962209}
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+--- !u!114 &938962213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938962209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94291677aa80939428e12d07a3c1e22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkGameObj
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 1
+  usePositionOffsetData: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  scalingFactor: 1
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &950563161
 GameObject:
   m_ObjectHideFlags: 0

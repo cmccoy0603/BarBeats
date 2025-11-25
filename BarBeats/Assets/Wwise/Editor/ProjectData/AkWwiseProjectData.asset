@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 96c33a533de972459cd83d7e7a4e2894
     GuidInternal: 
-    m_lastTime: -8584391391427208762
+    m_lastTime: -8584375191216342828
     List:
     - name: MainBank
       guid: 86a06ef4ea973642bb86a5d4c3c36ca5
@@ -94,8 +94,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 2088215e559d8e4bbfd27e337f5f0df6
     GuidInternal: 
-    m_lastTime: -8584391391433394157
+    m_lastTime: -8584375192872164788
     List:
+    - name: Play_12_boOoOong
+      guid: 9527cbef82842440a139c00ecafd5f55
+      id: 1011953342
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2088215e559d8e4bbfd27e337f5f0df6
+      - ElementName: Play_12_boOoOong
+        ObjectType: 3
+        guid: 9527cbef82842440a139c00ecafd5f55
+      Path: Events\Default Work Unit\Play_12_boOoOong
+      maxAttenuation: 0
+      maxDuration: 1.708
+      minDuration: 1.708
     - name: Play_Amen_break_Playlist
       guid: 9c82d99b267bd74f92ea6685482d30d8
       id: 564305318
@@ -190,7 +207,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 8444e34b78df25439f2c53636da52eba
     GuidInternal: 
-    m_lastTime: -8584391391427208762
+    m_lastTime: -8584375223833885643
     List:
     - name: Medley_BGM_Choice
       guid: 94c04cc4933acb4396c4b89efc9b361c
