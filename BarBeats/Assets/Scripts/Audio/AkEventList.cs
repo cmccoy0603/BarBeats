@@ -6,6 +6,8 @@ public class AkEventList : MonoBehaviour
 {
     public static AkEventList instance;
 
+    public AK.Wwise.Event play_bonk;
+
     public AK.Wwise.Event play_amen_break;
     public AK.Wwise.Event stop_amen_break;
     public AK.Wwise.Event play_medley_bgm;

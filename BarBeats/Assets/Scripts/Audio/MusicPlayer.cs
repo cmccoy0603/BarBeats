@@ -16,11 +16,14 @@ public class MusicPlayer : MonoBehaviour
     private const double MS_PER_PULSE = 60000 / TEMPO;
     private static AK.Wwise.CallbackFlags ak_flags = new();
 
+    private static System.DateTime most_recent_window_open_time;
+
     void Start()
     {
         ak_flags.value = (uint)AkCallbackType.AK_EnableGetSourcePlayPosition;
         gameObject_id = AkUnitySoundEngine.GetAkGameObjectID(gameObject);
         StartCoroutine(GuaranteeInitTrack());
+        most_recent_window_open_time = DateTime.Now.AddMilliseconds(-300);
     }
 
     public void SwitchToTrack(string internal_name)
@@ -39,53 +42,60 @@ public class MusicPlayer : MonoBehaviour
         Play();
     }
 
-    public (uint, int) GetPlayheadProgressMilliseconds()
-    {
-        uint playing_id = GetPlayingID();
+    // public (uint, int) GetPlayheadProgressMilliseconds()
+    // {
+    //     uint playing_id = GetPlayingID();
 
-        if (IsInvalidPlayingID(playing_id)) return (AkUnitySoundEngine.AK_INVALID_PLAYING_ID, 0);
+    //     if (IsInvalidPlayingID(playing_id)) return (AkUnitySoundEngine.AK_INVALID_PLAYING_ID, 0);
 
-        AkUnitySoundEngine.GetSourcePlayPosition(playing_id, out int playback_ms);
-        return (playing_id, playback_ms);
-    }
+    //     _ = AkUnitySoundEngine.GetSourcePlayPosition(playing_id, out int playback_ms);
+    //     return (playing_id, playback_ms);
+    // }
 
     public float GetRhythmSyncScore()
     {
-        (uint playing_id, int progress_ms) = GetPlayheadProgressMilliseconds();
-        if (IsInvalidPlayingID(playing_id)) return 0;
+        // (uint playing_id, int progress_ms) = GetPlayheadProgressMilliseconds();
+        // if (IsInvalidPlayingID(playing_id)) return 0;
 
-        const double strictness = 0;
-        const int height = 1;
-        return (float)math.max(
-            0,
-            (
-                height
-                + strictness
-            )
-            * math.cos(
-                math.TAU
-                * (progress_ms + 280)
-                / MS_PER_PULSE
-            ) - strictness
-        );
+        // const double strictness = 0;
+        // const int height = 1;
+        // return (float)math.max(
+        //     0,
+        //     (
+        //         height
+        //         + strictness
+        //     )
+        //     * math.cos(
+        //         math.TAU
+        //         * (progress_ms + 280)
+        //         / MS_PER_PULSE
+        //     ) - strictness
+        // );
+
+        return (DateTime.Now.Subtract(most_recent_window_open_time).TotalMilliseconds < 100) ? 1 : 0;
     }
 
     public void LetMeKnowEarlyMyAttackWasOnNextBeat(float rhythm_score)
     {
-        StartCoroutine(WaitForAndPrintAttackEarlinessData(rhythm_score));
+        // StartCoroutine(WaitForAndPrintAttackEarlinessData(rhythm_score));
     }
 
-    private IEnumerator WaitForAndPrintAttackEarlinessData(float rhythm_score)
+    public void BeatWindow()
     {
-        DateTime start_time = DateTime.Now;
-        while (GetRhythmSyncScore() < 0.97)
-        {
-            yield return null;
-        }
-        double delta_ms = DateTime.Now.Subtract(start_time).TotalMilliseconds;
-        double delta_beats = delta_ms / MS_PER_PULSE;
-        //print($"<color=cyan>{delta_beats}</color> beats too early (<color=yellow>{(int)delta_ms}</color> ms). <color=red>RS: {rhythm_score}</color>");
+        most_recent_window_open_time = DateTime.Now;
     }
+
+    // private IEnumerator WaitForAndPrintAttackEarlinessData(float rhythm_score)
+    // {
+    //     DateTime start_time = DateTime.Now;
+    //     while (GetRhythmSyncScore() < 0.97)
+    //     {
+    //         yield return null;
+    //     }
+    //     double delta_ms = DateTime.Now.Subtract(start_time).TotalMilliseconds;
+    //     double delta_beats = delta_ms / MS_PER_PULSE;
+    //     //print($"<color=cyan>{delta_beats}</color> beats too early (<color=yellow>{(int)delta_ms}</color> ms). <color=red>RS: {rhythm_score}</color>");
+    // }
 
     private uint GetPlayingID()
     {

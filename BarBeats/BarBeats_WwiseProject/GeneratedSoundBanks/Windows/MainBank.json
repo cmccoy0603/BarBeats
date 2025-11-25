@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}",
     "Language": "SFX",
-    "Hash": "{5B207AE0-E2CE-9FFD-C554-0015F0DB3705}",
+    "Hash": "{DA47E956-2556-C06C-B39E-D9B36198B51E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MainBank",
     "ShortName": "MainBank",
     "Path": "MainBank.bnk",
@@ -24,6 +24,14 @@
       "CachePath": "CE/{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem"
      },
      {
+      "Id": "845915703",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "12_boOoOong.wav",
+      "CachePath": "75/{754F942A-2041-5733-B264-7336B98C7EC3}.wem"
+     },
+     {
       "Id": "868969617",
       "Language": "SFX",
       "Streaming": "false",
@@ -33,6 +41,20 @@
      }
     ],
     "Events": [
+     {
+      "Id": "1011953342",
+      "Name": "Play_12_boOoOong",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_12_boOoOong",
+      "GUID": "{EFCB2795-8482-4024-A139-C00ECAFD5F55}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.708",
+      "DurationMax": "1.708",
+      "MediaRefs": [
+       {
+        "Id": "845915703"
+       }
+      ]
+     },
      {
       "Id": "564305318",
       "Name": "Play_Amen_break_Playlist",
@@ -80,6 +102,6 @@
     ]
    }
   ],
-  "FileHash": "{FF580269-3B55-12E3-CD3B-A97A97F86D6D}"
+  "FileHash": "{9F78811F-2758-65BD-56F8-FFDD09222254}"
  }
 }
