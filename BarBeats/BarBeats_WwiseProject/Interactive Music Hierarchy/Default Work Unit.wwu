@@ -338,7 +338,6 @@
 																				<Property Name="EndTrimOffset" Type="Real64" Value="1832.06106870229"/>
 																				<Property Name="FadeInMode" Type="int16" Value="0"/>
 																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
-																				<Property Name="PlayAt" Type="Real64" Value="1.94289029309402E-11"/>
 																			</PropertyList>
 																			<AudioSourceRef Name="2025-10-29_BarBeats_medley" ID="{BC646FD8-28BF-4441-B81B-FA10080B37AF}"/>
 																			<PropertyCurveList>
