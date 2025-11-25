@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
     private PolygonCollider2D _polygonCollider2D;
 
     private Vector2 _widthHeight = Vector2.zero;
-    
+
     // All of our silly input stuff
     private InputAction _mousePositionAction;
     private InputAction _joystickPositionAction;
@@ -60,7 +60,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         if (!_attackedThisFrame || GameManager.PlayerManager.IsGameOver()) return;
-        
+
         Attack(_attackDevice);
     }
 
@@ -79,11 +79,10 @@ public class PlayerAttack : MonoBehaviour
         }
         weapon.SetActive(true);
         animator.SetTrigger("Attack");
-        
+
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
-        
+
         Vector2 aimVector = GetAttackDirection(device);
-        GameManager.MusicPlayer.LetMeKnowEarlyMyAttackWasOnNextBeat(rhythmScore);
 
         aimVector.Normalize();
 
@@ -92,14 +91,14 @@ public class PlayerAttack : MonoBehaviour
         Vector2 startPos = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * _widthHeight;
 
         _weaponTransform.localPosition = startPos;
-        _weaponTransform.localRotation = Quaternion.Euler(0,0,angle * Mathf.Rad2Deg);
-        
+        _weaponTransform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+
         _weaponRender.DrawPolygon(4, _polygonCollider2D.points, rhythmScore);
 
         // Get collisions?
         float damageMult = rhythmScore > .9 ? 2 : 1 + (rhythmScore);
         CheckCollisions(damageMult);
-        
+
         // Player follow through
         GameManager.PlayerManager.MovePlayer(aimVector);
 
@@ -157,7 +156,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 Debug.Log("Why did I get an error >:-( " + e.Message);
             }
-            
+
             Debug.Log("Keyboard position?" + pointerPos);
         }
 
@@ -185,7 +184,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnHitEnemy()
     {
-        
+
     }
 
 }

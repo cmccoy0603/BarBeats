@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}",
     "Language": "SFX",
-    "Hash": "{DA47E956-2556-C06C-B39E-D9B36198B51E}",
+    "Hash": "{E79EEDF3-AB64-7825-495E-144C76808A37}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MainBank",
     "ShortName": "MainBank",
     "Path": "MainBank.bnk",
@@ -18,9 +18,10 @@
      {
       "Id": "204484264",
       "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
+      "Streaming": "true",
+      "Location": "Loose",
       "ShortName": "2025-10-29_BarBeats_medley.wav",
+      "Path": "Media/204484264.wem",
       "CachePath": "CE/{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem"
      },
      {
@@ -102,6 +103,6 @@
     ]
    }
   ],
-  "FileHash": "{A9E959F2-7360-B76A-6D21-627A0EA1A6A3}"
+  "FileHash": "{D528C67D-3596-0262-4187-8B7D0A268359}"
  }
 }

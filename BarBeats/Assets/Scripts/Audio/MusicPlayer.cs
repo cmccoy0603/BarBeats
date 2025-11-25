@@ -12,11 +12,9 @@ public class MusicPlayer : MonoBehaviour
     private BGMTrack current_track = null;
     private ulong gameObject_id;
 
-    private const double TEMPO = 131;
-    private const double MS_PER_PULSE = 60000 / TEMPO;
     private static AK.Wwise.CallbackFlags ak_flags = new();
 
-    private static System.DateTime most_recent_window_open_time;
+    private static DateTime most_recent_window_open_time;
 
     void Start()
     {
@@ -82,7 +80,15 @@ public class MusicPlayer : MonoBehaviour
 
     public void BeatWindow()
     {
+        AkEventList.instance.play_bonk.Post(gameObject);
+        StartCoroutine(OpenBeatWindowAfterDelay(AkEventList.audio_device_latency_ms));
+    }
+
+    private IEnumerator OpenBeatWindowAfterDelay(int ms)
+    {
+        yield return new WaitForSeconds(ms / 1000f);
         most_recent_window_open_time = DateTime.Now;
+
     }
 
     // private IEnumerator WaitForAndPrintAttackEarlinessData(float rhythm_score)

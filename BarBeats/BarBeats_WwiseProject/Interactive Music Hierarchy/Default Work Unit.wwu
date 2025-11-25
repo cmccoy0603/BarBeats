@@ -268,6 +268,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<MusicTrack Name="March" ID="{CA2D2730-FB24-458D-8224-0AEB5FEE0785}" ShortID="744216428">
+									<PropertyList>
+										<Property Name="LookAheadTime" Type="int16">
+											<ValueList>
+												<Value>500</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A83A366A-4E49-413D-B3E4-BF46B401B97F}"/>
@@ -551,6 +558,13 @@
 									</ObjectLists>
 								</MusicTrack>
 								<MusicTrack Name="Western" ID="{DA2B1DF8-AD96-42DD-9A1A-89B1C38874CF}" ShortID="185716383">
+									<PropertyList>
+										<Property Name="LookAheadTime" Type="int16">
+											<ValueList>
+												<Value>500</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A83A366A-4E49-413D-B3E4-BF46B401B97F}"/>
