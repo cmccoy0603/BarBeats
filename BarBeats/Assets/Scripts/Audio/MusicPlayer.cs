@@ -18,10 +18,25 @@ public class MusicPlayer : MonoBehaviour
 
     void Start()
     {
-        ak_flags.value = (uint)AkCallbackType.AK_EnableGetSourcePlayPosition;
-        gameObject_id = AkUnitySoundEngine.GetAkGameObjectID(gameObject);
+        // ak_flags.value = (uint)AkCallbackType.AK_EnableGetSourcePlayPosition;
+        // gameObject_id = AkUnitySoundEngine.GetAkGameObjectID(gameObject);
         StartCoroutine(GuaranteeInitTrack());
         most_recent_window_open_time = DateTime.Now.AddMilliseconds(-300);
+
+        // Destroy all other instances of MusicPlayer
+        var instances = FindObjectsByType<MusicPlayer>(FindObjectsSortMode.None);
+        if (instances.Length <= 1)
+        {
+            Debug.Log("MusicPlayer initialized.");
+            return;
+        }
+
+        foreach (var obj in instances)
+        {
+            if (obj == this) continue;
+
+            Destroy(obj.gameObject);
+        }
     }
 
     public void SwitchToTrack(string internal_name)
@@ -80,7 +95,6 @@ public class MusicPlayer : MonoBehaviour
 
     public void BeatWindow()
     {
-        AkEventList.instance.play_bonk.Post(gameObject);
         StartCoroutine(OpenBeatWindowAfterDelay(AkEventList.audio_device_latency_ms));
     }
 
@@ -88,7 +102,6 @@ public class MusicPlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(ms / 1000f);
         most_recent_window_open_time = DateTime.Now;
-
     }
 
     // private IEnumerator WaitForAndPrintAttackEarlinessData(float rhythm_score)
@@ -103,26 +116,26 @@ public class MusicPlayer : MonoBehaviour
     //     //print($"<color=cyan>{delta_beats}</color> beats too early (<color=yellow>{(int)delta_ms}</color> ms). <color=red>RS: {rhythm_score}</color>");
     // }
 
-    private uint GetPlayingID()
-    {
-        uint num_ids = 1; // We expect at least one playing ID
-        uint[] playing_ids = new uint[1]; // Array to store the result
-        AkUnitySoundEngine.GetPlayingIDsFromGameObject(gameObject_id, ref num_ids, playing_ids);
+    // private uint GetPlayingID()
+    // {
+    //     uint num_ids = 1; // We expect at least one playing ID
+    //     uint[] playing_ids = new uint[1]; // Array to store the result
+    //     AkUnitySoundEngine.GetPlayingIDsFromGameObject(gameObject_id, ref num_ids, playing_ids);
 
-        if (num_ids <= 0)
-        {
-            return AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
-        }
+    //     if (num_ids <= 0)
+    //     {
+    //         return AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+    //     }
 
-        return playing_ids[0];
-    }
+    //     return playing_ids[0];
+    // }
 
     private void Play()
     {
         current_track?.play_event.Post(gameObject, ak_flags, Noop);
     }
 
-    private void Stop()
+    public void Stop()
     {
         current_track?.stop_event.Post(gameObject);
     }
@@ -141,8 +154,8 @@ public class MusicPlayer : MonoBehaviour
         return;
     }
 
-    private static bool IsInvalidPlayingID(uint id)
-    {
-        return id == AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
-    }
+    // private static bool IsInvalidPlayingID(uint id)
+    // {
+    //     return id == AkUnitySoundEngine.AK_INVALID_PLAYING_ID;
+    // }
 }
