@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enums;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows.WebCam;
@@ -73,7 +74,7 @@ public class PlayerAttack : MonoBehaviour
     public void Attack(InputDevice device)
     {
         _attackedThisFrame = false;
-        if (weapon.activeSelf)
+        if (weapon.activeSelf || GameManager.GameState != GameState.PLAYING)
         {
             return;
         }

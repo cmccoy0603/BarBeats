@@ -79,6 +79,12 @@ public class PlayerMovement : MonoBehaviour
         _moveDirection.Normalize();
     }
 
+    // Idk where else to put this so I put it here
+    public void Pause(InputAction.CallbackContext context)
+    {
+        GameManager.UiManager.Pause();
+    }
+
     public void FollowThrough(Vector2 direction)
     {
         // Get the current players velocity
