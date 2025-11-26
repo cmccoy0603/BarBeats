@@ -185,7 +185,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnHitEnemy()
     {
-        
+        Debug.Log("Hit enemy");
+        GameManager.PlayerManager.HitScreenZoom();
     }
 
 }

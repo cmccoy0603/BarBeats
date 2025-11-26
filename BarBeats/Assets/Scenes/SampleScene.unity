@@ -1009,6 +1009,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd99ae0e851ed864eafdd66ecb87aab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraManager
+  baseFov: 5
+  minimumFov: 4
+  resetTime: 2.5
 --- !u!1 &340228879
 GameObject:
   m_ObjectHideFlags: 0

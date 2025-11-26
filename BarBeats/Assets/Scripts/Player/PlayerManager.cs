@@ -23,6 +23,11 @@ public class PlayerManager : MonoBehaviour
         cameraManager.AddScreenShake(.1f, .25f);
     }
 
+    public void HitScreenZoom()
+    {
+        cameraManager.ZoomIn();
+    }
+
     public void MovePlayer(Vector2 direction)
     {
         playerMovement.FollowThrough(direction);

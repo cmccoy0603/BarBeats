@@ -21,8 +21,6 @@ public class ParticleSpawner : MonoBehaviour
         // Gives the vector pointing from the source of the hit to the thing hit
         Vector2 vectorOut = (transform.position - source.transform.position).normalized;
         float zRot = Mathf.Atan2(vectorOut.y, vectorOut.x);
-        
-        Debug.Log("Z rotation: " + zRot);
 
         Quaternion q = Quaternion.Euler(0, 0, zRot * Mathf.Rad2Deg);
 
