@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_12_BOOOOONG = 1011953342U;
         static const AkUniqueID PLAY_AMEN_BREAK_PLAYLIST = 564305318U;
         static const AkUniqueID PLAY_BGM_PLAYLIST = 904524261U;
         static const AkUniqueID STOP_AMEN_BREAK_PLAYLIST = 1969469092U;
