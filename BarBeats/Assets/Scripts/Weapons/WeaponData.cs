@@ -15,4 +15,9 @@ public class WeaponData : ScriptableObject
     public float endHeight;
     public Sprite attackEffect;
     public Sprite weaponSprite;
+    public GameObject thrownPrefab;
+    public float throwSpeed;
+    public bool oneShot = true;
+    public float thrownDurabilityDec;
+    public float swingDurabilityDec;
 }

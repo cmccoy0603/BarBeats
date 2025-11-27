@@ -22,6 +22,7 @@ public class PlayerAttack : MonoBehaviour
     private Transform _weaponTransform;
     private Polygon _weaponRender;
     private PolygonCollider2D _polygonCollider2D;
+    [SerializeField] private Weapon weaponInst;
 
     private Vector2 _widthHeight = Vector2.zero;
     
@@ -73,6 +74,10 @@ public class PlayerAttack : MonoBehaviour
     public void Attack(InputDevice device)
     {
         _attackedThisFrame = false;
+        Vector2 aimVector = GetAttackDirection(device);
+        float angle = Mathf.Atan2(aimVector.y, aimVector.x);
+        weaponInst.Attack(angle);
+        /*
         if (weapon.activeSelf)
         {
             return;
@@ -104,6 +109,7 @@ public class PlayerAttack : MonoBehaviour
         GameManager.PlayerManager.MovePlayer(aimVector);
 
         StartCoroutine(StopWeaponAnimation());
+        */
 
     }
 
