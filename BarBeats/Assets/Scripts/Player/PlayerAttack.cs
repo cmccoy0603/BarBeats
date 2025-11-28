@@ -76,7 +76,14 @@ public class PlayerAttack : MonoBehaviour
         _attackedThisFrame = false;
         Vector2 aimVector = GetAttackDirection(device);
         float angle = Mathf.Atan2(aimVector.y, aimVector.x);
-        weaponInst.Attack(angle);
+        if (!weaponInst.Attack(angle))
+        {
+            return;
+        }
+        animator.SetTrigger("Attack");
+        // Player follow through
+        GameManager.PlayerManager.MovePlayer(aimVector);
+        
         /*
         if (weapon.activeSelf)
         {

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private LayerMask hitLayer;
 
     private float currentDurability;
+    private bool _canAttack = true;
 
     private void Start()
     {
@@ -23,13 +25,19 @@ public class Weapon : MonoBehaviour
         weaponData = data;
         
         // Use the weapon data for initial stuff
+        SetCollider();
     }
 
     // An agnostic function for someone with a weapon to swing it and hit whatever they're mad at
-    public void Attack(float angle)
+    public bool Attack(float angle)
     {
-        // First we want to modify the collision for the weapon based off of the weapon data
-        ModifyCollider(angle);
+        // Check cooldown
+        if (!_canAttack)
+        {
+            return false;
+        }
+        // Rotate the collider based on the attack angle
+        RotateCollider(angle);
         
         // Then check collisions and get the things to hit
         List<Health> thingsToHurt = CheckCollisions();
@@ -37,11 +45,16 @@ public class Weapon : MonoBehaviour
         // Hurt the things
         foreach (Health thing in thingsToHurt)
         {
-            thing.TakeDamage(weaponData.damage);
+            thing.TakeDamage(weaponData.damage, gameObject);
         }
         
         // Check durability
         DamageDurability(weaponData.swingDurabilityDec);
+        
+        // Handle attack speed
+        StartCoroutine(resetAttack(weaponData.fireRate));
+        _canAttack = false;
+        return true;
     }
 
     // Sometimes you want to hurl something
@@ -77,23 +90,32 @@ public class Weapon : MonoBehaviour
         
         // Update stuff to reflect that
     }
-    
-    // Set the points for the polygon collider to check for collisions based on the weapon data
-    void ModifyCollider(float angle)
+
+    // Updates the current polygon collider points with the current weapon data
+    void SetCollider()
     {
-        // Get the angles for the left and right start of the polygon
-        float leftAngle = angle - Mathf.PI / 2.0f;
-        float rightAngle = angle + Mathf.PI / 2.0f;
-        Vector2 leftVector = new Vector2(Mathf.Cos(leftAngle), Mathf.Sin(leftAngle));
-        Vector2 rightVector = new Vector2(Mathf.Cos(rightAngle), Mathf.Sin(rightAngle));
-        
         // Update the points in a clockwise order
-        Vector2[] points = weaponCollider.points;
-        points[0] = leftVector * weaponData.startWidth;
-        points[1] = (leftVector * weaponData.endWidth) + (leftVector * weaponData.endHeight);
-        points[2] = (rightVector * weaponData.endWidth) + (rightVector * weaponData.endHeight);
-        points[3] = rightVector * weaponData.startWidth;
-        weaponCollider.points = points;
+        Vector2[] points = new Vector2[4];
+        Debug.Log(weaponData.startWidth);
+        points[0] = new Vector2(weaponData.startHeight, weaponData.startWidth);
+        points[1] = new Vector2(weaponData.endHeight, weaponData.endWidth);
+        points[2] = new Vector2(weaponData.endHeight, -weaponData.endWidth);
+        points[3] = new Vector2(weaponData.startHeight, -weaponData.startWidth);
+        Debug.Log(points[0]);
+        weaponCollider.pathCount = 1; 
+
+        // Set the points for the first path (index 0)
+        weaponCollider.SetPath(0, points); 
+    }
+    
+    // Rotate the collider by a certain amount
+    void RotateCollider(float angle)
+    {
+        // TODO: Have this be based off of the pivot somehow
+        Vector2 startPos = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+
+        weaponPivot.localPosition = startPos;
+        weaponPivot.localRotation = Quaternion.Euler(0,0,angle * Mathf.Rad2Deg);
     }
     
     List<Health> CheckCollisions()
@@ -119,4 +141,10 @@ public class Weapon : MonoBehaviour
         return thingsToHit;
     }
 
+    private IEnumerator resetAttack(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        _canAttack = true;
+    }
 }

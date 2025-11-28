@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: Axe
   damage: 10
-  fireRate: 0.5
+  fireRate: 0.2
   durability: 5
   type: 0
-  startWidth: 0
+  startWidth: 1
   startHeight: 0
-  endWidth: 0
-  endHeight: 0
+  endWidth: 3
+  endHeight: 3
   attackEffect: {fileID: 0}
   weaponSprite: {fileID: 0}
+  thrownPrefab: {fileID: 0}
+  throwSpeed: 0
+  oneShot: 1
+  thrownDurabilityDec: 0
+  swingDurabilityDec: 1
