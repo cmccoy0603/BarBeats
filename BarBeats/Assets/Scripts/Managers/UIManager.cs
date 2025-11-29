@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
 
+    private float upgradeGoal = 100;
+
     public void UpdateScore(float amount)
     {
         float currScore;
@@ -26,6 +28,13 @@ public class UIManager : MonoBehaviour
 
         currScore += amount;
         score.text = currScore.ToSafeString();
+
+        if (currScore >= upgradeGoal)
+        {
+            UpgradePlayer();
+            upgradeGoal *= 1.5f;
+        }
+
     }
 
     public void ShowGameOver()
@@ -61,5 +70,10 @@ public class UIManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Boolean isActive = settingsMenu.activeSelf;
         settingsMenu.SetActive(!isActive);
+    }
+
+    public void UpgradePlayer()
+    {
+        print("Upgrade Player");
     }
 }
