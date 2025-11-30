@@ -15,9 +15,11 @@ public class PlayerAttack : MonoBehaviour
     public float attackSpread = 1;
     public float weaponDamage = 10;
     public float meleeSpeed = .25f;
-    public GameObject weapon;
+    public float lifesteal = 0f;
+    public GameObject weapon;   
 
     private Camera cam;
+    private Health playerHealth;
 
     // We'll probably want a weapon for the player to have. That way we can switch it out. For now, nah
     private Transform _weaponTransform;
@@ -37,6 +39,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         cam = Camera.main;
+        playerHealth = GetComponent<Health>();
         _mousePositionAction = InputSystem.actions.FindAction("MousePos");
         _joystickPositionAction = InputSystem.actions.FindAction("StickPos");
         _keysPositionAction = InputSystem.actions.FindAction("KeysPos");
@@ -172,6 +175,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnKillEnemy()
     {
+        // The below line is only called so that lifesteal works. If any conflicting code is added to in the future, then feel free to remove this, just make sure that lifesteal works on-kill.
+        OnHitEnemy();
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
         if (rhythmScore > 0)
         {
@@ -185,7 +190,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnHitEnemy()
     {
-
+        playerHealth.currentHealth += lifesteal;
     }
 
 }

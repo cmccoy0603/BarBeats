@@ -183721,14 +183721,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8ca1a6dda1a19488896e6c66d89cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  player: {fileID: 1613686468}
   score: {fileID: 267580657}
   gameOver: {fileID: 630987275}
   pauseMenu: {fileID: 2018279883}
   settingsMenu: {fileID: 194829423}
   upgradeMenu: {fileID: 1837378153}
-  upgradeText1: {fileID: 0}
-  upgradeText2: {fileID: 0}
-  upgradeText3: {fileID: 0}
+  upgradeText1: {fileID: 2092729516}
+  upgradeText2: {fileID: 543767258}
+  upgradeText3: {fileID: 1846791200}
 --- !u!114 &927746749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185633,6 +185634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6218fc9b2f662684c8d9e1f222b34aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+  currentHealth: 100
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
