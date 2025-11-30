@@ -1,11 +1,8 @@
 Event	ID	Name			Wwise Object Path	Notes
-	447642349	play_early_hit			\Default Work Unit\play_early_hit	
 	564305318	Play_Amen_break_Playlist			\Default Work Unit\Play_Amen_break_Playlist	
 	904524261	Play_BGM_Playlist			\Default Work Unit\Play_BGM_Playlist	
-	1260131267	play_perfect_hit			\Default Work Unit\play_perfect_hit	
+	1011953342	Play_12_boOoOong			\Default Work Unit\Play_12_boOoOong	
 	1969469092	Stop_Amen_break_Playlist			\Default Work Unit\Stop_Amen_break_Playlist	
-	2058610800	play_late_hit			\Default Work Unit\play_late_hit	
-	2068608165	play_slime_death			\Default Work Unit\play_slime_death	
 	2287618571	Stop_BGM_Playlist			\Default Work Unit\Stop_BGM_Playlist	
 
 State Group	ID	Name			Wwise Object Path	Notes
@@ -17,10 +14,9 @@ State	ID	Name	State Group			Notes
 	3740536705	Western	Medley_BGM_Choice			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	204484264	March	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\CE\{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem		\Interactive Music Hierarchy\Default Work Unit\BGM_Playlist\BGM\March		26706348
-	204739079	Barbarian Beats perfect hit-2	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\6A\{6ACFAD93-7D3F-4F8F-A719-DC8270756F21}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Barbarian Beats perfect hit-2		441096
-	222560348	burst	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\A4\{A443C729-1433-1B79-0915-53F2A9014FFA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\burst		62296
-	245571729	Barbarian Beats sfx late hit	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\DA\{DACC66E7-0E6E-A25F-1DAF-2F4915DA0CAA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Barbarian Beats sfx late hit		352896
-	350131934	Barbarian Beats sfx early hit	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\03\{0398FEF1-8C13-736C-A238-78D575B7A21A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Barbarian Beats sfx early hit		352896
-	868969617	Amen-break	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\D3\{D3B51746-2533-F334-5F12-CA82ACFAB555}.wem		\Interactive Music Hierarchy\Default Work Unit\Amen-break_Playlist\Amen-break\Amen-break		1229740
+	845915703	12_boOoOong	C:\Users\timot\OneDrive\Documents\GitHub\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\75\{754F942A-2041-5733-B264-7336B98C7EC3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\12_boOoOong		328032
+	868969617	Amen-break	C:\Users\timot\OneDrive\Documents\GitHub\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\D3\{D3B51746-2533-F334-5F12-CA82ACFAB555}.wem		\Interactive Music Hierarchy\Default Work Unit\Amen-break_Playlist\Amen-break\Amen-break		1229740
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	204484264	March	C:\Users\timot\OneDrive\Documents\GitHub\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\CE\{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem	204484264.wem	\Interactive Music Hierarchy\Default Work Unit\BGM_Playlist\BGM\March	
 

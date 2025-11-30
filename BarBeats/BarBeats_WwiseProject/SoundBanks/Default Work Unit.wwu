@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="MainBank" ID="{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_12_boOoOong" ID="{EFCB2795-8482-4024-A139-C00ECAFD5F55}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BGM_Playlist" ID="{07887010-ADBE-4133-BE45-4FDE2728D9DB}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="play_early_hit" ID="{E0CEF390-80D1-4376-AE2A-028317E2384D}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="play_slime_death" ID="{3E78C8E4-9C9B-43B5-BEC8-F5F5D3D88008}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>

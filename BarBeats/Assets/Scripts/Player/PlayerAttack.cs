@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enums;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows.WebCam;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -16,13 +18,14 @@ public class PlayerAttack : MonoBehaviour
     public GameObject weapon;
 
     private Camera cam;
+
     // We'll probably want a weapon for the player to have. That way we can switch it out. For now, nah
     private Transform _weaponTransform;
     private Polygon _weaponRender;
     private PolygonCollider2D _polygonCollider2D;
 
     private Vector2 _widthHeight = Vector2.zero;
-    
+
     // All of our silly input stuff
     private InputAction _mousePositionAction;
     private InputAction _joystickPositionAction;
@@ -57,8 +60,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (!_attackedThisFrame) return;
-        
+        if (!_attackedThisFrame || GameManager.PlayerManager.IsGameOver()) return;
+
         Attack(_attackDevice);
     }
 
@@ -71,17 +74,16 @@ public class PlayerAttack : MonoBehaviour
     public void Attack(InputDevice device)
     {
         _attackedThisFrame = false;
-        if (weapon.activeSelf)
+        if (weapon.activeSelf || GameManager.GameState != GameState.PLAYING)
         {
             return;
         }
         weapon.SetActive(true);
         animator.SetTrigger("Attack");
-        
+
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
-        
+
         Vector2 aimVector = GetAttackDirection(device);
-        GameManager.MusicPlayer.LetMeKnowEarlyMyAttackWasOnNextBeat(rhythmScore);
 
         aimVector.Normalize();
 
@@ -90,13 +92,16 @@ public class PlayerAttack : MonoBehaviour
         Vector2 startPos = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * _widthHeight;
 
         _weaponTransform.localPosition = startPos;
-        _weaponTransform.localRotation = Quaternion.Euler(0,0,angle * Mathf.Rad2Deg);
-        
+        _weaponTransform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+
         _weaponRender.DrawPolygon(4, _polygonCollider2D.points, rhythmScore);
-        
+
         // Get collisions?
         float damageMult = rhythmScore > .9 ? 2 : 1 + (rhythmScore);
         CheckCollisions(damageMult);
+
+        // Player follow through
+        GameManager.PlayerManager.MovePlayer(aimVector);
 
         StartCoroutine(StopWeaponAnimation());
 
@@ -152,7 +157,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 Debug.Log("Why did I get an error >:-( " + e.Message);
             }
-            
+
             Debug.Log("Keyboard position?" + pointerPos);
         }
 
@@ -163,6 +168,24 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(meleeSpeed);
         weapon.SetActive(false);
+    }
+
+    public void OnKillEnemy()
+    {
+        float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
+        if (rhythmScore > 0)
+        {
+            GameManager.PlayerManager.AddScreenShake(.15f * rhythmScore, .5f);
+        }
+        else
+        {
+            GameManager.PlayerManager.AddScreenShake(.05f, .25f);
+        }
+    }
+
+    public void OnHitEnemy()
+    {
+
     }
 
 }

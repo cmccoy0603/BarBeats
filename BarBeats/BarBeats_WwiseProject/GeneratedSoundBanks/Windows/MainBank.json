@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}",
     "Language": "SFX",
-    "Hash": "{DB5AD3F1-EF8F-5513-8E18-1F38E722401D}",
+    "Hash": "{E79EEDF3-AB64-7825-495E-144C76808A37}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MainBank",
     "ShortName": "MainBank",
     "Path": "MainBank.bnk",
@@ -18,42 +18,19 @@
      {
       "Id": "204484264",
       "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
+      "Streaming": "true",
+      "Location": "Loose",
       "ShortName": "2025-10-29_BarBeats_medley.wav",
+      "Path": "Media/204484264.wem",
       "CachePath": "CE/{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem"
      },
      {
-      "Id": "204739079",
+      "Id": "845915703",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Barbarian Beats perfect hit-2.wav",
-      "CachePath": "6A/{6ACFAD93-7D3F-4F8F-A719-DC8270756F21}.wem"
-     },
-     {
-      "Id": "222560348",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "burst.wav",
-      "CachePath": "A4/{A443C729-1433-1B79-0915-53F2A9014FFA}.wem"
-     },
-     {
-      "Id": "245571729",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Barbarian Beats sfx late hit.wav",
-      "CachePath": "DA/{DACC66E7-0E6E-A25F-1DAF-2F4915DA0CAA}.wem"
-     },
-     {
-      "Id": "350131934",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Barbarian Beats sfx early hit.wav",
-      "CachePath": "03/{0398FEF1-8C13-736C-A238-78D575B7A21A}.wem"
+      "ShortName": "12_boOoOong.wav",
+      "CachePath": "75/{754F942A-2041-5733-B264-7336B98C7EC3}.wem"
      },
      {
       "Id": "868969617",
@@ -65,6 +42,20 @@
      }
     ],
     "Events": [
+     {
+      "Id": "1011953342",
+      "Name": "Play_12_boOoOong",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_12_boOoOong",
+      "GUID": "{EFCB2795-8482-4024-A139-C00ECAFD5F55}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.708",
+      "DurationMax": "1.708",
+      "MediaRefs": [
+       {
+        "Id": "845915703"
+       }
+      ]
+     },
      {
       "Id": "564305318",
       "Name": "Play_Amen_break_Playlist",
@@ -86,62 +77,6 @@
       "MediaRefs": [
        {
         "Id": "204484264"
-       }
-      ]
-     },
-     {
-      "Id": "447642349",
-      "Name": "play_early_hit",
-      "ObjectPath": "\\Events\\Default Work Unit\\play_early_hit",
-      "GUID": "{E0CEF390-80D1-4376-AE2A-028317E2384D}",
-      "DurationType": "OneShot",
-      "DurationMin": "1.9152067",
-      "DurationMax": "2.0885475",
-      "MediaRefs": [
-       {
-        "Id": "350131934"
-       }
-      ]
-     },
-     {
-      "Id": "2058610800",
-      "Name": "play_late_hit",
-      "ObjectPath": "\\Events\\Default Work Unit\\play_late_hit",
-      "GUID": "{3A936C13-DA88-48EE-A436-FDDDB8031945}",
-      "DurationType": "OneShot",
-      "DurationMin": "1.9152067",
-      "DurationMax": "2.0885475",
-      "MediaRefs": [
-       {
-        "Id": "245571729"
-       }
-      ]
-     },
-     {
-      "Id": "1260131267",
-      "Name": "play_perfect_hit",
-      "ObjectPath": "\\Events\\Default Work Unit\\play_perfect_hit",
-      "GUID": "{FE3D23F0-F92B-4538-A87B-057B07EA6C00}",
-      "DurationType": "OneShot",
-      "DurationMin": "2.3940084",
-      "DurationMax": "2.6106844",
-      "MediaRefs": [
-       {
-        "Id": "204739079"
-       }
-      ]
-     },
-     {
-      "Id": "2068608165",
-      "Name": "play_slime_death",
-      "ObjectPath": "\\Events\\Default Work Unit\\play_slime_death",
-      "GUID": "{3E78C8E4-9C9B-43B5-BEC8-F5F5D3D88008}",
-      "DurationType": "OneShot",
-      "DurationMin": "0.6115519",
-      "DurationMax": "0.68644387",
-      "MediaRefs": [
-       {
-        "Id": "222560348"
        }
       ]
      },
@@ -168,6 +103,6 @@
     ]
    }
   ],
-  "FileHash": "{9BECB480-E6F9-031F-050B-E2A9667AC4DA}"
+  "FileHash": "{855E5EDE-4140-CAB9-AFF8-E44B9A53DA55}"
  }
 }
