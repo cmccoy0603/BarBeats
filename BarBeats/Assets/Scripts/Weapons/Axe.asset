@@ -21,10 +21,10 @@ MonoBehaviour:
   startHeight: 0
   endWidth: 3
   endHeight: 3
-  attackEffect: {fileID: 0}
-  weaponSprite: {fileID: 0}
-  thrownPrefab: {fileID: 0}
-  throwSpeed: 0
+  attackEffect: {fileID: 6519135755651677584, guid: 4ab5c4dcee448b143806bde8e4c935fe, type: 3}
+  weaponSprite: {fileID: 21300000, guid: 952d7b8bf726c0641b8cf0b4f5ad0d8d, type: 3}
+  thrownPrefab: {fileID: 7914722759427678525, guid: 362c9206ceeea6641843629b134c79af, type: 3}
+  throwSpeed: 225
   oneShot: 1
-  thrownDurabilityDec: 0
-  swingDurabilityDec: 1
+  thrownDurabilityDec: 2
+  swingDurabilityDec: 0.5

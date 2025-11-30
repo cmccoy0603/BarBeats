@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
     private Transform _weaponTransform;
     private Polygon _weaponRender;
     private PolygonCollider2D _polygonCollider2D;
-    [SerializeField] private Weapon weaponInst;
+    [SerializeField] private WeaponHolder weaponHolder;
 
     private Vector2 _widthHeight = Vector2.zero;
     
@@ -32,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
     private InputAction _keysPositionAction;
     private InputDevice _attackDevice;
     private bool _attackedThisFrame = false;
+    private bool _threwThisFrame = false;
 
 
     private void Awake()
@@ -61,8 +62,16 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         if (!_attackedThisFrame || GameManager.PlayerManager.IsGameOver()) return;
+
+        if (!_threwThisFrame)
+        {
+            Attack(_attackDevice);
+        }
+        else
+        {
+            Throw(_attackDevice);
+        }
         
-        Attack(_attackDevice);
     }
 
     public void PreAttack(InputAction.CallbackContext context)
@@ -71,76 +80,39 @@ public class PlayerAttack : MonoBehaviour
         _attackedThisFrame = true;
     }
 
+    // So we can time our throw to be on frame
+    public void PreThrow(InputAction.CallbackContext context)
+    {
+        _attackDevice = context.control.device;
+        _attackedThisFrame = true;
+        _threwThisFrame = true;
+    }
+    
     public void Attack(InputDevice device)
     {
         _attackedThisFrame = false;
-        Vector2 aimVector = GetAttackDirection(device);
+        Vector2 aimVector = GetAttackDirection(device).normalized;
         float angle = Mathf.Atan2(aimVector.y, aimVector.x);
-        if (!weaponInst.Attack(angle))
+        if (!weaponHolder.Attack(angle))
         {
             return;
         }
         animator.SetTrigger("Attack");
         // Player follow through
         GameManager.PlayerManager.MovePlayer(aimVector);
-        
-        /*
-        if (weapon.activeSelf)
-        {
-            return;
-        }
-        weapon.SetActive(true);
-        animator.SetTrigger("Attack");
-        
-        float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
-        
-        Vector2 aimVector = GetAttackDirection(device);
-        GameManager.MusicPlayer.LetMeKnowEarlyMyAttackWasOnNextBeat(rhythmScore);
-
-        aimVector.Normalize();
-
-        // Angle in rad
-        float angle = Mathf.Atan2(aimVector.y, aimVector.x);
-        Vector2 startPos = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * _widthHeight;
-
-        _weaponTransform.localPosition = startPos;
-        _weaponTransform.localRotation = Quaternion.Euler(0,0,angle * Mathf.Rad2Deg);
-        
-        _weaponRender.DrawPolygon(4, _polygonCollider2D.points, rhythmScore);
-
-        // Get collisions?
-        float damageMult = rhythmScore > .9 ? 2 : 1 + (rhythmScore);
-        CheckCollisions(damageMult);
-        
-        // Player follow through
-        GameManager.PlayerManager.MovePlayer(aimVector);
-
-        StartCoroutine(StopWeaponAnimation());
-        */
-
     }
 
-    void CheckCollisions(float damageMult)
+    void Throw(InputDevice device)
     {
-        List<Collider2D> overlappingColliders = new List<Collider2D>();
-        ContactFilter2D contactFilter = new ContactFilter2D();
-        contactFilter.SetLayerMask(enemyLayer);
-        contactFilter.useTriggers = false;
-        int numColliders = _polygonCollider2D.Overlap(contactFilter, overlappingColliders);
-
-        if (numColliders > 0)
-        {
-            foreach (Collider2D enemy in overlappingColliders)
-            {
-                Health enemyHealth = enemy.gameObject.GetComponent<Health>();
-                if (!enemyHealth)
-                {
-                    return;
-                }
-
-                enemyHealth.TakeDamage(weaponDamage * damageMult, gameObject);
-            }
-        }
+        _attackedThisFrame = false;
+        _threwThisFrame = false;
+        
+        // Can we actually throw?
+        if (!weaponHolder.HasWeapon()) return;
+        
+        Vector2 aimVector = GetAttackDirection(device).normalized;
+        float angle = Mathf.Atan2(aimVector.y, aimVector.x);
+        weaponHolder.Throw(angle);
     }
 
     private Vector2 GetAttackDirection(InputDevice device)
@@ -175,12 +147,6 @@ public class PlayerAttack : MonoBehaviour
         }
 
         return pointerPos;
-    }
-
-    IEnumerator StopWeaponAnimation()
-    {
-        yield return new WaitForSeconds(meleeSpeed);
-        weapon.SetActive(false);
     }
 
     public void OnKillEnemy()

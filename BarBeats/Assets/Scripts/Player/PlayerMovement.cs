@@ -9,9 +9,9 @@ public class PlayerMovement : MonoBehaviour
 {
     // Public vars
     [SerializeField] private float speed = 5f;
-    [SerializeField] private float followThroughStrength = 5f;
-    [SerializeField] private float followThroughTime = .1f;
-    [SerializeField] private float followThroughDirectionFactor = 1.25f;
+    [SerializeField] private float followThroughStrength = 1.25f;
+    [SerializeField] private float followThroughTime = .05f;
+    [SerializeField] private float followThroughDirectionFactor = 1.5f;
     [SerializeField] private SpriteRenderer _sr;
 
     private Rigidbody2D _rigidbody;

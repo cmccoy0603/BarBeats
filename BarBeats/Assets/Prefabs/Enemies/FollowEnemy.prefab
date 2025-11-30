@@ -20,9 +20,10 @@ GameObject:
   - component: {fileID: 19345096812962430}
   - component: {fileID: 1587907688261239430}
   - component: {fileID: 2497592141550791427}
+  - component: {fileID: 2775068702460614566}
   m_Layer: 7
   m_Name: FollowEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -212,6 +213,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2775068702460614566}
+        m_TargetAssemblyTypeName: DropWeapon, Assembly-CSharp
+        m_MethodName: Drop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHit:
     m_PersistentCalls:
       m_Calls:
@@ -386,3 +399,17 @@ MonoBehaviour:
   - {fileID: 42198813336044558, guid: 011be323487d6f340aa7d8fff1c36a71, type: 3}
   - {fileID: 42198813336044558, guid: 792c47adf2a763b44bdd4210f072f9a1, type: 3}
   hitParticle: {fileID: 42198813336044558, guid: b15a91de0e66286459ee74aa9ea73a4f, type: 3}
+--- !u!114 &2775068702460614566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560046693183542054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65a8582dc3799f468cddb694bc4dcc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropWeapon
+  data: {fileID: 11400000, guid: c12905d48843bf544aeb9be635dfc4a9, type: 2}
+  dropPrefab: {fileID: 6620211918536186484, guid: 04c7f4b06e0c3c947b11f89ee4def5d3, type: 3}

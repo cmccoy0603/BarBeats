@@ -13,7 +13,7 @@ public class WeaponData : ScriptableObject
     public float startHeight;
     public float endWidth;
     public float endHeight;
-    public Sprite attackEffect;
+    public GameObject attackEffect;
     public Sprite weaponSprite;
     public GameObject thrownPrefab;
     public float throwSpeed;
