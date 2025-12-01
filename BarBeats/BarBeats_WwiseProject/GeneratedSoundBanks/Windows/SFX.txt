@@ -1,0 +1,12 @@
+Event	ID	Name			Wwise Object Path	Notes
+	447642349	play_early_hit			\Default Work Unit\play_early_hit	
+	1260131267	play_perfect_hit			\Default Work Unit\play_perfect_hit	
+	2058610800	play_late_hit			\Default Work Unit\play_late_hit	
+	2068608165	play_slime_death			\Default Work Unit\play_slime_death	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	204739079	Barbarian Beats perfect hit-2	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\6A\{6ACFAD93-7D3F-4F8F-A719-DC8270756F21}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Barbarian Beats perfect hit-2		441096
+	222560348	burst	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\A4\{A443C729-1433-1B79-0915-53F2A9014FFA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\burst		62296
+	245571729	Barbarian Beats sfx late hit	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\DA\{DACC66E7-0E6E-A25F-1DAF-2F4915DA0CAA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Barbarian Beats sfx late hit		352896
+	350131934	Barbarian Beats sfx early hit	D:\unity\BarBeats-main\BarBeats\BarBeats\BarBeats_WwiseProject\.cache\03\{0398FEF1-8C13-736C-A238-78D575B7A21A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Barbarian Beats sfx early hit		352896
+

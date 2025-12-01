@@ -97,6 +97,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="play_dash" ID="{883F78DD-EEDC-4517-A80F-AE63B75D8D15}">
+					<ChildrenList>
+						<Action Name="" ID="{8083E7FD-D5DD-4F25-987C-018E498CA9BC}" ShortID="225578320">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Barbarian Beats dash" ID="{31C1ED51-1BEC-4E3D-A27F-76137B18ECBB}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

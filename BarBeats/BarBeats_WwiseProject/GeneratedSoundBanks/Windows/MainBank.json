@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}",
     "Language": "SFX",
-    "Hash": "{E79EEDF3-AB64-7825-495E-144C76808A37}",
+    "Hash": "{AD21542D-BA9C-77DE-CD41-8168DBE07370}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MainBank",
     "ShortName": "MainBank",
     "Path": "MainBank.bnk",
@@ -18,19 +18,10 @@
      {
       "Id": "204484264",
       "Language": "SFX",
-      "Streaming": "true",
-      "Location": "Loose",
-      "ShortName": "2025-10-29_BarBeats_medley.wav",
-      "Path": "Media/204484264.wem",
-      "CachePath": "CE/{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem"
-     },
-     {
-      "Id": "845915703",
-      "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "12_boOoOong.wav",
-      "CachePath": "75/{754F942A-2041-5733-B264-7336B98C7EC3}.wem"
+      "ShortName": "2025-10-29_BarBeats_medley.wav",
+      "CachePath": "CE/{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem"
      },
      {
       "Id": "868969617",
@@ -42,20 +33,6 @@
      }
     ],
     "Events": [
-     {
-      "Id": "1011953342",
-      "Name": "Play_12_boOoOong",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_12_boOoOong",
-      "GUID": "{EFCB2795-8482-4024-A139-C00ECAFD5F55}",
-      "DurationType": "OneShot",
-      "DurationMin": "1.708",
-      "DurationMax": "1.708",
-      "MediaRefs": [
-       {
-        "Id": "845915703"
-       }
-      ]
-     },
      {
       "Id": "564305318",
       "Name": "Play_Amen_break_Playlist",
@@ -103,6 +80,6 @@
     ]
    }
   ],
-  "FileHash": "{855E5EDE-4140-CAB9-AFF8-E44B9A53DA55}"
+  "FileHash": "{D8B2E6A2-EE8F-5581-F329-1556A79CA551}"
  }
 }

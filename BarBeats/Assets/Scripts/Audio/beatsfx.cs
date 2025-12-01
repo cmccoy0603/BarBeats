@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class beatsfx : MonoBehaviour
 {
-    public AK.Wwise.Bank MainBank;
+    public AK.Wwise.Bank SFX;
     public AK.Wwise.Event play_perfect_hit;
     public AK.Wwise.Event play_late_hit;
 
@@ -14,7 +14,7 @@ public class beatsfx : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        MainBank.Load();
+        SFX.Load();
         
     }
 
@@ -31,13 +31,13 @@ public class beatsfx : MonoBehaviour
             if (!isSoundTriggeredThisFrame)
             {
 
-                if (rhythumScore >= .5f)
+                if (rhythumScore >= .8f)
                 {
                     play_perfect_hit.Post(gameObject);
                     isSoundTriggeredThisFrame = true;
                     lastBeatTime = currentTime;
                 }
-            else if (rhythumScore >= .01f && rhythumScore < .5f)
+            else if (rhythumScore >= .01f && rhythumScore < .8f)
             {
 
                 play_late_hit.Post(gameObject);
@@ -48,7 +48,7 @@ public class beatsfx : MonoBehaviour
         }
         if (currentTime - lastBeatTime >= timeBetweenBeats)
         {
-            isSoundTriggeredThisFrame = false; 
+            isSoundTriggeredThisFrame = false;
         }
     }
 
@@ -56,6 +56,6 @@ public class beatsfx : MonoBehaviour
 
     private void OnDestroy()
     {
-        MainBank.Unload();
+        SFX.Unload();
     }
 }
