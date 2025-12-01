@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    private float currentHealth = 100f;
+    public float currentHealth = 100f;
     private bool destroyGameObjectOnDeath = true;
     private float deathDestroyDelay = 0f;
     private bool invulnerable = false;
@@ -46,7 +46,6 @@ public class Health : MonoBehaviour
 
         // Negative damage will heal
         currentHealth -= amount;
-
         if (currentHealth <= 0f)
         {
             Die();

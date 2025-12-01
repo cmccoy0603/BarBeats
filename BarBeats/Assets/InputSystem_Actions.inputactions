@@ -97,9 +97,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Throw",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "5076337f-8529-4f9d-9263-73ad3e388014",
+                    "id": "7af23162-7375-4589-b831-8b4ca5c1d796",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -527,23 +527,23 @@
                 },
                 {
                     "name": "",
-                    "id": "d1637744-cdb1-4a30-ba4c-1e4dd3aef400",
-                    "path": "<Mouse>/rightButton",
+                    "id": "06790b63-a737-47cd-960e-664dff843d9c",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Throw",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "271cd14f-4b37-46a4-96ae-df0ac7cd1f9b",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "73419b5f-4728-4b59-939e-4409ed9db005",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Throw",
+                    "groups": "",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

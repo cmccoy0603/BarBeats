@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Enums;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Windows.WebCam;
@@ -14,9 +15,11 @@ public class PlayerAttack : MonoBehaviour
     public float attackSpread = 1;
     public float weaponDamage = 10;
     public float meleeSpeed = .25f;
-    public GameObject weapon;
+    public float lifesteal = 0f;
+    public GameObject weapon;   
 
     private Camera cam;
+    private Health playerHealth;
 
     // We'll probably want a weapon for the player to have. That way we can switch it out. For now, nah
     private Transform _weaponTransform;
@@ -25,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private WeaponHolder weaponHolder;
 
     private Vector2 _widthHeight = Vector2.zero;
-    
+
     // All of our silly input stuff
     private InputAction _mousePositionAction;
     private InputAction _joystickPositionAction;
@@ -38,6 +41,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         cam = Camera.main;
+        playerHealth = GetComponent<Health>();
         _mousePositionAction = InputSystem.actions.FindAction("MousePos");
         _joystickPositionAction = InputSystem.actions.FindAction("StickPos");
         _keysPositionAction = InputSystem.actions.FindAction("KeysPos");
@@ -93,10 +97,15 @@ public class PlayerAttack : MonoBehaviour
         _attackedThisFrame = false;
         Vector2 aimVector = GetAttackDirection(device).normalized;
         float angle = Mathf.Atan2(aimVector.y, aimVector.x);
-        if (!weaponHolder.Attack(angle))
+        
+        if (weapon.activeSelf || GameManager.GameState != GameState.PLAYING)
         {
             return;
         }
+        
+        // Actually try to attack
+        if (!weaponHolder.Attack(angle)) return;
+
         animator.SetTrigger("Attack");
         // Player follow through
         GameManager.PlayerManager.MovePlayer(aimVector);
@@ -142,7 +151,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 Debug.Log("Why did I get an error >:-( " + e.Message);
             }
-            
+
             Debug.Log("Keyboard position?" + pointerPos);
         }
 
@@ -151,6 +160,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnKillEnemy()
     {
+        // The below line is only called so that lifesteal works. If any conflicting code is added to in the future, then feel free to remove this, just make sure that lifesteal works on-kill.
+        OnHitEnemy();
         float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
         if (rhythmScore > 0)
         {
@@ -164,8 +175,8 @@ public class PlayerAttack : MonoBehaviour
 
     public void OnHitEnemy()
     {
-        Debug.Log("Hit enemy");
         GameManager.PlayerManager.HitScreenZoom();
+        playerHealth.currentHealth += lifesteal;
     }
 
 }
