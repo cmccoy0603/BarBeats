@@ -9,14 +9,16 @@ public class ThrownWeapon : MonoBehaviour
     private float _durability;
     private LayerMask _layerMask;
     private bool _stopAfterHit = true;
+    private bool _oneShot = true;
     private float damageCooldown = 1f;
     private float _lastDamageTime = -Mathf.Infinity;
-    
-    public void Throw(WeaponData data, float durability, LayerMask mask)
+
+    public void Throw(WeaponData data, float durability, LayerMask mask, bool isOneShot)
     {
         _weaponData = data;
         _durability = durability;
         _layerMask = mask;
+        _oneShot = isOneShot;
     }
     
     private void OnCollisionEnter2D(Collision2D collision) => TryDamage(collision.gameObject);
@@ -40,7 +42,7 @@ public class ThrownWeapon : MonoBehaviour
 
         if (!_stopAfterHit) return;
         
-        if (_durability > 0)
+        if (_durability > 0 && !_oneShot)
         {
             // drop instead of destroying
             DropWeapon();

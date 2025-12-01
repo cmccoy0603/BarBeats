@@ -7,6 +7,7 @@ using UnityEngine;
 public class WeaponHolder : MonoBehaviour
 {
     [SerializeField] private WeaponData weaponData;
+    [SerializeField] private WeaponData unarmedWeaponData;  // What weapon data should we use if the weapon holder is unarmed?
     [SerializeField] private PolygonCollider2D weaponCollider;
     [SerializeField] private Transform weaponPivot;
     [SerializeField] private LayerMask hitLayer;
@@ -14,6 +15,8 @@ public class WeaponHolder : MonoBehaviour
     private float _currentDurability;
     private bool _canAttack = true;
     private bool _hasWeapon;
+    // The player still can use her fists to punch stuff, so we kind of make a clause for using the unarmed weapon data
+    private bool _unarmedWeapon = false;
 
     private void Start()
     {
@@ -30,6 +33,11 @@ public class WeaponHolder : MonoBehaviour
         
         // Use the weapon data for initial stuff
         SetCollider();
+
+        if (data != unarmedWeaponData)
+        {
+            _unarmedWeapon = false;
+        }
     }
 
     // An agnostic function for someone with a weapon to swing it and hit whatever they're mad at
@@ -68,6 +76,7 @@ public class WeaponHolder : MonoBehaviour
     // Sometimes you want to hurl something
     public void Throw(float angle)
     {
+        if (!weaponData.canThrow) return;
         // Take durability damage
         DamageDurability(weaponData.thrownDurabilityDec);
         
@@ -80,7 +89,7 @@ public class WeaponHolder : MonoBehaviour
         ThrownWeapon thrownInfo = thrownWeapon.GetComponent<ThrownWeapon>();
         if (thrownInfo)
         {
-            thrownInfo.Throw(weaponData, _currentDurability, hitLayer);
+            thrownInfo.Throw(weaponData, _currentDurability, hitLayer, weaponData.oneShot);
         }
         else
         {
@@ -92,6 +101,8 @@ public class WeaponHolder : MonoBehaviour
         if (!weaponsRigidbody) return;
         Vector2 force = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * weaponData.throwSpeed;
         weaponsRigidbody.AddForceAtPosition(force, Vector2.zero);
+        
+        if (!weaponData.oneShot) return;    // Some weapons can be thrown a lot (javelin?), some just once. So we think about that... I guess
         
         // TODO: Don't just call break, do a unique thing
         Break();
@@ -115,6 +126,13 @@ public class WeaponHolder : MonoBehaviour
         weaponData = null;
 
         // Update stuff to reflect that, maybe play a sound
+        
+        // if player, give the unarmed weapon data
+        if (gameObject.CompareTag("Player"))
+        {
+            SetWeapon(unarmedWeaponData, 1);
+            _unarmedWeapon = true;
+        }
     }
 
     void PlayEffect(float angle)
@@ -189,6 +207,11 @@ public class WeaponHolder : MonoBehaviour
     public bool HasWeapon()
     {
         return _hasWeapon;
+    }
+
+    public bool CanPickup()
+    {
+        return _unarmedWeapon;
     }
 
     public WeaponData EquippedWeaponData()

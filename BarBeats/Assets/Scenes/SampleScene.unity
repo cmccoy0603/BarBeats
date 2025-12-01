@@ -1698,7 +1698,7 @@ GameObject:
   - component: {fileID: 788272652}
   m_Layer: 6
   m_Name: WeaponTwo
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1781,7 +1781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20758895e302a6844b6cf924653bd328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  weaponData: {fileID: 11400000, guid: c12905d48843bf544aeb9be635dfc4a9, type: 2}
+  weaponData: {fileID: 11400000, guid: 3ad05b55d3796df4ab8024a8b971ede2, type: 2}
+  unarmedWeaponData: {fileID: 11400000, guid: fb744d1900f2d4d40aee60b5b9d09064, type: 2}
   weaponCollider: {fileID: 788272652}
   weaponPivot: {fileID: 788272651}
   hitLayer:

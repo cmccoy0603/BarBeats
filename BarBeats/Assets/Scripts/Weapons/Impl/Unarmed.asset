@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ec05f2da8cc7314a87a0275b4c28a71, type: 3}
-  m_Name: Axe
+  m_Name: Unarmed
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  weaponName: Axe
-  damage: 10
-  fireRate: 0.2
-  durability: 5
-  type: 0
-  startWidth: 1
-  startHeight: 0
-  endWidth: 3
-  endHeight: 3
-  attackEffect: {fileID: 6519135755651677584, guid: 4ab5c4dcee448b143806bde8e4c935fe, type: 3}
-  weaponSprite: {fileID: 21300000, guid: 952d7b8bf726c0641b8cf0b4f5ad0d8d, type: 3}
-  thrownPrefab: {fileID: 7914722759427678525, guid: 362c9206ceeea6641843629b134c79af, type: 3}
-  throwSpeed: 225
+  weaponName: Fists of Flemenco
+  damage: 2
+  fireRate: 0.1
+  durability: 1
+  type: 2
+  throwSpeed: 0
   oneShot: 1
-  thrownDurabilityDec: 2
-  swingDurabilityDec: 0.5
+  canThrow: 0
+  thrownDurabilityDec: 0
+  swingDurabilityDec: 0
+  startWidth: 0.5
+  startHeight: 0
+  endWidth: 0.5
+  endHeight: 1
+  attackEffect: {fileID: 6519135755651677584, guid: 4ab5c4dcee448b143806bde8e4c935fe, type: 3}
+  weaponSprite: {fileID: 0}
+  thrownPrefab: {fileID: 0}

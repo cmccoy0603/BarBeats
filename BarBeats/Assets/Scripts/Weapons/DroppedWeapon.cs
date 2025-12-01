@@ -35,7 +35,7 @@ public class DroppedWeapon : MonoBehaviour
         if (!holder) return;
 
         // They already have a weapon
-        if (holder.HasWeapon()) return;
+        if (!holder.CanPickup()) return;
         
         // Finally just give them the weapon
         Pickup(holder);
