@@ -37,6 +37,18 @@ namespace AK
             } // namespace STATE
         } // namespace MEDLEY_BGM_CHOICE
 
+        namespace PAUSE_CHOICE
+        {
+            static const AkUniqueID GROUP = 3112673657U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID PAUSED = 319258907U;
+                static const AkUniqueID UNPAUSED = 1365518790U;
+            } // namespace STATE
+        } // namespace PAUSE_CHOICE
+
     } // namespace STATES
 
     namespace BANKS

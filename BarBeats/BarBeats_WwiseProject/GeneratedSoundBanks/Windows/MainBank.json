@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}",
     "Language": "SFX",
-    "Hash": "{AD21542D-BA9C-77DE-CD41-8168DBE07370}",
+    "Hash": "{3EAFF0A7-0F3F-50B4-0251-12322896741E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MainBank",
     "ShortName": "MainBank",
     "Path": "MainBank.bnk",
     "Media": [
+     {
+      "Id": "113521286",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "UFO Noise 2.wav",
+      "CachePath": "DD/{DD006AF9-BCA3-129E-7DE1-74755C8D7A9D}.wem"
+     },
      {
       "Id": "204484264",
       "Language": "SFX",
@@ -22,6 +30,14 @@
       "Location": "Memory",
       "ShortName": "2025-10-29_BarBeats_medley.wav",
       "CachePath": "CE/{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem"
+     },
+     {
+      "Id": "845915703",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "12_boOoOong.wav",
+      "CachePath": "75/{754F942A-2041-5733-B264-7336B98C7EC3}.wem"
      },
      {
       "Id": "868969617",
@@ -33,6 +49,20 @@
      }
     ],
     "Events": [
+     {
+      "Id": "1011953342",
+      "Name": "Play_12_boOoOong",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_12_boOoOong",
+      "GUID": "{EFCB2795-8482-4024-A139-C00ECAFD5F55}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.708",
+      "DurationMax": "1.708",
+      "MediaRefs": [
+       {
+        "Id": "845915703"
+       }
+      ]
+     },
      {
       "Id": "564305318",
       "Name": "Play_Amen_break_Playlist",
@@ -52,6 +82,9 @@
       "GUID": "{07887010-ADBE-4133-BE45-4FDE2728D9DB}",
       "DurationType": "Infinite",
       "MediaRefs": [
+       {
+        "Id": "113521286"
+       },
        {
         "Id": "204484264"
        }
@@ -80,6 +113,6 @@
     ]
    }
   ],
-  "FileHash": "{D8B2E6A2-EE8F-5581-F329-1556A79CA551}"
+  "FileHash": "{A9C8BB84-AB80-E39A-7828-24004CA40D0E}"
  }
 }
