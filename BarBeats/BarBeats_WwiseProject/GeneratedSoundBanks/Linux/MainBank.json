@@ -10,18 +10,25 @@
     "Type": "User",
     "GUID": "{F46EA086-97EA-4236-BB86-A5D4C3C36CA5}",
     "Language": "SFX",
-    "Hash": "{E79EEDF3-AB64-7825-495E-144C76808A37}",
+    "Hash": "{3EAFF0A7-0F3F-50B4-0251-12322896741E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\MainBank",
     "ShortName": "MainBank",
     "Path": "MainBank.bnk",
     "Media": [
      {
+      "Id": "113521286",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "UFO Noise 2.wav",
+      "CachePath": "DD/{DD006AF9-BCA3-129E-7DE1-74755C8D7A9D}.wem"
+     },
+     {
       "Id": "204484264",
       "Language": "SFX",
-      "Streaming": "true",
-      "Location": "Loose",
+      "Streaming": "false",
+      "Location": "Memory",
       "ShortName": "2025-10-29_BarBeats_medley.wav",
-      "Path": "Media/204484264.wem",
       "CachePath": "CE/{CED822A1-ABD5-A067-3E7B-31C0B7EE24AE}.wem"
      },
      {
@@ -76,6 +83,9 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
+        "Id": "113521286"
+       },
+       {
         "Id": "204484264"
        }
       ]
@@ -103,6 +113,6 @@
     ]
    }
   ],
-  "FileHash": "{03CCDD85-9037-632C-2080-0082DEBECD30}"
+  "FileHash": "{E469B63D-2D2D-624C-E0B2-D2F9C8A718A2}"
  }
 }
