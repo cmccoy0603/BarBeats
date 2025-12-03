@@ -16,6 +16,10 @@ public class AkEventList : MonoBehaviour
     public AK.Wwise.State medley_bgm_choice_march;
     public AK.Wwise.State medley_bgm_choice_western;
 
+    public AK.Wwise.State paused_state_none;
+    public AK.Wwise.State paused_choice_unpaused;
+    public AK.Wwise.State paused_state_paused;
+
 
     public static int audio_device_latency_ms = 0;
 

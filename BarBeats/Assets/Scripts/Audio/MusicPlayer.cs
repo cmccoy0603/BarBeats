@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using Unity.Mathematics;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 // Component that plays a BGM track on its gameObject.
@@ -15,6 +16,9 @@ public class MusicPlayer : MonoBehaviour
     private static AK.Wwise.CallbackFlags ak_flags = new();
 
     private static DateTime most_recent_window_open_time;
+
+    private static DateTime fixed_tempo_most_recent_window_open_time;
+    private static DateTime most_recent_bar_window_open_time;
 
     void Start()
     {
@@ -67,6 +71,7 @@ public class MusicPlayer : MonoBehaviour
 
     public float GetRhythmSyncScore()
     {
+
         // (uint playing_id, int progress_ms) = GetPlayheadProgressMilliseconds();
         // if (IsInvalidPlayingID(playing_id)) return 0;
 
@@ -88,20 +93,50 @@ public class MusicPlayer : MonoBehaviour
         return (DateTime.Now.Subtract(most_recent_window_open_time).TotalMilliseconds < 100) ? 1 : 0;
     }
 
-    public void LetMeKnowEarlyMyAttackWasOnNextBeat(float rhythm_score)
+    public float GetTempoSyncScore()
     {
-        // StartCoroutine(WaitForAndPrintAttackEarlinessData(rhythm_score));
+        return (DateTime.Now.Subtract(fixed_tempo_most_recent_window_open_time).TotalMilliseconds < 100) ? 1 : 0;
+    }
+
+    public float GetBarSyncScore()
+    {
+        return (DateTime.Now.Subtract(most_recent_bar_window_open_time).TotalMilliseconds < 100) ? 1 : 0;
     }
 
     public void BeatWindow()
     {
-        StartCoroutine(OpenBeatWindowAfterDelay(AkEventList.audio_device_latency_ms));
+        StartCoroutine(OpenBeatWindowAfterDelay());
     }
 
-    private IEnumerator OpenBeatWindowAfterDelay(int ms)
+    private IEnumerator OpenBeatWindowAfterDelay()
     {
-        yield return new WaitForSeconds(ms / 1000f);
+        float latency_seconds = (float)AkEventList.audio_device_latency_ms / 1000;
+        yield return new WaitForSecondsRealtime(latency_seconds);
         most_recent_window_open_time = DateTime.Now;
+    }
+
+    public void FixedTempoBeatWindow()
+    {
+        StartCoroutine(FixedTempoOpenBeatWindowAfterDelay());
+    }
+
+    private IEnumerator FixedTempoOpenBeatWindowAfterDelay()
+    {
+        float latency_seconds = (float)AkEventList.audio_device_latency_ms / 1000;
+        yield return new WaitForSecondsRealtime(latency_seconds);
+        fixed_tempo_most_recent_window_open_time = DateTime.Now;
+    }
+
+    public void BarWindow()
+    {
+        StartCoroutine(OpenBarWindowAfterDelay());
+    }
+
+    private IEnumerator OpenBarWindowAfterDelay()
+    {
+        float latency_seconds = (float)AkEventList.audio_device_latency_ms / 1000;
+        yield return new WaitForSecondsRealtime(latency_seconds);
+        most_recent_bar_window_open_time = DateTime.Now;
     }
 
     // private IEnumerator WaitForAndPrintAttackEarlinessData(float rhythm_score)
