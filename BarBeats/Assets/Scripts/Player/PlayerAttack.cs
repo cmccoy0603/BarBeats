@@ -177,7 +177,7 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator ResetSound()
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(.01f);
         SoundTriggered = false;
     }
 }
