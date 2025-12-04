@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 96c33a533de972459cd83d7e7a4e2894
     GuidInternal: 
-    m_lastTime: -8584367735006612426
+    m_lastTime: -8584367617834775808
     List:
     - name: MainBank
       guid: 86a06ef4ea973642bb86a5d4c3c36ca5
@@ -108,7 +108,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 2088215e559d8e4bbfd27e337f5f0df6
     GuidInternal: 
-    m_lastTime: -8584367735008216080
+    m_lastTime: -8584367617834775808
     List:
     - name: Play_Amen_break_Playlist
       guid: 9c82d99b267bd74f92ea6685482d30d8
@@ -179,7 +179,7 @@ MonoBehaviour:
       maxDuration: 2.0885475
       minDuration: 1.9152067
     - name: play_late_hit
-      guid: 136c933a88daee48a436fdddb8031945
+      guid: 4e063dba0c127a4699b1d6eaf7e43b9c
       id: 2058610800
       PathAndIcons:
       - ElementName: Events
@@ -190,13 +190,13 @@ MonoBehaviour:
         guid: 2088215e559d8e4bbfd27e337f5f0df6
       - ElementName: play_late_hit
         ObjectType: 3
-        guid: 136c933a88daee48a436fdddb8031945
+        guid: 4e063dba0c127a4699b1d6eaf7e43b9c
       Path: Events\Default Work Unit\play_late_hit
       maxAttenuation: 0
       maxDuration: 0.1637213
       minDuration: 0.1501331
     - name: play_perfect_hit
-      guid: f0233dfe2bf93845a87b057b07ea6c00
+      guid: 1afc75ffaf66f447b95d6364431e716c
       id: 1260131267
       PathAndIcons:
       - ElementName: Events
@@ -207,7 +207,7 @@ MonoBehaviour:
         guid: 2088215e559d8e4bbfd27e337f5f0df6
       - ElementName: play_perfect_hit
         ObjectType: 3
-        guid: f0233dfe2bf93845a87b057b07ea6c00
+        guid: 1afc75ffaf66f447b95d6364431e716c
       Path: Events\Default Work Unit\play_perfect_hit
       maxAttenuation: 0
       maxDuration: 1.0442737

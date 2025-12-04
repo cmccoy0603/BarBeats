@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aa3c39603e964a48bcfe6310505fea4, type: 3}
-  m_Name: 3A936C13-DA88-48EE-A436-FDDDB8031945
+  m_Name: BA3D064E-120C-467A-99B1-D6EAF7E43B9C
   m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseEventReference
   objectName: play_late_hit
   id: 2058610800
-  guid: 3A936C13-DA88-48EE-A436-FDDDB8031945
+  guid: BA3D064E-120C-467A-99B1-D6EAF7E43B9C
   IsInUserDefinedSoundBank: 1
