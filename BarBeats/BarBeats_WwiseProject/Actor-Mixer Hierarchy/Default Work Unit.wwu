@@ -40,48 +40,6 @@
 						<ActiveSource Name="burst" ID="{9578575F-AF2B-4F6C-89BF-A8E1C36AF6C3}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Barbarian Beats perfect hit-2" ID="{A356C78E-CDF5-4D9B-A931-9236D4C147F9}" ShortID="113290943">
-					<PropertyList>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{F1E66906-A730-4C98-B0C1-217D421942FC}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="75"/>
-											<Property Name="Min" Type="Real64" Value="-75"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{52266E1B-28FD-451F-B254-630FDCF2FF41}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A83A366A-4E49-413D-B3E4-BF46B401B97F}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Barbarian Beats perfect hit-2" ID="{ED11AF9C-3E04-469B-A5F4-22BB743075C3}">
-							<PropertyList>
-								<Property Name="LoopBegin" Type="Real64" Value="0.497159090909091"/>
-								<Property Name="LoopEnd" Type="Real64" Value="1.40625"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>Barbarian Beats perfect hit-2.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="204739079"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Barbarian Beats perfect hit-2" ID="{ED11AF9C-3E04-469B-A5F4-22BB743075C3}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<Sound Name="Barbarian Beats sfx early hit" ID="{358EFD4C-6975-44C5-A84A-ED9086C39904}" ShortID="315808992">
 					<PropertyList>
 						<Property Name="Pitch" Type="int32">
@@ -117,48 +75,6 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Barbarian Beats sfx early hit" ID="{A29901AD-8594-49BF-8F47-340277813B7C}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Barbarian Beats sfx late hit" ID="{7567158D-9070-4297-AB1D-45F7A5B5B710}" ShortID="47413512">
-					<PropertyList>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{F547645D-0682-40BE-86E5-4F26ED6E176C}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="75"/>
-											<Property Name="Min" Type="Real64" Value="-75"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{52266E1B-28FD-451F-B254-630FDCF2FF41}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A83A366A-4E49-413D-B3E4-BF46B401B97F}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Barbarian Beats sfx late hit" ID="{23DD4EDB-0BF4-44F2-8269-C3CBCFBC1493}">
-							<PropertyList>
-								<Property Name="LoopBegin" Type="Real64" Value="0.693181818181818"/>
-								<Property Name="LoopEnd" Type="Real64" Value="1.07954545454545"/>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>Barbarian Beats sfx late hit.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="245571729"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Barbarian Beats sfx late hit" ID="{23DD4EDB-0BF4-44F2-8269-C3CBCFBC1493}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Barbarian Beats dash" ID="{31C1ED51-1BEC-4E3D-A27F-76137B18ECBB}" ShortID="472260704">
@@ -203,6 +119,80 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Barbarian Beats dash" ID="{8F643F8A-7674-48C0-B20A-CE633B5AE2CC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Barbarian Beats late hit -2" ID="{ACE35033-2031-4191-975F-59833F0C12EA}" ShortID="384177355">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{7B97C879-7963-4983-B7E7-4609A13B9F60}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="75"/>
+											<Property Name="Min" Type="Real64" Value="-75"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{52266E1B-28FD-451F-B254-630FDCF2FF41}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A83A366A-4E49-413D-B3E4-BF46B401B97F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Barbarian Beats late hit -2" ID="{E0C79039-A1B4-47E5-9B91-8881D77EC368}">
+							<Language>SFX</Language>
+							<AudioFile>Barbarian Beats late hit -2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="822773329"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Barbarian Beats late hit -2" ID="{E0C79039-A1B4-47E5-9B91-8881D77EC368}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Barbarian Beats perfect hit -3" ID="{8B5DF6BF-5AE2-46C9-A088-106E50A6DB75}" ShortID="107395642">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{448AA95D-09D6-4440-9A3D-A1E698346BC2}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="75"/>
+											<Property Name="Min" Type="Real64" Value="-75"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{52266E1B-28FD-451F-B254-630FDCF2FF41}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{A83A366A-4E49-413D-B3E4-BF46B401B97F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Barbarian Beats perfect hit -3" ID="{FCF46E99-F359-43F9-98A9-AA6038791FEE}">
+							<Language>SFX</Language>
+							<AudioFile>Barbarian Beats perfect hit -3.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="393278182"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Barbarian Beats perfect hit -3" ID="{FCF46E99-F359-43F9-98A9-AA6038791FEE}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

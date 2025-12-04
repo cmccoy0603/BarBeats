@@ -53,28 +53,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="play_perfect_hit" ID="{FE3D23F0-F92B-4538-A87B-057B07EA6C00}">
-					<ChildrenList>
-						<Action Name="" ID="{D6ECB5B6-EF6A-4BC3-B3E1-325E7F3E4099}" ShortID="232013010">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Barbarian Beats perfect hit-2" ID="{A356C78E-CDF5-4D9B-A931-9236D4C147F9}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="play_late_hit" ID="{3A936C13-DA88-48EE-A436-FDDDB8031945}">
-					<ChildrenList>
-						<Action Name="" ID="{B8855E02-1A57-4A58-B959-BD89809C0BA5}" ShortID="92735733">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Barbarian Beats sfx late hit" ID="{7567158D-9070-4297-AB1D-45F7A5B5B710}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="play_early_hit" ID="{E0CEF390-80D1-4376-AE2A-028317E2384D}">
 					<ChildrenList>
 						<Action Name="" ID="{8D56FC49-79B7-47C8-B50E-BF98EACD0941}" ShortID="129277595">
@@ -103,6 +81,28 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Barbarian Beats dash" ID="{31C1ED51-1BEC-4E3D-A27F-76137B18ECBB}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_late_hit" ID="{BA3D064E-120C-467A-99B1-D6EAF7E43B9C}">
+					<ChildrenList>
+						<Action Name="" ID="{3992BCEA-D9CA-48CB-8267-C1FD1CE3ADC4}" ShortID="745650637">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Barbarian Beats late hit -2" ID="{ACE35033-2031-4191-975F-59833F0C12EA}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_perfect_hit" ID="{FF75FC1A-66AF-47F4-B95D-6364431E716C}">
+					<ChildrenList>
+						<Action Name="" ID="{38C9E97C-48D9-45A1-B4E9-882641E3B43C}" ShortID="940884482">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Barbarian Beats perfect hit -3" ID="{8B5DF6BF-5AE2-46C9-A088-106E50A6DB75}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
