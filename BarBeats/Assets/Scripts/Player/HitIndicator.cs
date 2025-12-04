@@ -62,8 +62,6 @@ public class HitIndicator : MonoBehaviour
             Debug.LogError($"Ran out of indicators in the queue. Look at increasing the size from {indicatorPool.transform.childCount}");
             return;
         }
-        
-        Debug.Log("Pool count: " + pooledText.Count);
 
         TextMeshProUGUI text = pooledText.Dequeue();
         
@@ -87,7 +85,7 @@ public class HitIndicator : MonoBehaviour
 
     private IEnumerator ResetPlayedRecently()
     {
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.05f);
         _played_recently = false;
     }
 }
