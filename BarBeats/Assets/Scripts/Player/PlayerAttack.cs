@@ -7,11 +7,6 @@ public class PlayerAttack : MonoBehaviour
 {
     // All stuff we get from serialize field
     [SerializeField] private Animator animator;
-    public float attackRange = 1;
-    public float attackSpread = 1;
-    public float weaponDamage = 10;
-    public float meleeSpeed = .25f;
-    public float lifesteal = 0f;
 
     private Camera cam;
     private Health playerHealth;
@@ -150,7 +145,7 @@ public class PlayerAttack : MonoBehaviour
     public void OnHitEnemy()
     {
         GameManager.PlayerManager.HitScreenZoom();
-        playerHealth.currentHealth += lifesteal;
+        playerHealth.Heal(GameManager.PlayerManager.PlayerStats.LifeSteal);
     }
 
 }

@@ -12,6 +12,7 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField] private Transform weaponPivot;
     [SerializeField] private LayerMask hitLayer;
 
+    private bool _isPlayer = false;
     private float _currentDurability;
     private bool _canAttack = true;
     private bool _hasWeapon;
@@ -21,6 +22,10 @@ public class WeaponHolder : MonoBehaviour
     private void Start()
     {
         SetWeapon(weaponData, weaponData.durability);
+        if (gameObject.CompareTag("Player"))
+        {
+            _isPlayer = true;
+        }
     }
     
     // This weapon class is kind of a holder for different possible weapons
@@ -56,11 +61,15 @@ public class WeaponHolder : MonoBehaviour
         
         // Then check collisions and get the things to hit
         List<Health> thingsToHurt = CheckCollisions();
+
+        float damage = _isPlayer
+            ? ((weaponData.damage + GameManager.PlayerManager.PlayerStats.DamageAdd) * GameManager.PlayerManager.PlayerStats.DamageMult) * GameManager.MusicPlayer.GetRhythmSyncScore()
+            : weaponData.damage;
         
         // Hurt the things
         foreach (Health thing in thingsToHurt)
         {
-            thing.TakeDamage(weaponData.damage, gameObject);
+            thing.TakeDamage(damage, gameObject);
         }
         
         // Handle attack speed
@@ -128,7 +137,7 @@ public class WeaponHolder : MonoBehaviour
         // Update stuff to reflect that, maybe play a sound
         
         // if player, give the unarmed weapon data
-        if (gameObject.CompareTag("Player"))
+        if (_isPlayer)
         {
             SetWeapon(unarmedWeaponData, 1);
             _unarmedWeapon = true;
@@ -146,18 +155,31 @@ public class WeaponHolder : MonoBehaviour
         Quaternion rotation = quaternion.Euler(0, 0, angle);
         
         GameObject effect = Instantiate(weaponData.attackEffect, spawnPos, rotation);
-        effect.transform.localScale = new Vector3(x, y * 2, 1);
+        effect.transform.localScale = new Vector3(Mathf.Min(x, 2), y * 2, 1);
     }
 
     // Updates the current polygon collider points with the current weapon data
-    void SetCollider()
+    public void SetCollider()
     {
+        // Sanity check
+        if (!weaponData)
+        {
+            return;
+        }
+        
+        float heightAdditive = _isPlayer && !_unarmedWeapon
+            ? GameManager.PlayerManager.PlayerStats.AttackRangeAdd
+            : 0.0f;
+        float widthAdditive = _isPlayer && !_unarmedWeapon
+            ? GameManager.PlayerManager.PlayerStats.AttackSpreadAdd
+            : 0.0f;
+
         // Update the points in a clockwise order
         Vector2[] points = new Vector2[4];
-        points[0] = new Vector2(weaponData.startHeight, weaponData.startWidth);
-        points[1] = new Vector2(weaponData.endHeight, weaponData.endWidth);
-        points[2] = new Vector2(weaponData.endHeight, -weaponData.endWidth);
-        points[3] = new Vector2(weaponData.startHeight, -weaponData.startWidth);
+        points[0] = new Vector2(weaponData.startHeight, weaponData.startWidth + widthAdditive);
+        points[1] = new Vector2(weaponData.endHeight + heightAdditive, weaponData.endWidth + widthAdditive);
+        points[2] = new Vector2(weaponData.endHeight + heightAdditive, -weaponData.endWidth - widthAdditive);
+        points[3] = new Vector2(weaponData.startHeight, -weaponData.startWidth - widthAdditive);
         weaponCollider.pathCount = 1; 
 
         // Set the points for the first path (index 0)

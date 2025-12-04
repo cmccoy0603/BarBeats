@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 8737227043732577558}
   - component: {fileID: 5302094453751679200}
   - component: {fileID: 2207559896703881128}
+  - component: {fileID: 673520419597978336}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -769,11 +770,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
   animator: {fileID: 5302094453751679200}
-  attackRange: 1.5
-  attackSpread: 2
-  weaponDamage: 10
-  meleeSpeed: 0.25
-  lifesteal: 0
   weaponHolder: {fileID: 732789942050637652}
 --- !u!114 &4180377042682284568
 MonoBehaviour:
@@ -936,5 +932,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   playerMovement: {fileID: 2369685322163668460}
   playerAttack: {fileID: 8695864652765215849}
+  playerHealth: {fileID: 4180377042682284568}
   cameraManager: {fileID: 2635782902099231741}
   spriteRenderer: {fileID: 8957205303050718606}
+  PlayerStats: {fileID: 673520419597978336}
+  OnUpgrade:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 732789942050637652}
+        m_TargetAssemblyTypeName: WeaponHolder, Assembly-CSharp
+        m_MethodName: SetCollider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &673520419597978336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070669319350897480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312aea72a37b42cdb3861c7e81e53cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerStats
+  DamageMult: 1
+  DamageAdd: 0
+  AttackSpreadAdd: 0
+  AttackRangeAdd: 0
+  LifeSteal: 0

@@ -71,6 +71,16 @@ public class Health : MonoBehaviour
         return false;
     }
 
+    public void IncreaseMaxHealth(float amount)
+    {
+        maxHealth += amount;
+    }
+
+    public void Heal(float amount)
+    {
+        currentHealth = Mathf.Max(currentHealth + amount, maxHealth);
+    }
+
     private void Die(GameObject source = null)
     {
         // Fire any inspector-assigned listeners

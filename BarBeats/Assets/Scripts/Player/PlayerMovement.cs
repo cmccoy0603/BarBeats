@@ -35,18 +35,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update()
-{
-    float hx = (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed ? 1f : 0f)
-             - (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed ? 1f : 0f);
-    float hy = (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed ? 1f : 0f)
-             - (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed ? 1f : 0f);
-    cachedMoveInput = new Vector2(hx, hy);
-
-    if (!isDashing && Time.time >= nextDashTime && Keyboard.current.spaceKey.wasPressedThisFrame)
     {
-        StartCoroutine(Dash());
+        float hx = (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed ? 1f : 0f)
+                 - (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed ? 1f : 0f);
+        float hy = (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed ? 1f : 0f)
+                 - (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed ? 1f : 0f);
+        cachedMoveInput = new Vector2(hx, hy);
+
+        if (!isDashing && Time.time >= nextDashTime && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            StartCoroutine(Dash());
+        }
     }
-}
 
     private void FixedUpdate()
     {
