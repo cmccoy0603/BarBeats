@@ -14,7 +14,8 @@ public class RhythmSyncTesterUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float sync_score = GameManager.MusicPlayer.GetRhythmSyncScore();
-        syncImage.color = new Vector4(1 - sync_score, 1f, 1 - sync_score, 1f);
+        float sync_score = GameManager.MusicPlayer.GetTempoSyncScore();
+        float bar_sync_score = GameManager.MusicPlayer.GetBarSyncScore();
+        syncImage.color = new Vector4(1 - sync_score, 1 - sync_score / 2 + bar_sync_score / 2, 1 - bar_sync_score, 1);
     }
 }

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{15C3EC77-CEF3-2290-416F-27BB5FCA8A4B}",
+    "Hash": "{53A4AE42-293B-C565-56B2-D703AE182166}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -68,10 +68,36 @@
         "GUID": "{63E82D72-E06F-4E1D-B173-F35D1E8EAA2A}"
        }
       ]
+     },
+     {
+      "Id": "3112673657",
+      "Name": "Pause_Choice",
+      "ObjectPath": "\\States\\Default Work Unit\\Pause_Choice",
+      "GUID": "{5532C5C4-BA46-4966-A43A-6571E01150B8}",
+      "States": [
+       {
+        "Id": "319258907",
+        "Name": "Paused",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause_Choice\\Paused",
+        "GUID": "{87F81B33-A70A-4E5E-85B6-B16624C4B38B}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause_Choice\\None",
+        "GUID": "{506A7664-119A-49E7-A201-081D4F30159F}"
+       },
+       {
+        "Id": "1365518790",
+        "Name": "Unpaused",
+        "ObjectPath": "\\States\\Default Work Unit\\Pause_Choice\\Unpaused",
+        "GUID": "{79786D16-9181-4E5E-BCCC-B570FF7B8480}"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{DABA6CE0-3F06-4739-E303-5FFD9E71E758}"
+  "FileHash": "{734D90A5-27E1-AD5F-E359-130A53E3C1FA}"
  }
 }
