@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
 {
     // All stuff we get from serialize field
     [SerializeField] private Animator animator;
+    [SerializeField] private HitIndicator hitIndicator;
 
     private Camera cam;
     private Health playerHealth;
@@ -152,21 +153,21 @@ public class PlayerAttack : MonoBehaviour
     {
         GameManager.PlayerManager.HitScreenZoom();
         playerHealth.Heal(GameManager.PlayerManager.PlayerStats.LifeSteal);
-        PlayHitSound();
-        Debug.Log(SoundTriggered);
+        float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
+        PlayHitSound(rhythmScore);
+        hitIndicator.PlayIndicator(rhythmScore);
     }
     
-    private void PlayHitSound()
+    private void PlayHitSound(float rhythmScore)
     {
         if (SoundTriggered) return;
         SFX.Load();
-        float rhythumScore = GameManager.MusicPlayer.GetRhythmSyncScore();
-        if (rhythumScore >= .8f)
+        if (rhythmScore >= .8f)
         {
             play_perfect_hit.Post(gameObject);
 
         }
-        else if (rhythumScore < .8f)
+        else if (rhythmScore < .8f)
         {
 
             play_late_hit.Post(gameObject);

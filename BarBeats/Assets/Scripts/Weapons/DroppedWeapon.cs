@@ -24,7 +24,6 @@ public class DroppedWeapon : MonoBehaviour
 
     public void TryPickup(GameObject gameObject)
     {
-        Debug.Log("In trying to pickup");
         // If its not the player return
         if (!gameObject.CompareTag("Player")) return;
         
