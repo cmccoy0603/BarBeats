@@ -229,6 +229,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a821c8a6-e22a-48f0-a8fb-96e8783033c9
     m_ActionName: 'Player/PointerPosition[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 07d58a5a-4c92-460f-8d69-18d2dab7e345
+    m_ActionName: Player/StickPos
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 80678e52-6443-431e-94ff-a374b6461fa7
+    m_ActionName: 'Player/KeysPos[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -247,3 +255,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 5
+  _sr: {fileID: 0}

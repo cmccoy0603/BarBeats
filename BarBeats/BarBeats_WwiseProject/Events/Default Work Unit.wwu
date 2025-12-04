@@ -53,12 +53,56 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Play_12_boOoOong" ID="{EFCB2795-8482-4024-A139-C00ECAFD5F55}">
+				<Event Name="play_perfect_hit" ID="{FE3D23F0-F92B-4538-A87B-057B07EA6C00}">
 					<ChildrenList>
-						<Action Name="" ID="{E6D00F49-50F3-4B14-B05C-82FA4E879C9C}" ShortID="176584135">
+						<Action Name="" ID="{D6ECB5B6-EF6A-4BC3-B3E1-325E7F3E4099}" ShortID="232013010">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="12_boOoOong" ID="{0D1264AF-181D-45EE-A86F-B908AA03BF55}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+									<ObjectRef Name="Barbarian Beats perfect hit-2" ID="{A356C78E-CDF5-4D9B-A931-9236D4C147F9}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_late_hit" ID="{3A936C13-DA88-48EE-A436-FDDDB8031945}">
+					<ChildrenList>
+						<Action Name="" ID="{B8855E02-1A57-4A58-B959-BD89809C0BA5}" ShortID="92735733">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Barbarian Beats sfx late hit" ID="{7567158D-9070-4297-AB1D-45F7A5B5B710}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_early_hit" ID="{E0CEF390-80D1-4376-AE2A-028317E2384D}">
+					<ChildrenList>
+						<Action Name="" ID="{8D56FC49-79B7-47C8-B50E-BF98EACD0941}" ShortID="129277595">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Barbarian Beats sfx early hit" ID="{358EFD4C-6975-44C5-A84A-ED9086C39904}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_slime_death" ID="{3E78C8E4-9C9B-43B5-BEC8-F5F5D3D88008}">
+					<ChildrenList>
+						<Action Name="" ID="{D8D209B9-1A7D-4D5E-9261-7E480CE012EF}" ShortID="792766899">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="burst" ID="{DE4DE6E8-4A76-4CB4-9C45-6E0B2EE24713}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="play_dash" ID="{883F78DD-EEDC-4517-A80F-AE63B75D8D15}">
+					<ChildrenList>
+						<Action Name="" ID="{8083E7FD-D5DD-4F25-987C-018E498CA9BC}" ShortID="225578320">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Barbarian Beats dash" ID="{31C1ED51-1BEC-4E3D-A27F-76137B18ECBB}" WorkUnitID="{3E684598-5655-4C43-92C4-CAF8B7C06729}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

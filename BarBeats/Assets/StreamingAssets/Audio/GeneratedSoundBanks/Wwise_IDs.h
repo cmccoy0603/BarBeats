@@ -13,9 +13,13 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_12_BOOOOONG = 1011953342U;
         static const AkUniqueID PLAY_AMEN_BREAK_PLAYLIST = 564305318U;
         static const AkUniqueID PLAY_BGM_PLAYLIST = 904524261U;
+        static const AkUniqueID PLAY_DASH = 2211787386U;
+        static const AkUniqueID PLAY_EARLY_HIT = 447642349U;
+        static const AkUniqueID PLAY_LATE_HIT = 2058610800U;
+        static const AkUniqueID PLAY_PERFECT_HIT = 1260131267U;
+        static const AkUniqueID PLAY_SLIME_DEATH = 2068608165U;
         static const AkUniqueID STOP_AMEN_BREAK_PLAYLIST = 1969469092U;
         static const AkUniqueID STOP_BGM_PLAYLIST = 2287618571U;
     } // namespace EVENTS
@@ -52,6 +56,7 @@ namespace AK
     {
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID MAINBANK = 2880737896U;
+        static const AkUniqueID SFX = 393239870U;
     } // namespace BANKS
 
     namespace BUSSES
