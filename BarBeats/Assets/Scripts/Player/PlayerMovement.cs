@@ -167,7 +167,9 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashTime);
 
         //play dash audio
+        SFX.Load();
         play_dash.Post(gameObject);
+
 
         // Stop dash velocity and restore movement control
         _rigidbody.linearVelocity = Vector2.zero;
