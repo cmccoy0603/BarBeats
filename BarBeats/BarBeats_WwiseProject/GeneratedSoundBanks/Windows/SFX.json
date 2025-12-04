@@ -10,19 +10,11 @@
     "Type": "User",
     "GUID": "{AA6D4B15-E968-41F0-9105-F7216E7D9744}",
     "Language": "SFX",
-    "Hash": "{5C1789DC-568A-17B9-335A-2277F77107D2}",
+    "Hash": "{C16CD650-366C-959E-AC93-D9EE4A742795}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX",
     "ShortName": "SFX",
     "Path": "SFX.bnk",
     "Media": [
-     {
-      "Id": "204739079",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Barbarian Beats perfect hit-2.wav",
-      "CachePath": "6A/{6ACFAD93-7D3F-4F8F-A719-DC8270756F21}.wem"
-     },
      {
       "Id": "222560348",
       "Language": "SFX",
@@ -30,14 +22,6 @@
       "Location": "Memory",
       "ShortName": "burst.wav",
       "CachePath": "A4/{A443C729-1433-1B79-0915-53F2A9014FFA}.wem"
-     },
-     {
-      "Id": "245571729",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Barbarian Beats sfx late hit.wav",
-      "CachePath": "DA/{DACC66E7-0E6E-A25F-1DAF-2F4915DA0CAA}.wem"
      },
      {
       "Id": "350131934",
@@ -54,6 +38,22 @@
       "Location": "Memory",
       "ShortName": "Barbarian Beats dash.wav",
       "CachePath": "B5/{B538972B-FAF1-2517-7D0C-B4815145534D}.wem"
+     },
+     {
+      "Id": "393278182",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Barbarian Beats perfect hit -3.wav",
+      "CachePath": "66/{6646EA25-D746-9DD1-16BA-CEB5810D7BD3}.wem"
+     },
+     {
+      "Id": "822773329",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Barbarian Beats late hit -2.wav",
+      "CachePath": "83/{83D35B54-89E7-1BA1-13A3-0553E6CF8320}.wem"
      }
     ],
     "Events": [
@@ -89,13 +89,13 @@
       "Id": "2058610800",
       "Name": "play_late_hit",
       "ObjectPath": "\\Events\\Default Work Unit\\play_late_hit",
-      "GUID": "{3A936C13-DA88-48EE-A436-FDDDB8031945}",
+      "GUID": "{BA3D064E-120C-467A-99B1-D6EAF7E43B9C}",
       "DurationType": "OneShot",
-      "DurationMin": "1.9152067",
-      "DurationMax": "2.0885475",
+      "DurationMin": "0.1501331",
+      "DurationMax": "0.1637213",
       "MediaRefs": [
        {
-        "Id": "245571729"
+        "Id": "822773329"
        }
       ]
      },
@@ -103,13 +103,13 @@
       "Id": "1260131267",
       "Name": "play_perfect_hit",
       "ObjectPath": "\\Events\\Default Work Unit\\play_perfect_hit",
-      "GUID": "{FE3D23F0-F92B-4538-A87B-057B07EA6C00}",
+      "GUID": "{FF75FC1A-66AF-47F4-B95D-6364431E716C}",
       "DurationType": "OneShot",
-      "DurationMin": "2.3940084",
-      "DurationMax": "2.6106844",
+      "DurationMin": "0.95760334",
+      "DurationMax": "1.0442737",
       "MediaRefs": [
        {
-        "Id": "204739079"
+        "Id": "393278182"
        }
       ]
      },
@@ -130,6 +130,6 @@
     ]
    }
   ],
-  "FileHash": "{151950AC-E9BB-13D9-5EA4-75D9710C628E}"
+  "FileHash": "{46F06FAA-4FFC-5E12-C373-8C36A703AC89}"
  }
 }

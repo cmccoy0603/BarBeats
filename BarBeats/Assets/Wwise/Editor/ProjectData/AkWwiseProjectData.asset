@@ -193,8 +193,8 @@ MonoBehaviour:
         guid: 136c933a88daee48a436fdddb8031945
       Path: Events\Default Work Unit\play_late_hit
       maxAttenuation: 0
-      maxDuration: 2.0885475
-      minDuration: 1.9152067
+      maxDuration: 0.1637213
+      minDuration: 0.1501331
     - name: play_perfect_hit
       guid: f0233dfe2bf93845a87b057b07ea6c00
       id: 1260131267
@@ -210,8 +210,8 @@ MonoBehaviour:
         guid: f0233dfe2bf93845a87b057b07ea6c00
       Path: Events\Default Work Unit\play_perfect_hit
       maxAttenuation: 0
-      maxDuration: 2.6106844
-      minDuration: 2.3940084
+      maxDuration: 1.0442737
+      minDuration: 0.95760334
     - name: play_slime_death
       guid: e4c8783e9b9cb543bec8f5f5d3d88008
       id: 2068608165

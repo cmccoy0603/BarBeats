@@ -18,8 +18,8 @@
 						<ObjectRef Name="play_early_hit" ID="{E0CEF390-80D1-4376-AE2A-028317E2384D}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="play_slime_death" ID="{3E78C8E4-9C9B-43B5-BEC8-F5F5D3D88008}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="play_dash" ID="{883F78DD-EEDC-4517-A80F-AE63B75D8D15}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="play_perfect_hit" ID="{FE3D23F0-F92B-4538-A87B-057B07EA6C00}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
-						<ObjectRef Name="play_late_hit" ID="{3A936C13-DA88-48EE-A436-FDDDB8031945}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="play_late_hit" ID="{BA3D064E-120C-467A-99B1-D6EAF7E43B9C}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="play_perfect_hit" ID="{FF75FC1A-66AF-47F4-B95D-6364431E716C}" WorkUnitID="{5E218820-9D55-4B8E-BFD2-7E337F5F0DF6}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
