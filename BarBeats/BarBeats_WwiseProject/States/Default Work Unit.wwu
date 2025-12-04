@@ -10,6 +10,13 @@
 						<State Name="Western" ID="{63E82D72-E06F-4E1D-B173-F35D1E8EAA2A}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="Pause_Choice" ID="{5532C5C4-BA46-4966-A43A-6571E01150B8}">
+					<ChildrenList>
+						<State Name="None" ID="{506A7664-119A-49E7-A201-081D4F30159F}"/>
+						<State Name="Unpaused" ID="{79786D16-9181-4E5E-BCCC-B570FF7B8480}"/>
+						<State Name="Paused" ID="{87F81B33-A70A-4E5E-85B6-B16624C4B38B}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

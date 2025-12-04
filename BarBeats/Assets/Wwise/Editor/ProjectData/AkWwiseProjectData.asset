@@ -193,7 +193,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 2942ce4cb0d73b4181ead2223cb520e3
     GuidInternal: 
-    m_lastTime: -8584373735394783348
+    m_lastTime: -8584368572216911769
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -207,7 +207,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 8444e34b78df25439f2c53636da52eba
     GuidInternal: 
-    m_lastTime: -8584373735385700984
+    m_lastTime: -8584368572216886592
     List:
     - name: Medley_BGM_Choice
       guid: 94c04cc4933acb4396c4b89efc9b361c
@@ -275,6 +275,72 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: Pause_Choice
+      guid: c4c5325546ba6649a43a6571e01150b8
+      id: 3112673657
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 8444e34b78df25439f2c53636da52eba
+      - ElementName: Pause_Choice
+        ObjectType: 9
+        guid: c4c5325546ba6649a43a6571e01150b8
+      Path: States\Default Work Unit\Pause_Choice
+      values:
+      - name: None
+        guid: 64766a509a11e749a201081d4f30159f
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 8444e34b78df25439f2c53636da52eba
+        - ElementName: Pause_Choice
+          ObjectType: 9
+          guid: c4c5325546ba6649a43a6571e01150b8
+        - ElementName: None
+          ObjectType: 8
+          guid: 64766a509a11e749a201081d4f30159f
+      - name: Paused
+        guid: 331bf8870aa75e4e85b6b16624c4b38b
+        id: 319258907
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 8444e34b78df25439f2c53636da52eba
+        - ElementName: Pause_Choice
+          ObjectType: 9
+          guid: c4c5325546ba6649a43a6571e01150b8
+        - ElementName: Paused
+          ObjectType: 8
+          guid: 331bf8870aa75e4e85b6b16624c4b38b
+      - name: Unpaused
+        guid: 166d787981915e4ebcccb570ff7b8480
+        id: 1365518790
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 8444e34b78df25439f2c53636da52eba
+        - ElementName: Pause_Choice
+          ObjectType: 9
+          guid: c4c5325546ba6649a43a6571e01150b8
+        - ElementName: Unpaused
+          ObjectType: 8
+          guid: 166d787981915e4ebcccb570ff7b8480
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -304,7 +370,7 @@ MonoBehaviour:
     m_lastTime: -8584373735385675849
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0500000006000000070000000c0000000d0000000e000000
+  ExpandedWaapiItemIds: 0500000006000000070000000c0000000d0000000e0000000f000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

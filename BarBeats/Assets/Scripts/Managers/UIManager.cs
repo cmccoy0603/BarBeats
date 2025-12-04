@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     private int upgrade1;
     private int upgrade2;
     private int upgrade3;
-    private int[] UpgradeOptions = {1, 2, 3, 4, 5};
+    private int[] UpgradeOptions = { 1, 2, 3, 4, 5 };
     private Health playerHealth;
     private PlayerAttack playerAttack;
 
@@ -69,6 +69,7 @@ public class UIManager : MonoBehaviour
         {
             PauseGame();
             pauseMenu.SetActive(true);
+            AkEventList.instance.paused_state_paused.SetValue();
         }
         else if (gameState == GameState.PAUSED)
         {
@@ -79,6 +80,7 @@ public class UIManager : MonoBehaviour
             }
             UnpauseGame();
             pauseMenu.SetActive(false);
+            AkEventList.instance.paused_choice_unpaused.SetValue();
         }
     }
 
@@ -152,7 +154,7 @@ public class UIManager : MonoBehaviour
 
     public void UpgradeClicked(int upgradeChoice)
     {
-        switch(upgradeChoice)
+        switch (upgradeChoice)
         {
             case 1:
                 ApplyUpgrades(upgrade1);
@@ -165,14 +167,14 @@ public class UIManager : MonoBehaviour
                 break;
             default:
                 break;
-        }    
+        }
         UnpauseGame();
         upgradeMenu.SetActive(false);
     }
 
     public void ApplyUpgrades(int chosenUpgrade)
     {
-        switch(chosenUpgrade)
+        switch (chosenUpgrade)
         {
             case 1: // Upgrade player health
                 playerHealth.currentHealth += 25;
