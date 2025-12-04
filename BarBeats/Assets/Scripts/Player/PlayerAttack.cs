@@ -159,9 +159,8 @@ public class PlayerAttack : MonoBehaviour
     private void PlayHitSound()
     {
         if (SoundTriggered) return;
-        
+        SFX.Load();
         float rhythumScore = GameManager.MusicPlayer.GetRhythmSyncScore();
-        Debug.Log(rhythumScore);
         if (rhythumScore >= .8f)
         {
             play_perfect_hit.Post(gameObject);
