@@ -36,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
         _mousePositionAction = InputSystem.actions.FindAction("MousePos");
         _joystickPositionAction = InputSystem.actions.FindAction("StickPos");
         _keysPositionAction = InputSystem.actions.FindAction("KeysPos");
+        SFX.Load();
     }
 
     private void Update()
@@ -153,13 +154,11 @@ public class PlayerAttack : MonoBehaviour
         GameManager.PlayerManager.HitScreenZoom();
         playerHealth.Heal(GameManager.PlayerManager.PlayerStats.LifeSteal);
         PlayHitSound();
-        Debug.Log(SoundTriggered);
     }
     
     private void PlayHitSound()
-    {
+    { 
         if (SoundTriggered) return;
-        SFX.Load();
         float rhythumScore = GameManager.MusicPlayer.GetRhythmSyncScore();
         if (rhythumScore >= .8f)
         {
