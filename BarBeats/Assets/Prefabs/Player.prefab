@@ -1836,7 +1836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312aea72a37b42cdb3861c7e81e53cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerStats
-  DamageMult: 1
+  DamageMult: 10
   DamageAdd: 0
   AttackSpreadAdd: 0
   AttackRangeAdd: 0

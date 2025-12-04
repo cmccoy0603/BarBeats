@@ -8,12 +8,15 @@ public class GameManager : MonoBehaviour
     public MusicPlayer musicPlayer;
     public UIManager uiManager;
     public PlayerManager playerManager;
+    public TutorialManager tutorialManager;
 
     // The static managers we can access anywhere
     public static MusicPlayer MusicPlayer;
     public static UIManager UiManager;
     public static PlayerManager PlayerManager;
     public static GameState GameState;
+    public static TutorialManager TutorialManager;
+    public static bool IsTutorial = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
         MusicPlayer = musicPlayer;
         UiManager = uiManager;
         PlayerManager = playerManager;
+        TutorialManager = tutorialManager;
         GameState = GameState.PLAYING;
         StartCoroutine(EnsureUnpausedWwiseState());
     }

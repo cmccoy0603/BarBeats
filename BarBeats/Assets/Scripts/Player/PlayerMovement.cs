@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GameManager.PlayerManager.IsGameOver()) return;
+        if (GameManager.PlayerManager.IsGameOver() || GameManager.IsTutorial) return;
 
         if (isDashing)
         {
@@ -152,6 +152,8 @@ public class PlayerMovement : MonoBehaviour
     
     IEnumerator Dash()
     {
+        if (GameManager.IsTutorial) yield return null;
+        
         isDashing = true;
         health.SetInvulnerable();
         nextDashTime = Time.time + dashCooldown;

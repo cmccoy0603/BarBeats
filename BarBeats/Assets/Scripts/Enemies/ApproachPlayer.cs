@@ -26,7 +26,7 @@ public class EnemyChaseRigidbody2D : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (target == null)
+        if (target == null || GameManager.IsTutorial)
         {
             // print("test");
             return;

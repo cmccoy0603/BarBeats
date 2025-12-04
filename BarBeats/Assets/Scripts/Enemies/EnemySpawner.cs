@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Enums;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -33,8 +34,11 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator spawnEmemies(float delay, GameObject enemy)
     {
         yield return new WaitForSeconds(delay);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(UnityEngine.Random.Range(-5f, 5), Random.Range(-6f, 6), 0),
-            Quaternion.identity);
+        if (GameManager.GameState == GameState.PLAYING && !GameManager.IsTutorial)
+        {
+            GameObject newEnemy = Instantiate(enemy, new Vector3(UnityEngine.Random.Range(-5f, 5), Random.Range(-6f, 6), 0),
+                Quaternion.identity);
+        }
         StartCoroutine(spawnEmemies(delay, enemy));
     }
 }

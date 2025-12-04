@@ -79,6 +79,16 @@ public class PlayerAttack : MonoBehaviour
         {
             return;
         }
+
+        // We only let them attack when the score is good enough
+        if (GameManager.IsTutorial)
+        {
+            float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
+            if (rhythmScore < .8)
+            {
+                return;
+            }
+        }
         
         // Actually try to attack
         if (!weaponHolder.Attack(angle)) return;
@@ -147,6 +157,13 @@ public class PlayerAttack : MonoBehaviour
         else
         {
             GameManager.PlayerManager.AddScreenShake(.05f, .25f);
+        }
+        
+        // TODO: Make this less terrible
+        if (GameManager.IsTutorial)
+        {
+            GameManager.TutorialManager.EndTutorial();
+            GameManager.PlayerManager.AddScreenShake(.5f, .5f);
         }
     }
 
