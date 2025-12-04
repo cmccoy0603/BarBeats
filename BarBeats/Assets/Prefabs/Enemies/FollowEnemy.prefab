@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1587907688261239430}
   - component: {fileID: 2497592141550791427}
   - component: {fileID: 2775068702460614566}
+  - component: {fileID: 8423073413024592841}
   m_Layer: 7
   m_Name: FollowEnemy
   m_TagString: Enemy
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6218fc9b2f662684c8d9e1f222b34aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+  currentHealth: 100.2
   OnDeath:
     m_PersistentCalls:
       m_Calls:
@@ -216,6 +218,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2775068702460614566}
         m_TargetAssemblyTypeName: DropWeapon, Assembly-CSharp
         m_MethodName: Drop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8423073413024592841}
+        m_TargetAssemblyTypeName: SfxFeedback, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -413,3 +427,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DropWeapon
   data: {fileID: 11400000, guid: c12905d48843bf544aeb9be635dfc4a9, type: 2}
   dropPrefab: {fileID: 6620211918536186484, guid: 04c7f4b06e0c3c947b11f89ee4def5d3, type: 3}
+--- !u!114 &8423073413024592841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560046693183542054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dff8a2e34de544c87eef27a357977a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SfxFeedback
+  SFX:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: aa82dd556a0236c4d8ac25a342311fb6, type: 2}
+  SfxEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: fc1fe6eda428bbe49a82330801284f6d, type: 2}

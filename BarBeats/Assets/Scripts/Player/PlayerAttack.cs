@@ -37,6 +37,7 @@ public class PlayerAttack : MonoBehaviour
         _mousePositionAction = InputSystem.actions.FindAction("MousePos");
         _joystickPositionAction = InputSystem.actions.FindAction("StickPos");
         _keysPositionAction = InputSystem.actions.FindAction("KeysPos");
+        SFX.Load();
     }
 
     private void Update()
@@ -159,9 +160,10 @@ public class PlayerAttack : MonoBehaviour
     }
     
     private void PlayHitSound(float rhythmScore)
-    {
+    { 
         if (SoundTriggered) return;
         SFX.Load();
+
         if (rhythmScore >= .8f)
         {
             play_perfect_hit.Post(gameObject);
@@ -179,7 +181,7 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator ResetSound()
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(.01f);
         SoundTriggered = false;
     }
 }

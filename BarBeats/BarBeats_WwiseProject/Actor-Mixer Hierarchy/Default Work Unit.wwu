@@ -66,6 +66,11 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="Barbarian Beats perfect hit-2" ID="{ED11AF9C-3E04-469B-A5F4-22BB743075C3}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.497159090909091"/>
+								<Property Name="LoopEnd" Type="Real64" Value="1.40625"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Barbarian Beats perfect hit-2.wav</AudioFile>
 							<MediaIDList>
@@ -140,6 +145,11 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="Barbarian Beats sfx late hit" ID="{23DD4EDB-0BF4-44F2-8269-C3CBCFBC1493}">
+							<PropertyList>
+								<Property Name="LoopBegin" Type="Real64" Value="0.693181818181818"/>
+								<Property Name="LoopEnd" Type="Real64" Value="1.07954545454545"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Barbarian Beats sfx late hit.wav</AudioFile>
 							<MediaIDList>
