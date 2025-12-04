@@ -77,4 +77,9 @@ public class PlayerManager : MonoBehaviour
         GameManager.UiManager.ShowGameOver();
         spriteRenderer.enabled = false;
     }
+
+    public float GetWeaponDurabilityRatio()
+    {
+        return playerAttack.weaponHolder.GetDurabilityRatio();
+    }
 }

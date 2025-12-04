@@ -6,7 +6,10 @@ public class MainMenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        GameManager.MusicPlayer.Stop();
+        if (GameManager.MusicPlayer)
+        {
+            GameManager.MusicPlayer.Stop();
+        }
         SceneManager.LoadSceneAsync("SampleScene");
     }
 

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 714974278583179615}
   - component: {fileID: 8178770126369713711}
   - component: {fileID: 2018636751956541549}
-  - component: {fileID: 6945209875519946040}
   m_Layer: 7
   m_Name: SplatEffectLarge
   m_TagString: Untagged
@@ -4897,23 +4896,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &6945209875519946040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42198813336044558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d593c7cf154b446b830fb32146aa99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  splatPrefab: {fileID: 2832410670160141455, guid: faff16d910af09043845aae5e8d5223b, type: 3}
-  splatHolder: {fileID: 0}
-  collisionSound:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  soundCapResetSpeed: 0.55
-  maxSounds: 3

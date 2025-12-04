@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Enums;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
@@ -13,8 +14,10 @@ public class PlayerAttack : MonoBehaviour
     private Camera cam;
     private Health playerHealth;
 
+    public UnityEvent OnAttack;
+
     // The holder the contains the weapon
-    [SerializeField] private WeaponHolder weaponHolder;
+    [SerializeField] public WeaponHolder weaponHolder;
 
     // All of our silly input stuff
     private InputAction _mousePositionAction;
@@ -86,6 +89,7 @@ public class PlayerAttack : MonoBehaviour
             float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
             if (rhythmScore < .8)
             {
+                hitIndicator.PlayIndicator(rhythmScore);
                 return;
             }
         }
@@ -96,6 +100,7 @@ public class PlayerAttack : MonoBehaviour
         animator.SetTrigger("Attack");
         // Player follow through
         GameManager.PlayerManager.MovePlayer(aimVector);
+        OnAttack?.Invoke();
     }
 
     void Throw(InputDevice device)

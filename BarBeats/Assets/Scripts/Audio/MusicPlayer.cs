@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using Unity.Mathematics;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 // Component that plays a BGM track on its gameObject.

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WeaponHolder : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class WeaponHolder : MonoBehaviour
     private bool _hasWeapon;
     // The player still can use her fists to punch stuff, so we kind of make a clause for using the unarmed weapon data
     private bool _unarmedWeapon = false;
+
+    public UnityEvent<String> OnWeaponChange;
 
     private void Start()
     {
@@ -38,6 +41,8 @@ public class WeaponHolder : MonoBehaviour
         
         // Use the weapon data for initial stuff
         SetCollider();
+        
+        OnWeaponChange?.Invoke(weaponData.weaponName);
 
         if (data != unarmedWeaponData)
         {
@@ -254,5 +259,10 @@ public class WeaponHolder : MonoBehaviour
     public bool CanAttack()
     {
         return _canAttack && _hasWeapon;
+    }
+
+    public float GetDurabilityRatio()
+    {
+        return _currentDurability / weaponData.durability;
     }
 }
