@@ -1,33 +1,18 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Enums;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows.WebCam;
 
 public class PlayerAttack : MonoBehaviour
 {
     // All stuff we get from serialize field
     [SerializeField] private Animator animator;
-    public LayerMask enemyLayer;
-    public float attackRange = 1;
-    public float attackSpread = 1;
-    public float weaponDamage = 10;
-    public float meleeSpeed = .25f;
-    public float lifesteal = 0f;
-    public GameObject weapon;   
 
     private Camera cam;
     private Health playerHealth;
 
-    // We'll probably want a weapon for the player to have. That way we can switch it out. For now, nah
-    private Transform _weaponTransform;
-    private Polygon _weaponRender;
-    private PolygonCollider2D _polygonCollider2D;
+    // The holder the contains the weapon
     [SerializeField] private WeaponHolder weaponHolder;
-
-    private Vector2 _widthHeight = Vector2.zero;
 
     // All of our silly input stuff
     private InputAction _mousePositionAction;
@@ -45,22 +30,6 @@ public class PlayerAttack : MonoBehaviour
         _mousePositionAction = InputSystem.actions.FindAction("MousePos");
         _joystickPositionAction = InputSystem.actions.FindAction("StickPos");
         _keysPositionAction = InputSystem.actions.FindAction("KeysPos");
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        _widthHeight = spriteRenderer.size / 2;
-
-        _weaponTransform = weapon.transform;
-
-        // Modify the actual hit box
-        _polygonCollider2D = weapon.GetComponentInChildren<PolygonCollider2D>();
-        Vector2[] polygonPoints = _polygonCollider2D.points;
-        polygonPoints[1] = new Vector2(attackRange, attackSpread);
-        polygonPoints[2] = new Vector2(attackRange, -attackSpread);
-        _polygonCollider2D.points = polygonPoints;
-
-        _weaponRender = weapon.GetComponentInChildren<Polygon>();
-        _weaponRender.DrawPolygon(4, polygonPoints);
-
-        weapon.SetActive(false);
     }
 
     private void Update()
@@ -98,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
         Vector2 aimVector = GetAttackDirection(device).normalized;
         float angle = Mathf.Atan2(aimVector.y, aimVector.x);
         
-        if (weapon.activeSelf || GameManager.GameState != GameState.PLAYING)
+        if (GameManager.GameState != GameState.PLAYING)
         {
             return;
         }
@@ -176,7 +145,7 @@ public class PlayerAttack : MonoBehaviour
     public void OnHitEnemy()
     {
         GameManager.PlayerManager.HitScreenZoom();
-        playerHealth.currentHealth += lifesteal;
+        playerHealth.Heal(GameManager.PlayerManager.PlayerStats.LifeSteal);
     }
 
 }

@@ -1,6 +1,7 @@
 using Enums;
 using System;
 using System.Linq;
+using Player;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -23,14 +24,6 @@ public class UIManager : MonoBehaviour
     private int upgrade2;
     private int upgrade3;
     private int[] UpgradeOptions = { 1, 2, 3, 4, 5 };
-    private Health playerHealth;
-    private PlayerAttack playerAttack;
-
-    public void Awake()
-    {
-        playerHealth = player.GetComponent<Health>();
-        playerAttack = player.GetComponent<PlayerAttack>();
-    }
 
     public void UpdateScore(float amount)
     {
@@ -150,6 +143,7 @@ public class UIManager : MonoBehaviour
                 print("Unknown upgrade");
                 break;
         }
+        GameManager.PlayerManager.ApplyUpgrade();
     }
 
     public void UpgradeClicked(int upgradeChoice)
@@ -174,22 +168,23 @@ public class UIManager : MonoBehaviour
 
     public void ApplyUpgrades(int chosenUpgrade)
     {
+        PlayerStats stats = GameManager.PlayerManager.PlayerStats;
         switch (chosenUpgrade)
         {
             case 1: // Upgrade player health
-                playerHealth.currentHealth += 25;
+                GameManager.PlayerManager.IncreaseMaxHealth(25);
                 break;
             case 2: // Upgrade player damage
-                playerAttack.weaponDamage += 2;
+                stats.DamageAdd += 2;
                 break;
             case 3: // Upgrade attack spread/width
-                playerAttack.attackSpread += .4f;
+                stats.AttackSpreadAdd += .2f;
                 break;
             case 4: // Upgrade lifesteal
-                playerAttack.lifesteal += 1;
+                stats.LifeSteal += 1;
                 break;
             case 5: // Upgrade attack range
-                playerAttack.attackRange += .3f;
+                stats.AttackRangeAdd += .3f;
                 break;
             default:
                 print("Unknown upgrade");

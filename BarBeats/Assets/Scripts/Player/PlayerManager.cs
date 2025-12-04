@@ -1,5 +1,8 @@
+using System;
 using Enums;
+using Player;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -7,11 +10,25 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private PlayerAttack playerAttack;
 
+    [SerializeField] private Health playerHealth;
+
     [SerializeField] private CameraManager cameraManager;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    public PlayerStats PlayerStats;
+    
+    public UnityEvent OnUpgrade;
+
     private GameState _gameState = GameState.PLAYING;
+
+    private void Awake()
+    {
+        if (!GameManager.PlayerManager)
+        {
+            GameManager.PlayerManager = this;
+        }
+    }
 
     public void AddScreenShake(float magnitude, float duration)
     {
@@ -31,6 +48,16 @@ public class PlayerManager : MonoBehaviour
     public void MovePlayer(Vector2 direction)
     {
         playerMovement.FollowThrough(direction);
+    }
+
+    public void IncreaseMaxHealth(float amount)
+    {
+        playerHealth.IncreaseMaxHealth(amount);
+    }
+
+    public void ApplyUpgrade()
+    {
+        OnUpgrade?.Invoke();
     }
 
     public GameState GetGameState()
