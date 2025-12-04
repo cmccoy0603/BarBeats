@@ -69,7 +69,7 @@ public class WeaponHolder : MonoBehaviour
         // Hurt the things
         foreach (Health thing in thingsToHurt)
         {
-            thing.TakeDamage(damage, gameObject);
+            thing.TakeDamage(damage, transform.parent.gameObject);
         }
         
         // Handle attack speed

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Enums;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -22,6 +23,11 @@ public class PlayerAttack : MonoBehaviour
     private bool _attackedThisFrame = false;
     private bool _threwThisFrame = false;
 
+    //SFX audio stuff
+    public AK.Wwise.Bank SFX;
+    public AK.Wwise.Event play_perfect_hit;
+    public AK.Wwise.Event play_late_hit;
+    private bool SoundTriggered = false;
 
     private void Awake()
     {
@@ -146,6 +152,34 @@ public class PlayerAttack : MonoBehaviour
     {
         GameManager.PlayerManager.HitScreenZoom();
         playerHealth.Heal(GameManager.PlayerManager.PlayerStats.LifeSteal);
+        PlayHitSound();
+        Debug.Log(SoundTriggered);
+    }
+    
+    private void PlayHitSound()
+    {
+        if (SoundTriggered) return;
+        
+        float rhythumScore = GameManager.MusicPlayer.GetRhythmSyncScore();
+        Debug.Log(rhythumScore);
+        if (rhythumScore >= .8f)
+        {
+            play_perfect_hit.Post(gameObject);
+
+        }
+        else if (rhythumScore < .8f)
+        {
+
+            play_late_hit.Post(gameObject);
+
+        }
+        SoundTriggered = true;
+        StartCoroutine(ResetSound());
     }
 
+    private IEnumerator ResetSound()
+    {
+        yield return new WaitForEndOfFrame();
+        SoundTriggered = false;
+    }
 }
