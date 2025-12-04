@@ -186898,9 +186898,21 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2369685322163668460, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      propertyPath: SFX.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: aa82dd556a0236c4d8ac25a342311fb6, type: 2}
+    - target: {fileID: 2369685322163668460, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       propertyPath: followThroughDirectionFactor
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2369685322163668460, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      propertyPath: play_dash.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 03c736d220843d24d834e192c04e8a42, type: 2}
+    - target: {fileID: 2369685322163668460, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      propertyPath: play_perfect_hit.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 03c736d220843d24d834e192c04e8a42, type: 2}
     - target: {fileID: 4341262379558932502, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 21

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{AA6D4B15-E968-41F0-9105-F7216E7D9744}",
     "Language": "SFX",
-    "Hash": "{74B4994F-D640-5682-55AB-02EFBBBBAD0D}",
+    "Hash": "{5C1789DC-568A-17B9-335A-2277F77107D2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX",
     "ShortName": "SFX",
     "Path": "SFX.bnk",
@@ -46,9 +46,31 @@
       "Location": "Memory",
       "ShortName": "Barbarian Beats sfx early hit.wav",
       "CachePath": "03/{0398FEF1-8C13-736C-A238-78D575B7A21A}.wem"
+     },
+     {
+      "Id": "366402696",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Barbarian Beats dash.wav",
+      "CachePath": "B5/{B538972B-FAF1-2517-7D0C-B4815145534D}.wem"
      }
     ],
     "Events": [
+     {
+      "Id": "2211787386",
+      "Name": "play_dash",
+      "ObjectPath": "\\Events\\Default Work Unit\\play_dash",
+      "GUID": "{883F78DD-EEDC-4517-A80F-AE63B75D8D15}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.375",
+      "DurationMax": "0.375",
+      "MediaRefs": [
+       {
+        "Id": "366402696"
+       }
+      ]
+     },
      {
       "Id": "447642349",
       "Name": "play_early_hit",
@@ -108,6 +130,6 @@
     ]
    }
   ],
-  "FileHash": "{C50B9554-C50D-4526-5D8B-8B2D9163D90F}"
+  "FileHash": "{151950AC-E9BB-13D9-5EA4-75D9710C628E}"
  }
 }

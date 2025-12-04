@@ -26,7 +26,8 @@ public class PlayerMovement : MonoBehaviour
     bool isDashing = false;
     float nextDashTime = 0f;
     Vector2 cachedMoveInput;
-
+    public AK.Wwise.Bank SFX;
+    public AK.Wwise.Event play_dash;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -164,6 +165,9 @@ public class PlayerMovement : MonoBehaviour
         _movementControl = false;
 
         yield return new WaitForSeconds(dashTime);
+
+        //play dash audio
+        play_dash.Post(gameObject);
 
         // Stop dash velocity and restore movement control
         _rigidbody.linearVelocity = Vector2.zero;

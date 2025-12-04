@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID PLAY_AMEN_BREAK_PLAYLIST = 564305318U;
         static const AkUniqueID PLAY_BGM_PLAYLIST = 904524261U;
+        static const AkUniqueID PLAY_DASH = 2211787386U;
         static const AkUniqueID PLAY_EARLY_HIT = 447642349U;
         static const AkUniqueID PLAY_LATE_HIT = 2058610800U;
         static const AkUniqueID PLAY_PERFECT_HIT = 1260131267U;
