@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2aa3c39603e964a48bcfe6310505fea4, type: 3}
-  m_Name: FE3D23F0-F92B-4538-A87B-057B07EA6C00
+  m_Name: FF75FC1A-66AF-47F4-B95D-6364431E716C
   m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseEventReference
   objectName: play_perfect_hit
   id: 1260131267
-  guid: FE3D23F0-F92B-4538-A87B-057B07EA6C00
+  guid: FF75FC1A-66AF-47F4-B95D-6364431E716C
   IsInUserDefinedSoundBank: 1

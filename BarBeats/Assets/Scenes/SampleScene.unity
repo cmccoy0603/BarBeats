@@ -7712,6 +7712,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8695864652765215849, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      propertyPath: play_late_hit.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 55661ae01a893344c8b9f24c2a8400aa, type: 2}
+    - target: {fileID: 8695864652765215849, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
+      propertyPath: play_perfect_hit.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: a4368cc63a0b88642a44581b55a17675, type: 2}
     - target: {fileID: 9070669319350897480, guid: b258f4e15b94984478ef1dd85448c3c6, type: 3}
       propertyPath: m_Name
       value: Player
