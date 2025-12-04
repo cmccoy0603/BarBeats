@@ -61,9 +61,14 @@ public class WeaponHolder : MonoBehaviour
         
         // Then check collisions and get the things to hit
         List<Health> thingsToHurt = CheckCollisions();
+        
+        float rhythmScore = GameManager.MusicPlayer.GetRhythmSyncScore();
+        float rhythmScoreMult = rhythmScore >= .8
+            ? 1.2f + rhythmScore
+            : rhythmScore + .1f;
 
         float damage = _isPlayer
-            ? ((weaponData.damage + GameManager.PlayerManager.PlayerStats.DamageAdd) * GameManager.PlayerManager.PlayerStats.DamageMult) * GameManager.MusicPlayer.GetRhythmSyncScore()
+            ? ((weaponData.damage + GameManager.PlayerManager.PlayerStats.DamageAdd) * GameManager.PlayerManager.PlayerStats.DamageMult) * rhythmScoreMult
             : weaponData.damage;
         
         // Hurt the things
