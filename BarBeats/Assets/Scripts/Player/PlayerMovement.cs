@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
                  - (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed ? 1f : 0f);
         cachedMoveInput = new Vector2(hx, hy);
 
-        if (!isDashing && Time.time >= nextDashTime && Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (!isDashing && Time.time >= nextDashTime && Keyboard.current.spaceKey.wasPressedThisFrame && !GameManager.IsTutorial)
         {
             StartCoroutine(Dash());
         }

@@ -5,14 +5,15 @@ using Player;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
     [SerializeField] private TextMeshProUGUI score;
     [SerializeField] private GameObject gameOver;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private Image playerHealth;
 
     [SerializeField] private GameObject upgradeMenu;
     [SerializeField] private TextMeshProUGUI upgradeText1;
@@ -46,7 +47,13 @@ public class UIManager : MonoBehaviour
             UpgradePlayer();
             upgradeGoal *= 2f;
         }
+    }
 
+    public void UpdateHealth()
+    {
+        Health health = GameManager.PlayerManager.playerHealth;
+        float healthRatio = health.currentHealth / health.GetMaxHealth();
+        playerHealth.transform.localScale = new Vector3(healthRatio, 1, 1);
     }
 
     public void ShowGameOver()

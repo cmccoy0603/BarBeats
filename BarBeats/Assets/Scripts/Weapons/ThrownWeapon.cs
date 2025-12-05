@@ -37,7 +37,8 @@ public class ThrownWeapon : MonoBehaviour
             return;
         }
 
-        health.TakeDamage(_weaponData.damage, gameObject);
+        // Add a little thrown weapon bonus
+        health.TakeDamage(_weaponData.damage * 1.5f, gameObject);
         _lastDamageTime = Time.time;
 
         if (!_stopAfterHit) return;

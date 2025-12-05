@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
 
     public UnityEvent OnDeath;
     public UnityEvent<GameObject> OnHit;
+    public UnityEvent OnHealthChange;
 
     [SerializeField]
     private float maxHealth;
@@ -46,6 +47,7 @@ public class Health : MonoBehaviour
 
         // Negative damage will heal
         currentHealth -= amount;
+        OnHealthChange?.Invoke();
         if (currentHealth <= 0f)
         {
             Die();
@@ -74,11 +76,14 @@ public class Health : MonoBehaviour
     public void IncreaseMaxHealth(float amount)
     {
         maxHealth += amount;
+        currentHealth += amount;
+        OnHealthChange?.Invoke();
     }
 
     public void Heal(float amount)
     {
-        currentHealth = Mathf.Max(currentHealth + amount, maxHealth);
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        OnHealthChange?.Invoke();
     }
 
     private void Die(GameObject source = null)
@@ -104,5 +109,10 @@ public class Health : MonoBehaviour
     public void SetVulnerable()
     {
         invulnerable = false;
+    }
+
+    public float GetMaxHealth()
+    {
+        return maxHealth;
     }
 }

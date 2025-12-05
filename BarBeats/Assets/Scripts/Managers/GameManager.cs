@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         PlayerManager = playerManager;
         TutorialManager = tutorialManager;
         GameState = GameState.PLAYING;
+        IsTutorial = true;
         StartCoroutine(EnsureUnpausedWwiseState());
     }
 

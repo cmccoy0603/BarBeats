@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235cb707eab55d84b8e8ed9ef502ef32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KnockbackFeedback
-  strength: 16
+  strength: 4
   delay: 0.15
   OnBegin:
     m_PersistentCalls:

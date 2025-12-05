@@ -17,7 +17,7 @@ MonoBehaviour:
   fireRate: 0.2
   durability: 10
   type: 0
-  throwSpeed: 225
+  throwSpeed: 250
   oneShot: 1
   canThrow: 1
   thrownDurabilityDec: 2

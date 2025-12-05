@@ -101,7 +101,7 @@ public class WeaponHolder : MonoBehaviour
         
         // I  guess instantiate something and hurl it
         Quaternion thrownRot = Quaternion.Euler(0, 0, angle);
-        Vector2 spawnPos = weaponPivot.position + (new Vector3(MathF.Cos(angle), Mathf.Sin(angle), 0) * 1.75f);
+        Vector2 spawnPos = weaponPivot.position + (new Vector3(MathF.Cos(angle), Mathf.Sin(angle), 0).normalized * weaponData.startHeight);
         GameObject thrownWeapon = Instantiate(weaponData.thrownPrefab, spawnPos, thrownRot);
         
         // Find our nice component
@@ -118,7 +118,7 @@ public class WeaponHolder : MonoBehaviour
         // Hurl
         Rigidbody2D weaponsRigidbody = thrownWeapon.GetComponent<Rigidbody2D>();
         if (!weaponsRigidbody) return;
-        Vector2 force = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * weaponData.throwSpeed;
+        Vector2 force = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)).normalized * weaponData.throwSpeed;
         weaponsRigidbody.AddForceAtPosition(force, Vector2.zero);
         
         if (!weaponData.oneShot) return;    // Some weapons can be thrown a lot (javelin?), some just once. So we think about that... I guess

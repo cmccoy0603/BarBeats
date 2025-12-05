@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private PlayerAttack playerAttack;
 
-    [SerializeField] private Health playerHealth;
+    [SerializeField] public Health playerHealth;
 
     [SerializeField] private CameraManager cameraManager;
 
@@ -81,5 +81,10 @@ public class PlayerManager : MonoBehaviour
     public float GetWeaponDurabilityRatio()
     {
         return playerAttack.weaponHolder.GetDurabilityRatio();
+    }
+
+    public void UpdateHealth()
+    {
+        GameManager.UiManager.UpdateHealth();
     }
 }
